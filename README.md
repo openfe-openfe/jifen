@@ -1,6 +1,6 @@
 ## 基于react仿知乎live页面
 
-
+![image](https://raw.githubusercontent.com/songhaoreact/zhihu-live-react/63aa56a500c10043b6b226d67bc8970c3d60f4cc/screenshots/react%20spa1.png)
 ### 安装
 
 ```
