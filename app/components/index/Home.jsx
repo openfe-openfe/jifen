@@ -36,7 +36,7 @@ export default class Home extends React.Component {
             <div className="Card-root-1Dmx Card-group-24-a">
               <div className="HotTopBar-content-1fAc HotTopBar-isFixed-1A9U Card-root-1Dmx">
                   <div className="segmentedControl">
-                    <NavLink to="/" className="SegmentedControlItem-root-mpuA HotTopBar-item-1Zz9 SegmentedControlItem-active-38tL">7 天热门</NavLink>
+                    <NavLink to="/Home" className="SegmentedControlItem-root-mpuA HotTopBar-item-1Zz9 SegmentedControlItem-active-38tL">7 天热门</NavLink>
                     <NavLink to="/HomeMonthly" className="SegmentedControlItem-root-mpuA HotTopBar-item-1Zz9">30 天热门</NavLink>
                   </div>
               </div>

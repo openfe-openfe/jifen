@@ -37,7 +37,7 @@ export default class HomeMonthly extends React.Component {
               <div className="HotTopBar-content-1fAc HotTopBar-isFixed-1A9U Card-root-1Dmx">
                   <div className="segmentedControl">
                   <NavLink to="/Home" className="SegmentedControlItem-root-mpuA HotTopBar-item-1Zz9">7 天热门</NavLink>
-                  <NavLink to="/" className="SegmentedControlItem-root-mpuA HotTopBar-item-1Zz9 SegmentedControlItem-active-38tL">30 天热门</NavLink>
+                  <NavLink onlyActiveOnIndex to="/HomeMonthly" className="SegmentedControlItem-root-mpuA HotTopBar-item-1Zz9 SegmentedControlItem-active-38tL">30 天热门</NavLink>
                   </div>
               </div>
               <div className="HotBanner-banner-19UD2">
