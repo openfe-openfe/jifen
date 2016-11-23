@@ -43,13 +43,13 @@ export default class HomeMonthly extends React.Component {
               <div className="HotBanner-banner-19UD2">
       				</div>
               {
-                  this.state.lists.map((e) => {
+                  this.state.lists.map((e,index) => {
                       return (
-                        <div className="Card-root-1Dmx">
+                        <div className="Card-root-1Dmx" key={index}>
                           <a className="LiveItem-root-a6A2 common-clearfix-3JMt">
                             <img  className="LiveItem-avatar-vumW Avatar-img--rfs" src={require('../../img/avatar.jpg')} width="60" height="60"/>
                             <div className="LiveItem-content-1pZp">
-                              <svg fill="currentColor" className="LiveItem-arrow-1bM5" width="48" height="48" viewBox="0 0 48 48"><title>arrow</title><path d="M19.608308 11.291022c-.39064-.387697-1.037868-.388717-1.42788-.019096l-1.879672 1.7814c-.397956.37715-.40446 1.001224-.020242 1.388148l9.488537 9.55542-9.488535 9.55542c-.386777.389504-.36977 1.01853.020242 1.38815l1.879672 1.7814c.397955.37715 1.041186.364683 1.42788-.019096l12.09502-12.003886c.39064-.387697.386693-1.020195 0-1.403974L19.60831 11.291022z" fill-rule="evenodd"></path></svg>
+                              <svg fill="currentColor" className="LiveItem-arrow-1bM5" width="48" height="48" viewBox="0 0 48 48"><title>arrow</title><path d="M19.608308 11.291022c-.39064-.387697-1.037868-.388717-1.42788-.019096l-1.879672 1.7814c-.397956.37715-.40446 1.001224-.020242 1.388148l9.488537 9.55542-9.488535 9.55542c-.386777.389504-.36977 1.01853.020242 1.38815l1.879672 1.7814c.397955.37715 1.041186.364683 1.42788-.019096l12.09502-12.003886c.39064-.387697.386693-1.020195 0-1.403974L19.60831 11.291022z"></path></svg>
                               <div className="LiveItem-subject-1fn7 common-textEllipsis-3N5q">{e.title}</div>
                               <div className="LiveItem-authorName-ghXZ common-textEllipsis-3N5q">{e.author}</div>
                               <div className="LiveItem-description-2_zb">{e.involvement}个参与 {e.question}个提问 {e.answer}个回答</div>
