@@ -10,9 +10,6 @@ cd zhihulive-react
 npm install
 npm run build //打包前端
 npm start //开启server，访问 http://localost:8080
-
-### 初步版本
-### 联系react + node + mongodb
-### 目前只是简单页面+路由,还未进行node服务端开发,逐步增加服务端
-
-### 感兴趣的童鞋可以来个star
+初步版本,用于练习react + node + mongodb
+目前只是简单页面+路由,还未进行node服务端开发,逐步增加服务端
+感兴趣的童鞋可以来个star
