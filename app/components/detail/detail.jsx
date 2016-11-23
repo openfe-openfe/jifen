@@ -1,7 +1,7 @@
 import React from 'react'
-import Slider from '../lib/Slider.jsx'
 import NavLink from '../lib/NavLink.jsx'
-export default class Lives extends React.Component {
+import DetailHeader from './detailHeader.jsx'
+export default class Detail extends React.Component {
   constructor(props) {
       super(props)
       this.state = {
@@ -34,13 +34,12 @@ export default class Lives extends React.Component {
         <div>
           <div className="lives">
             <div className="Card-root-1Dmx Card-group-24-a">
-              <Slider/>
+              <DetailHeader/>
               {
                   this.state.lists.map((e,index) => {
                       return (
                         <div className="Card-root-1Dmx" key={index}>
-
-                          <NavLink to="/detail" className="LiveItem-root-a6A2 common-clearfix-3JMt">30 天热门
+                          <a className="LiveItem-root-a6A2 common-clearfix-3JMt">
                             <img  className="LiveItem-avatar-vumW Avatar-img--rfs" src={require('../../img/avatar2.jpg')} width="60" height="60"/>
                             <div className="LiveItem-content-1pZp">
                               <svg fill="currentColor" className="LiveItem-arrow-1bM5" width="48" height="48" viewBox="0 0 48 48"><title>arrow</title><path d="M19.608308 11.291022c-.39064-.387697-1.037868-.388717-1.42788-.019096l-1.879672 1.7814c-.397956.37715-.40446 1.001224-.020242 1.388148l9.488537 9.55542-9.488535 9.55542c-.386777.389504-.36977 1.01853.020242 1.38815l1.879672 1.7814c.397955.37715 1.041186.364683 1.42788-.019096l12.09502-12.003886c.39064-.387697.386693-1.020195 0-1.403974L19.60831 11.291022z"></path></svg>
@@ -48,8 +47,7 @@ export default class Lives extends React.Component {
                               <div className="LiveItem-authorName-ghXZ common-textEllipsis-3N5q">{e.author}</div>
                               <div className="LiveItem-tag-PtGy"><span className="Label-root-xrSQ">5 小时后开始</span></div>
                             </div>
-
-                          </NavLink>
+                          </a>
                         </div>
                       )
                   })

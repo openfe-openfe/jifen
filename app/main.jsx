@@ -7,6 +7,7 @@ import App from './components/index/App.jsx'
 import Home from './components/index/Home.jsx'
 import HomeMonthly from './components/index/HomeMonthly.jsx'
 import Lives from './components/lives/lives.jsx'
+import Detail from './components/detail/detail.jsx'
 /* 样式文件加载 */
 import './css/reset.css'
 import './css/hotpage.css'
@@ -21,6 +22,7 @@ render((
             <Route path="HomeMonthly" component={HomeMonthly}/>
             <Route path="home" component={Home}/>
             <Route path="lives" component={Lives}/>
+            <Route path="detail" component={Detail}/>
         </Route>
     </Router>
 ), document.getElementById('app'))

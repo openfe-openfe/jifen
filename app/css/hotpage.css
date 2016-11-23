@@ -223,3 +223,119 @@ a {
     border-radius: 50%;
     border: 1px solid transparent;
 }
+.Card-group-24-a>.Card-root-1Dmx:first-child {
+    border-top: none;
+}
+.LivePageHeader-container-3_3o {
+    position: relative;
+    padding: 15px;
+}
+.LivePageHeader-liveInfo-2J1D {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin-bottom: 15px;
+}
+.LivePageHeader-avatarContainer-2kCT {
+    -webkit-box-flex: 0;
+    -ms-flex: none;
+    flex: none;
+}
+.LivePageHeader-avatar-1q_V {
+    vertical-align: top;
+    margin-right: 12px;
+}
+.Avatar-img--rfs {
+    display: inline-block;
+    border-radius: 10%;
+    background-color: #f7f7f7;
+}
+.LivePageHeader-content-22FD {
+    overflow: hidden;
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+}
+.LivePageHeader-title-1q2A {
+    font-size: 18px;
+    font-weight: 500;
+}
+.LivePageHeader-name-2EAP, .LivePageHeader-title-1q2A {
+    line-height: 1.5;
+}
+.LivePageHeader-name-2EAP {
+    display: inline-block;
+    margin-top: 4.6px;
+    color: #646464;
+    font-size: 16px;
+}
+.LivePageHeader-name-2EAP, .LivePageHeader-title-1q2A {
+    line-height: 1.5;
+}
+.LivePageHeader-speakerIcon-1iL6 {
+    vertical-align: -2px;
+    margin-right: 5px;
+    color: #1185fe;
+}
+svg[Attributes Style] {
+    fill: currentcolor;
+    width: 16;
+    height: 16;
+}
+.LivePageHeader-arrow-oGZZ {
+    width: 12px;
+    height: 12px;
+    vertical-align: -1px;
+}
+.LivePageHeader-timeTitle-30N6 {
+    font-size: 12px;
+    line-height: 1;
+}
+.LivePageHeader-dateTip-237K {
+    color: #999;
+}
+.LivePageHeader-timeTitle-30N6
+.LivePageHeader-timeTitle-30N6 {
+    font-size: 12px;
+    line-height: 1;
+}
+.LivePageHeader-dateTip-237K {
+    color: #999;
+}
+.LivePageHeader-timeTitle-30N6 {
+    font-size: 12px;
+    line-height: 1;
+}
+.LivePageHeader-timeNumber-1k09 {
+    margin-top: 8px;
+    font-size: 18px;
+    line-height: 1;
+    color: #646464;
+}
+.Button-buttonBase-3YR6 {
+    padding: 8px;
+    color: #fff;
+    line-height: 1;
+    border: 1px solid;
+    border-radius: 5px;
+}
+.LivePageHeader-button-17uS {
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
+    font-size: 12px;
+}
+.Button-ghost-37SQ {
+    color: #1185fe;
+    background-color: transparent;
+    border-color: #1185fe;
+}
+
+.Button-base-3ydE {
+    text-align: center;
+    white-space: nowrap;
+}
