@@ -214,3 +214,12 @@ a {
     border: 1px solid #1185fe;
     border-radius: 3px;
 }
+.SelfTab-avatar-zr8y {
+    display: block;
+    padding: 1px;
+    width: 22px;
+    height: 22px;
+    background-color: transparent;
+    border-radius: 50%;
+    border: 1px solid transparent;
+}
