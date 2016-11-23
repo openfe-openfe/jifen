@@ -1,6 +1,9 @@
 import React from 'react'
 import NavLink from '../lib/NavLink.jsx'
 import DetailHeader from './detailHeader.jsx'
+import DetailParty from './detailParty.jsx'
+import DetailActity from './detailActity.jsx'
+import DetailDes from './detailDes.jsx'
 export default class Detail extends React.Component {
   constructor(props) {
       super(props)
@@ -35,6 +38,9 @@ export default class Detail extends React.Component {
           <div className="lives">
             <div className="Card-root-1Dmx Card-group-24-a">
               <DetailHeader/>
+              <DetailParty/>
+              <DetailActity/>
+              <DetailDes/>
               {
                   this.state.lists.map((e,index) => {
                       return (

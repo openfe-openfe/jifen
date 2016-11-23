@@ -10,6 +10,11 @@ body {
   margin: 0px;
   padding: 0px;
 }
+h1, h2 {
+    margin: 0;
+    font-weight: 400;
+    font-size: inherit;
+}
 body, html {
     margin: 0;
     padding: 0;
@@ -33,6 +38,9 @@ button {
     -ms-user-select: none;
     user-select: none;
     cursor: pointer;
+}
+button, input[type=button], input[type=file]::-webkit-file-upload-button, input[type=submit] {
+    font-family: ZhiFont,Helvetica Neue,Roboto,Segoe UI,Microsoft YaHei,sans-serif;
 }
 /*a:-webkit-any-link {
     color: -webkit-link;

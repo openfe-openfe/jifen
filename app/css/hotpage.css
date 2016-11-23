@@ -339,3 +339,153 @@ svg[Attributes Style] {
     text-align: center;
     white-space: nowrap;
 }
+.LivePageParticipants-link-2pDP {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: 15px;
+    color: #999;
+}
+.LivePageParticipants-avatar-3fON {
+    vertical-align: bottom;
+}
+.Avatar-rounded-Rnjb {
+    border-radius: 50%;
+}
+.Avatar-img--rfs {
+    display: inline-block;
+    border-radius: 10%;
+    background-color: #f7f7f7;
+}
+.LivePageParticipants-avatar-3fON+.LivePageParticipants-avatar-3fON {
+    margin-left: 8px;
+}
+.LivePageParticipants-avatar-3fON {
+    vertical-align: bottom;
+}
+.Avatar-rounded-Rnjb {
+    border-radius: 50%;
+}
+.Card-group-24-a>.Card-root-1Dmx+.Card-root-1Dmx {
+    margin-top: 0;
+    border-top: 1px solid #eee;
+    border-radius: 0;
+}
+.Card-root-1Dmx+.Card-root-1Dmx {
+    margin-top: 8px;
+}
+.LivePage-liveActions-EgLr {
+    padding: 12px 15px;
+}
+.Card-root-1Dmx {
+    background-color: #fff;
+}
+
+.LivePage-buttonWrapper-2FzJ {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+    -ms-flex-direction: row-reverse;
+    flex-direction: row-reverse;
+}
+@media (max-width: 500px){
+  .LivePage-buttonWrapper-2FzJ {
+      display: block;
+  }
+}
+.LivePage-applyButton-3KH8 {
+    padding-left: .5em;
+}
+.LivePage-button-181X {
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+}
+.Button-block-3rjb {
+    display: block;
+    padding: 13px 0;
+    width: 100%;
+    font-size: 16px;
+}
+.Button-primary-5q6- {
+    background-color: #1185fe;
+    border-color: #1185fe;
+    font-weight: 500;
+}
+.Button-buttonBase-3YR6 {
+    padding: 8px;
+    color: #fff;
+    line-height: 1;
+    border: 1px solid;
+    border-radius: 5px;
+}
+.Button-base-3ydE {
+    text-align: center;
+    white-space: nowrap;
+}
+@media (max-width: 500px){
+  .LivePage-buttonWrapper-2FzJ .LivePage-giftButton-1fYX {
+      width: 100%;
+      padding: 10px 0;
+      margin-top: 7px;
+  }
+}
+
+
+.LivePage-giftButton-1fYX {
+    -webkit-box-flex: 0;
+    -ms-flex: none;
+    flex: none;
+    padding: 10px;
+    width: auto;
+    margin-right: 10px;
+}
+.Button-block-3rjb {
+    display: block;
+    padding: 13px 0;
+    width: 100%;
+    font-size: 16px;
+}
+.Button-ghost-37SQ {
+    color: #1185fe;
+    background-color: transparent;
+    border-color: #1185fe;
+}
+.LivePage-alert-14y5 {
+    margin-top: 15px;
+    padding: 8px 10px;
+    border-radius: 5px;
+    background: #f7f7fa;
+    color: #8c8c8c;
+    font-size: 13px;
+}
+.LivePage-giftIcon-29DK {
+    vertical-align: -4px;
+    margin-right: 3px;
+}
+.Card-root-1Dmx+.Card-root-1Dmx {
+    margin-top: 8px;
+}
+.LivePage-description-dZ-4 {
+    padding: 15px;
+}
+.Card-root-1Dmx {
+    background-color: #fff;
+}
+.LivePage-title-2GsD {
+    color: #444;
+}
+.LivePage-content-2uDl {
+    position: relative;
+    margin-top: 15px;
+    color: #646464;
+    white-space: pre-wrap;
+}
