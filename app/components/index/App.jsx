@@ -2,6 +2,9 @@ import React from 'react'
 import NavLink from '../lib/NavLinkBottom.jsx'
 
 export default React.createClass({
+  alert(){
+    alert('该页面还未开发')
+  },
   render() {
     return (
         <div>
@@ -16,10 +19,10 @@ export default React.createClass({
       			</svg>
       			<span className="TabNavBarItem-label-2QpM">热门精选</span>
             </NavLink>
-            <NavLink to="/aaa" className="BottomTabNavBar-tab-di_V TabNavBarItem-tab-1ckL TabNavBarItem-isColumn-37rJ Link-link-3Nen">
+            <a onClick={this.alert}className="BottomTabNavBar-tab-di_V TabNavBarItem-tab-1ckL TabNavBarItem-isColumn-37rJ Link-link-3Nen">
             <img className="SelfTab-avatar-zr8y Avatar-img--rfs Avatar-rounded-Rnjb" src={require('../../img/author.jpg')} width="25" height="25"/>
       			<span className="TabNavBarItem-label-2QpM">我的 Live</span>
-            </NavLink>
+            </a>
           </footer>
           {this.props.children}
         </div>
