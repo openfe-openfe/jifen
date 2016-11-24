@@ -481,3 +481,77 @@ svg[Attributes Style] {
     color: #646464;
     white-space: pre-wrap;
 }
+.Summary-expand--M94 {
+    color: #9b9bb2;
+    margin-left: 8px;
+    margin-left: .5rem;
+    display: inline-block;
+}
+.LivePage-title-2GsD2 {
+    padding: 15px 0 0 15px;
+}
+.LivePage-title-2GsD {
+    color: #444;
+}
+
+/*modal*/
+.Dialog-overlay-2RlI {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    background-color: rgba(0,0,0,.5);
+    z-index: 100;
+}
+.Dialog-content-3qxv {
+    position: relative;
+    margin: auto;
+    width: 92%;
+    max-width: 472px;
+    background-color: #fff;
+    border-radius: 8px;
+    outline: none;
+}
+.DialogContent-content-2pSe {
+    padding: 30px 32px;
+    text-align: center;
+}
+.DialogTitle-root-1xzv {
+    margin-bottom: 16px;
+    font-size: 18px;
+    font-weight: 500;
+}
+.ConfirmDialog-text-SoKk {
+    margin-bottom: 18px;
+    font-size: 14px;
+    color: #999;
+    white-space: pre-wrap;
+}
+.Button-block-3rjb {
+    display: block;
+    padding: 13px 0;
+    width: 100%;
+    font-size: 16px;
+}
+.Button-primary-5q6- {
+    /*background-color: #1185fe;*/
+    border-color: #1185fe;
+    font-weight: 500;
+}
+
+.Button-base-3ydE {
+    text-align: center;
+    white-space: nowrap;
+}
+.Dialog-closeButton-2qrC {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45px;
+    height: 45px;
+    color: #999;
+}

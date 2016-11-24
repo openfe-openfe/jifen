@@ -20,6 +20,7 @@
     "jshint": "^2.9.3",
     "react": "15.x",
     "react-dom": "15.x",
+    "react-modal": "^1.5.2",
     "react-router": "^2.6.1",
     "react-slick": "^0.12.2",
     "url-loader": "^0.5.7",

@@ -41,6 +41,7 @@ export default class Detail extends React.Component {
               <DetailParty/>
               <DetailActity/>
               <DetailDes/>
+              <h2 className="LivePage-title-2GsD2">更多 Live</h2>
               {
                   this.state.lists.map((e,index) => {
                       return (
