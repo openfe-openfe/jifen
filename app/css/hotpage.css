@@ -548,3 +548,86 @@ svg[Attributes Style] {
     height: 45px;
     color: #999;
 }
+
+/*gift*/
+.GiftDialog-title-2z4r {
+    font-size: 18px;
+    color: #444;
+    margin-bottom: 16px;
+}
+.GiftDialog-subTitle-1MIQ {
+    font-size: 14px;
+    color: #999;
+}
+.GiftDialog-detailItem-2uRC:first-child {
+    margin-top: 17px;
+}
+.GiftDialog-detailItem-2uRC {
+    padding-bottom: 9px;
+    padding-top: 6px;
+    margin-bottom: 12px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: end;
+    -ms-flex-align: end;
+    align-items: flex-end;
+    border-bottom: 1px solid #e8e8e8;
+}
+.GiftDialog-detailTitle-2Uzm {
+    font-size: 14px;
+    padding-bottom: 5px;
+    color: #999;
+}
+.GiftDialog-detailTitle-2Uzm {
+    font-size: 14px;
+    padding-bottom: 5px;
+    color: #999;
+}
+.GiftDialog-wechatIcon-2kJO {
+    margin-right: 6px;
+    vertical-align: -2px;
+}
+.NumberSetter-container-1Ptd {
+    display: inline-block;
+    border: 1px solid #d3d3d3;
+    border-radius: 4px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.NumberSetter-adjustButton-ahDs:first-child {
+    padding-left: 12px;
+}
+.NumberSetter-adjustButton-ahDs {
+    padding: 7px 0;
+    font-size: 18px;
+    color: #b2b2b2;
+}
+.NumberSetter-adjustButton-ahDs svg {
+    vertical-align: -2px;
+}
+.NumberSetter-input-I7-A {
+    height: 28px;
+    width: 44px;
+    font-size: 18px;
+    text-align: center;
+}
+input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: none;
+}
+.NumberSetter-adjustButton-ahDs:last-child {
+    padding-right: 12px;
+}
+.GiftDialog-price-14cN {
+    margin-bottom: -3px;
+    font-size: 24px;
+    color: #444;
+}
