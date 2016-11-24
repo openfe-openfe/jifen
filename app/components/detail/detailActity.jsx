@@ -106,8 +106,7 @@ var detailActity =React.createClass({
               <path fillRule="evenodd" d="M166 28.452h-14.452V14h-3.096v14.452H134v3.096h14.452V46h3.096V31.548H166"></path></svg></button>
               </div></div></div>
               <div className="GiftDialog-detailItem-2uRC"><div className="GiftDialog-detailTitle-2Uzm">合计</div>
-              <div className="GiftDialog-price-14cN">¥
-                    {(9.9*inputNum).toFixed(1)}
+              <div className="GiftDialog-price-14cN">¥{(9.99*inputNum).toFixed(2)}
               </div>
               </div>
               <button className="Button-primary-5q6- Button-buttonBase-3YR6 Button-base-3ydE Button-block-3rjb">打包{inputNum}份赠礼</button>
