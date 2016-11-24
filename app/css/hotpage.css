@@ -396,7 +396,7 @@ svg[Attributes Style] {
     -ms-flex-direction: row-reverse;
     flex-direction: row-reverse;
 }
-@media (max-width: 500px){
+@media (max-width: 370px){
   .LivePage-buttonWrapper-2FzJ {
       display: block;
   }
@@ -420,18 +420,12 @@ svg[Attributes Style] {
     border-color: #1185fe;
     font-weight: 500;
 }
-.Button-buttonBase-3YR6 {
-    padding: 8px;
-    color: #fff;
-    line-height: 1;
-    border: 1px solid;
-    border-radius: 5px;
-}
+
 .Button-base-3ydE {
     text-align: center;
     white-space: nowrap;
 }
-@media (max-width: 500px){
+@media (max-width: 370px){
   .LivePage-buttonWrapper-2FzJ .LivePage-giftButton-1fYX {
       width: 100%;
       padding: 10px 0;
@@ -448,12 +442,7 @@ svg[Attributes Style] {
     width: auto;
     margin-right: 10px;
 }
-.Button-block-3rjb {
-    display: block;
-    padding: 13px 0;
-    width: 100%;
-    font-size: 16px;
-}
+
 .Button-ghost-37SQ {
     color: #1185fe;
     background-color: transparent;
@@ -476,6 +465,9 @@ svg[Attributes Style] {
 }
 .LivePage-description-dZ-4 {
     padding: 15px;
+}
+.LivePage-liveActions-EgLr {
+    padding: 12px 15px;
 }
 .Card-root-1Dmx {
     background-color: #fff;
