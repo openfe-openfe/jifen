@@ -1,6 +1,9 @@
 import React from 'react'
 
 export default class detailHeader extends React.Component {
+  share(){
+    window.location.href="zhihu:"
+  }
     render() {
         return(
           <div className="LivePageHeader-container-3_3o Card-root-1Dmx">
@@ -25,7 +28,7 @@ export default class detailHeader extends React.Component {
                 <div className="LivePageHeader-timeTitle-30N6">时间<span className="LivePageHeader-dateTip-237K"> ( 今天 )</span>
                 </div>
               <div className="LivePageHeader-timeNumber-1k09">2016-11-23 19:00</div>
-                <button className="LivePageHeader-button-17uS Button-ghost-37SQ Button-buttonBase-3YR6 Button-base-3ydE">在 App 内打开</button>
+                <button className="LivePageHeader-button-17uS Button-ghost-37SQ Button-buttonBase-3YR6 Button-base-3ydE" onClick={this.share}>在 App 内打开</button>
               </div>
           </div>
         )
