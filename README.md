@@ -3,6 +3,7 @@
 ![image](https://github.com/songhaoreact/zhihu-live-react/blob/master/screenshots/react%20spa1.png?raw=true)
 ![image](https://github.com/songhaoreact/zhihu-live-react/blob/master/screenshots/react%20spa2.png?raw=true)
 ![image](https://github.com/songhaoreact/zhihu-live-react/blob/master/screenshots/react%20spa3.png?raw=true)
+![image](https://github.com/songhaoreact/zhihu-live-react/blob/master/screenshots/react%20spa4.png?raw=true)
 ### 安装
 
 ```
