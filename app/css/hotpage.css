@@ -631,3 +631,36 @@ input {
     font-size: 24px;
     color: #444;
 }
+
+/*pay*/
+.QRCodePaymentModal-dialog-2jfa {
+  width: auto;
+}
+.QRCodePaymentModal-content-2pni {
+    position: relative;
+    padding: 20px;
+    text-align: center;
+}
+.QRCodePaymentModal-imgWrapper-IJGB {
+    position: relative;
+    margin: 16px;
+}
+.QRCodePaymentModal-img-3eMI {
+    position: absolute;
+    display: block;
+}
+.QRCodePaymentModal-img-3eMI, .QRCodePaymentModal-imgWrapper-IJGB {
+    width: 30vh;
+    height: 30vh;
+    max-width: 400px;
+    max-height: 400px;
+}
+.QRCodePaymentModal-icon-1oS6 {
+    margin-right: 8px;
+    vertical-align: -6px;
+}
+.QRCodePaymentModal-title-27h- {
+    margin-top: 30px;
+    font-size: 18px;
+    font-weight: 500;
+}

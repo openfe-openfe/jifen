@@ -7,6 +7,7 @@ var detailActity =React.createClass({
     return {
       modalIsOpen: false,
       modalIsOpenGift:false,
+      modalIsOpenPay:false,
       inputNum:5,
       sumNum:9.9
      }
@@ -42,13 +43,19 @@ var detailActity =React.createClass({
   openModalGift: function() {
     this.setState({modalIsOpenGift: true})
   },
-
+  //支付
+  pay(){
+    this.setState({modalIsOpen: false})
+    this.setState({modalIsOpenGift: false})
+    this.setState({modalIsOpenPay: true})
+  },
   afterOpenModal: function() {
   },
 
   closeModal: function() {
     this.setState({modalIsOpen: false})
     this.setState({modalIsOpenGift: false})
+    this.setState({modalIsOpenPay: false})
  },
     render() {
       var inputNum = this.state.inputNum
@@ -68,7 +75,7 @@ var detailActity =React.createClass({
             <div className="DialogContent-content-2pSe">
               <h1 className="DialogTitle-root-1xzv">提示</h1>
               <div className="ConfirmDialog-text-SoKk">当前 Live 互动环节已结束，你仍然可以参与并浏览全部内容，但将不能提问，是否继续？</div>
-              <button className="Button-primary-5q6- Button-buttonBase-3YR6 Button-base-3ydE Button-block-3rjb">继续</button>
+              <button className="Button-primary-5q6- Button-buttonBase-3YR6 Button-base-3ydE Button-block-3rjb" onClick={this.pay}>继续</button>
             </div>
             <button title="关闭" className="Dialog-closeButton-2qrC" onClick={this.closeModal}>
             <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><title>close</title>
@@ -109,7 +116,25 @@ var detailActity =React.createClass({
               <div className="GiftDialog-price-14cN">¥{(9.99*inputNum).toFixed(2)}
               </div>
               </div>
-              <button className="Button-primary-5q6- Button-buttonBase-3YR6 Button-base-3ydE Button-block-3rjb">打包{inputNum}份赠礼</button>
+              <button className="Button-primary-5q6- Button-buttonBase-3YR6 Button-base-3ydE Button-block-3rjb" onClick={this.pay}>打包{inputNum}份赠礼</button>
+            </div>
+            <button title="关闭" className="Dialog-closeButton-2qrC" onClick={this.closeModal}>
+            <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><title>close</title>
+            <path d="M11.75 10.94L8.034 7.223c-.29-.29-.764-.29-1.057.003-.295.295-.294.766-.003 1.057L10.69 12l-3.716 3.716c-.29.29-.292.762.003 1.057.293.293.766.294 1.057.003l3.716-3.715 3.716 3.718c.29.29.764.29 1.057-.003.295-.295.294-.766.003-1.057L12.81 12l3.716-3.716c.29-.29.292-.762-.003-1.057-.293-.293-.766-.294-1.057-.003L11.75 10.94z" fillRule="evenodd"></path>
+            </svg></button>
+            </Modal>
+            <Modal
+              isOpen={this.state.modalIsOpenPay}
+              onAfterOpen={this.afterOpenModal}
+              onRequestClose={this.closeModal}
+              overlayClassName="Dialog-overlay-2RlI"
+              className="Dialog-content-3qxv QRCodePaymentModal-dialog-2jfa "
+            >
+            <div className="QRCodePaymentModal-content-2pni">
+              <div className="QRCodePaymentModal-imgWrapper-IJGB">
+              <img className="QRCodePaymentModal-img-3eMI" src="//www.zhihu.com/qrcode?url=weixin%3A%2F%2Fwxpay%2Fbizpayurl%3Fpr%3Dhe6sP6u" />
+              </div>
+              <h2 className="QRCodePaymentModal-title-27h-"><svg width="24" height="24" fill="currentColor" className="QRCodePaymentModal-icon-1oS6" viewBox="0 0 24 24"><title>wechat_pay</title><path d="M8.68 14.624c-.107.056-.23.088-.358.088-.298 0-.557-.168-.694-.416l-.05-.118-2.174-4.875c-.024-.053-.038-.113-.038-.172 0-.223.178-.406.398-.406.09 0 .17.03.238.08l2.563 1.868c.188.126.41.2.652.2.144 0 .28-.028.408-.076l12.057-5.488C19.522 2.703 15.962 1 11.934 1 5.344 1 0 5.554 0 11.172c0 3.065 1.608 5.824 4.123 7.688.202.148.335.39.335.663 0 .09-.02.173-.042.26l-.538 2.05c-.025.097-.064.198-.064.3 0 .223.178.405.398.405.086 0 .156-.033.23-.076l2.612-1.542c.197-.116.404-.188.634-.188.122 0 .24.02.35.054 1.22.358 2.534.558 3.896.558 6.59 0 11.934-4.554 11.934-10.172 0-1.702-.493-3.304-1.36-4.714L8.77 14.573l-.087.05z" fill="#00C800" fillRule="evenodd"></path></svg>微信扫码支付</h2>
             </div>
             <button title="关闭" className="Dialog-closeButton-2qrC" onClick={this.closeModal}>
             <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><title>close</title>
