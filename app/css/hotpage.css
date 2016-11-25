@@ -631,6 +631,11 @@ input {
     font-size: 24px;
     color: #444;
 }
+.Summary-expandButton-1roc{
+  color: #9b9bb2;
+  display: inline-block;
+  margin-top: 10px;
+}
 
 /*pay*/
 .QRCodePaymentModal-dialog-2jfa {
