@@ -669,3 +669,79 @@ input {
     font-size: 18px;
     font-weight: 500;
 }
+/*我的*/
+.Card-root-3z5t {
+    background-color: #fff;
+}
+.Card-group-1iQj>.Card-root-3z5t:first-child {
+    border-top: none;
+}
+.UserLivesPage-header-3awb {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: 48px;
+    font-size: 17px;
+    overflow: visible;
+    z-index: 1;
+}
+.Card-root-3z5t {
+    background-color: #fff;
+}
+.UserLivesPage-title-3mP_ {
+    margin: auto;
+}
+.Dropdown-dropdown-25cx {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+}
+.UserLivesPage-setting-wxtR {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.SelfMenu-button-E5Iz {
+    display: block;
+    width: 28px;
+    height: 28px;
+}
+.SelfMenu-setting-2qjn {
+    color: #888;
+}
+.Card-group-1iQj>.Card-root-3z5t+.Card-root-3z5t {
+    margin-top: 0;
+    border-top: 1px solid #eee;
+    border-radius: 0;
+}
+.UserLivesPage-noResults-wGsQ {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -ms-grid-row-align: center;
+    align-items: center;
+    font-size: 14px;
+}
+.UserLivesPage-noResultsText-38YT {
+    color: #999;
+}
+.UserLivesPage-noResultsLink-2opc {
+    margin-top: 17px;
+}
+.Link-link-2KsG {
+    color: #1185fe;
+    cursor: pointer;
+}
+.UserLivesPage-arrow-3kRB {
+    vertical-align: -6px;
+}
+.SelfTab-avatar-s7Pz {
+    background-color: #fff;
+    border: 1px solid #1185fe;
+}
