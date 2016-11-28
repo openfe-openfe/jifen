@@ -8,7 +8,7 @@
 
 ```
 git clone https://github.com/songhaoreact/zhihu-live-react.git
-cd zhihulive-react
+cd zhihu-live-react
 npm install
 npm run build //打包前端
 npm start //开启server，访问 http://localost:8080
