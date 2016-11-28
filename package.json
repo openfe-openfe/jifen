@@ -1,5 +1,5 @@
 {
-  "name": "react-spa",
+  "name": "zhihu-live-react",
   "version": "1.0.0",
   "description": "",
   "main": "app/main.jsx",
@@ -54,9 +54,9 @@
   },
   "keywords": [
     "es6",
-    "web app"
+    "react zhizhulive"
   ],
-  "author": "Allan Xu",
+  "author": "songhao",
   "license": "MIT",
   "config": {
     "validate-commit-msg": {
