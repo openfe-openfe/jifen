@@ -17,7 +17,7 @@ export default React.createClass({
       			<span className="TabNavBarItem-label-2QpM">热门精选</span>
             </NavLink>
             <NavLink to="/user"className="BottomTabNavBar-tab-di_V TabNavBarItem-tab-1ckL TabNavBarItem-isColumn-37rJ Link-link-3Nen">
-            <img className="SelfTab-avatar-zr8y Avatar-img--rfs Avatar-rounded-Rnjb" src={require('../../img/author.jpg')} width="25" height="25"/>
+            <img className="SelfTab-avatar-zr8y Avatar-img--rfs Avatar-rounded-Rnjb SelfTab-avatar-s7Pz" src={require('../../img/author.jpg')} width="25" height="25"/>
       			<span className="TabNavBarItem-label-2QpM">我的 Live</span>
             </NavLink>
           </footer>

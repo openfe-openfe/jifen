@@ -19,7 +19,7 @@ import './lib/slick-carousel/slick/slick-theme.css'
 render((
     <Router history={browserHistory}>
         <Route path="/" component={App}>
-            <IndexRoute component={Home}/>
+            <IndexRoute component={Lives}/>
             <Route path="HomeMonthly" component={HomeMonthly}/>
             <Route path="home" component={Home}/>
             <Route path="lives" component={Lives}/>
