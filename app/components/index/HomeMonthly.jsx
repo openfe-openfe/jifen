@@ -2,12 +2,19 @@ import React from 'react'
 import Slider from '../lib/Slider.jsx'
 import NavLink from '../lib/NavLink.jsx'
 import request from '../commen/request.js'
+import Loading  from '../commen/Loading.jsx'
 export default class HomeMonthly extends React.Component {
   constructor(props) {
       super(props)
       this.state = {
-          lists: []
+          lists: [],
+          loading:false
       }
+  }
+  componentWillMount(){
+    this.setState({
+      loading:true
+    })
   }
   // 获取数据
   fetchFn = () => {
@@ -17,7 +24,8 @@ export default class HomeMonthly extends React.Component {
         console.log(data.listData)
         this.setState(
           {
-            lists:data.listData
+            lists:data.listData,
+            loading:false
           }
         )
        })
@@ -40,6 +48,11 @@ export default class HomeMonthly extends React.Component {
               </div>
               <div className="HotBanner-banner-19UD2">
       				</div>
+              {
+                this.state.loading
+                ?<Loading/>
+                :null
+              }
               {
                   this.state.lists.map((e,index) => {
                       return (

@@ -15,7 +15,7 @@ import './css/hotpage.css'
 /*slide滚动样式加载*/
 import './lib/slick-carousel/slick/slick.css'
 import './lib/slick-carousel/slick/slick-theme.css'
-
+import './components/commen/loading.css'
 render((
     <Router history={browserHistory}>
         <Route path="/" component={App}>

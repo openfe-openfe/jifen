@@ -2,12 +2,19 @@ import React from 'react'
 import Slider from '../lib/Slider.jsx'
 import NavLink from '../lib/NavLink.jsx'
 import request from '../commen/request.js'
+import Loading  from '../commen/Loading.jsx'
 export default class Lives extends React.Component {
   constructor(props) {
       super(props)
       this.state = {
-          lists: []
+          lists: [],
+          loading:false
       }
+  }
+  componentWillMount(){
+    this.setState({
+      loading:true
+    })
   }
   // 获取数据
   fetchFn = () => {
@@ -17,7 +24,8 @@ export default class Lives extends React.Component {
         console.log(data.listData)
         this.setState(
           {
-            lists:data.listData
+            lists:data.listData,
+            loading:false
           }
         )
        })
@@ -33,6 +41,11 @@ export default class Lives extends React.Component {
           <div className="lives">
             <div className="Card-root-1Dmx Card-group-24-a">
               <Slider/>
+              {
+                this.state.loading
+                ?<Loading/>
+                :null
+              }
               {
                   this.state.lists.map((e,index) => {
                       return (

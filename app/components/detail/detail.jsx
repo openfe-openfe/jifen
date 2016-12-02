@@ -1,16 +1,27 @@
 import React from 'react'
+
 import NavLink from '../lib/NavLink.jsx'
 import DetailHeader from './detailHeader.jsx'
 import request from '../commen/request.js'
 import DetailParty from './detailParty.jsx'
 import DetailActity from './detailActity.jsx'
 import DetailDes from './detailDes.jsx'
+import Loading  from '../commen/Loading.jsx'
 export default class Detail extends React.Component {
   constructor(props) {
       super(props)
       this.state = {
-          lists: []
+          lists: [],
+          loading:false
       }
+  }
+  componentWillMount(){
+    this.setState({
+      loading:true
+    })
+  }
+  componentDidMount() {
+       this.fetchFn()
   }
   // 获取数据
   fetchFn = () => {
@@ -20,15 +31,12 @@ export default class Detail extends React.Component {
         console.log(data.listData)
         this.setState(
           {
-            lists:data.listData
+            lists:data.listData,
+            loading:false
           }
         )
        })
       .catch((e) => { console.log(e.message) })
-  }
-
-  componentDidMount() {
-       this.fetchFn()
   }
   render() {
     return (
@@ -39,6 +47,12 @@ export default class Detail extends React.Component {
               <DetailParty/>
               <DetailActity/>
               <DetailDes/>
+              {
+                this.state.loading
+                ?<Loading/>
+                :null
+              }
+
               <h2 className="LivePage-title-2GsD2">更多 Live</h2>
               {
                   this.state.lists.map((e,index) => {
