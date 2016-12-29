@@ -16,6 +16,13 @@ export default React.createClass({
       			</svg>
       			<span className="TabNavBarItem-label-2QpM">热门精选</span>
             </NavLink>
+            <NavLink to="/specials" className="BottomTabNavBar-tab-di_V TabNavBarItem-tab-1ckL TabNavBarItem-isColumn-37rJ Link-link-3Nen">
+            <svg fill="currentColor" width="24" height="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path fillRule="evenodd" d="M2,10.0058587 C2,8.89805351 2.89092539,8 3.99742191,8 L19.0025781,8 C20.1057238,8 21,8.89706013 21,10.0058587 L21,19.9941413 C21,21.1019465 20.1090746,22 19.0025781,22 L3.99742191,22 C2.89427625,22 2,21.1029399 2,19.9941413 L2,10.0058587 Z M3.5,6.25 C3.5,5.83578644 3.83418274,5.5 4.25025296,5.5 L18.749747,5.5 C19.1641003,5.5 19.5,5.83289862 19.5,6.25 L19.5,7 L3.5,7 L3.5,6.25 Z M4.5,3.75 C4.5,3.33578644 4.83226082,3 5.25270081,3 L17.7472992,3 C18.1630044,3 18.5,3.33289862 18.5,3.75 L18.5,4.5 L4.5,4.5 L4.5,3.75 Z M13.2094104,12.0722595 C13.4107246,11.3837899 13.169708,11.2609236 12.6821783,11.7858847 L9.06160115,15.6844413 C8.93531145,15.8204272 8.97648022,15.9306656 9.15574889,15.9306656 L11.0207202,15.9306656 L10.2916004,18.4277406 C10.0905745,19.1162101 10.3316911,19.2390764 10.8190596,18.7141154 L14.4384393,14.8155591 C14.5646873,14.6795732 14.5234847,14.5693348 14.344216,14.5693348 L12.4792449,14.5693348 L13.2094104,12.0722595 Z">
+            </path>
+            </svg>
+      			<span className="TabNavBarItem-label-2QpM">专题推荐</span>
+            </NavLink>
             <NavLink to="/user"className="BottomTabNavBar-tab-di_V TabNavBarItem-tab-1ckL TabNavBarItem-isColumn-37rJ Link-link-3Nen">
             <img className="SelfTab-avatar-zr8y Avatar-img--rfs Avatar-rounded-Rnjb SelfTab-avatar-s7Pz" src={require('../../img/author.jpg')} width="25" height="25"/>
       			<span className="TabNavBarItem-label-2QpM">我的 Live</span>
