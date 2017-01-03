@@ -8,7 +8,11 @@ export default class Lives extends React.Component {
       super(props)
       this.state = {
           lists: [],
-          loading:false
+          loading:false,
+          bottomTxt: '',
+          pageIndex:1,
+          pageCount: 0,
+
       }
   }
   componentWillMount(){
@@ -19,30 +23,53 @@ export default class Lives extends React.Component {
   // 获取数据
   fetchFn = () => {
     var that=this
-    request.get('http://rap.taobao.org/mockjs/7918/songhao/batch')
+    var url='http://rap.taobao.org/mockjs/7918/songhao/batch'
+    request.post(url,{
+      page:that.state.pageIndex
+    })
       .then((data) => {
-        console.log(data.listData)
-        this.setState(
-          {
-            lists:data.listData,
-            loading:false
-          }
-        )
+        console.log(data.total)
+        that.setState({
+          pageCount:data.total
+        })
+        if(that.state.pageIndex == 1){
+                that.setState({lists: data.listData,loading:false})
+            }else{
+                that.setState({lists: that.state.lists.concat(data.listData),loading:false})
+            }
+            that.setState({pageIndex: that.state.pageIndex+1},function(){
+                console.log("pageIndex",that.state.pageIndex);})
        })
       .catch((e) => { console.log(e.message) })
   }
-
+  componentWillUnmount() {
+        document.removeEventListener('scroll', this.handleScroll);
+    }
   componentDidMount() {
        this.fetchFn()
+       document.addEventListener('scroll', this.handleScroll);
   }
+  handleScroll = () => {
+        var that = this;
+        var scrolltop = document.body.scrollTop || document.documentElement.scrollTop;
+        var clientHeight = document.documentElement.clientHeight;
+        if(scrolltop + clientHeight==document.body.clientHeight){
+          if (that.state.pageIndex <= that.state.pageCount){
+                that.fetchFn();
+            }else{
+                that.setState({bottomTxt: '我是有底线的'});
+            }
+        }
+    }
   render() {
+    var that=this
     return (
         <div>
           <div className="lives">
             <div className="Card-root-1Dmx Card-group-24-a">
               <Slider/>
               {
-                this.state.loading
+                that.state.loading
                 ?<Loading/>
                 :null
               }
@@ -50,7 +77,6 @@ export default class Lives extends React.Component {
                   this.state.lists.map((e,index) => {
                       return (
                         <div className="Card-root-1Dmx" key={index}>
-
                           <NavLink to="/detail" className="LiveItem-root-a6A2 common-clearfix-3JMt">{e.involvement} 天热门
                             <img  className="LiveItem-avatar-vumW Avatar-img--rfs" src={e.avatar} width="60" height="60"/>
                             <div className="LiveItem-content-1pZp">
@@ -59,12 +85,12 @@ export default class Lives extends React.Component {
                               <div className="LiveItem-authorName-ghXZ common-textEllipsis-3N5q">{e.author}</div>
                               <div className="LiveItem-tag-PtGy"><span className="Label-root-xrSQ">5 小时后开始</span></div>
                             </div>
-
                           </NavLink>
                         </div>
                       )
                   })
               }
+              { that.state.bottomTxt?<div className="loadmore">{that.state.bottomTxt}</div>:null }
             </div>
           </div>
         </div>
