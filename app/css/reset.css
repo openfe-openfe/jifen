@@ -12,6 +12,11 @@ body, html {
 button, input[type=button], input[type=file]::-webkit-file-upload-button, input[type=submit] {
     font-family: ZhiFont,Helvetica Neue,Roboto,Segoe UI,Microsoft YaHei,sans-serif;
 }
+a {
+    color: inherit;
+    text-decoration: none;
+    outline: none;
+}
 h1, h2 {
     margin: 0;
     font-weight: 400;

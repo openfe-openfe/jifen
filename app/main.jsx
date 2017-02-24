@@ -20,23 +20,18 @@ import Coupon from './components/index/detail/Coupon.jsx'
 import Allshoplist from './components/index/Allshoplist.jsx'
 /* 样式文件加载 */
 import './css/reset.css'
-import './css/hotpage.css'
+import './css/modal.css'
 /*slide滚动样式加载*/
 import './lib/slick-carousel/slick/slick.css'
 import './lib/slick-carousel/slick/slick-theme.css'
 /*组件加载动画样式*/
 import './components/common/loading.scss'
 
-/*积分商城首页样式 */
+/*积分商城首页样式,新品推荐,所有分类,个人中心等css */
 import './css/home.css'
 
 /*积分商城列表详情样式 */
 import './css/homeDetail.css'
-// 给增强后的store传入reducer
-//const store = finalCreateStore(reducer);
-
-// 创建一个增强版的history来结合store同步导航事件(redux专用)
-//const history = syncHistoryWithStore(hashHistory, store)
 render((
         <Router history={browserHistory}>
                  <Route path="/" component={Home}/>

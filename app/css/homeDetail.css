@@ -307,9 +307,6 @@ ol, ul {
     font-size: 1.5rem;
     margin-bottom: 10px;
 }
-.coupon_container{
-
-}
 .coupon_detail{
     width:100%;height:150px;background:#f26d5f;
     background:radial-gradient(rgba(0, 0, 0, 0)0,rgba(0, 0, 0, 0)4px,#f26d5f 4px);
