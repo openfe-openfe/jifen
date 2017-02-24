@@ -24,9 +24,8 @@ module.exports = {
     path.resolve(__dirname, 'app/main.jsx')
   ],
   output: {
-    path: __dirname + '/build', //打包输出的路径
-    publicPath: '/',  //html引用路径，在这里是本地地址。
-    filename: './bundle.js' //打包后的名字
+    path: __dirname,//打包输出的路径
+    filename: 'bundle.js' //打包后的名字
   },
   module: {
     //加载器配置

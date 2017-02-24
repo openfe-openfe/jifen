@@ -1,11 +1,10 @@
 import React from 'react'
-import Slider from '../lib/Slider.jsx'
 import NavLink from '../lib/NavLink.jsx'
 import request from '../common/request.js'
+import Loading  from '../common/Loading.jsx'
 import config from '../common/config.js'
 import utilities from '../common/Utilities.js'
-import Loading  from '../common/Loading.jsx'
-export default class Home extends React.Component {
+export default class NewProduct extends React.Component {
   constructor(props) {
       super(props)
       this.state = {
@@ -16,43 +15,11 @@ export default class Home extends React.Component {
           pageCount: 0,
 
       }
-       
   }
   componentWillMount(){
-    var wv_account=utilities.getParameterByName('wv_account')
-    localStorage.setItem('wv_account',wv_account)
     this.setState({
       loading:true
     })
-  }
-  log=()=>{
-    var that=this
-    // 获取用户手机型号(记录日志功能)
-    var phonetype=''
-    var ua = navigator.userAgent.toLowerCase()
-    if (/iphone|ipad|ipod/.test(ua)){
-       phonetype='iOS'
-      }else if (/android/.test(ua)) { 
-      phonetype='Android'
-    }
-    var url=config.api.base+config.api.log
-     var formdata=new FormData();
-        formdata.append('useraccount',utilities.getParameterByName('wv_account'))
-        formdata.append('os',phonetype)
-         fetch(url,{
-            method: 'POST',
-            cache: 'default',
-            body: formdata
-        })
-        .then(function (response) {
-            return response.json();
-        })
-        .then((data)=>{
-          console.log(123)
-        })
-        .catch((err) => {
-        console.log(err)
-      })
   }
   loadList = () => {
         var that = this
@@ -60,17 +27,16 @@ export default class Home extends React.Component {
         var url=config.api.base+config.api.index
         var formdata=new FormData();
         formdata.append('page',that.state.pageIndex)
-        formdata.append('type',1)
+        formdata.append('type',2)
         fetch(url,{
             method: 'POST',
-            cache: 'default',
             body: formdata
         })
         .then(function (response) {
             return response.json();
         })
        .then((data) => {
-         //console.log(data.msg)
+         console.log(data.msg)
         //console.log(data.total)
         that.setState({
           pageCount:data.page.count
@@ -89,21 +55,21 @@ export default class Home extends React.Component {
   componentDidMount() {
        document.addEventListener('scroll', this.handleScroll);
        this.loadList()
-       this.log()
   }
     componentWillUnmount() {
        document.removeEventListener('scroll', this.handleScroll);
     }
   handleScroll = () => {
-        var _this = this;
-        var scrolltop = document.body.scrollTop || document.documentElement.scrollTop;
-        var clientHeight = document.documentElement.clientHeight;
-        if(scrolltop + clientHeight==document.body.clientHeight){
-            if (_this.state.pageIndex <= _this.state.pageCount){
-                 _this.loadList();
+        var that = this;
+        var a = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+        var b = document.documentElement.scrollTop==0? document.body.scrollTop : document.documentElement.scrollTop;
+        var c = document.documentElement.scrollTop==0? document.body.scrollHeight : document.documentElement.scrollHeight;
+        if(a+Math.floor(b)==c || a+Math.ceil(b)==c){
+          if (that.state.pageIndex <= that.state.pageCount){
+                
+                that.loadList();  
             }else{
-                _this.setState({bottomTxt: '到底儿了~'});
-
+               that.setState({bottomTxt: '到底了'});
             }
         }
     }
@@ -113,41 +79,6 @@ export default class Home extends React.Component {
         <div>
           <div className="">
             <div className="">
-              <Slider/>
-              {
-                that.state.loading
-                ?<Loading/>
-                :null
-              }
-              <div className="In_card shadow">
-                <div className="list_icon E_f12 E_fc_grey1">
-                  <NavLink to="newsproduct">
-                    <div className="rightLine">
-                      <img src="http://oeinf1vjn.bkt.clouddn.com/%E7%83%AD%E9%97%A8%E5%85%91%E6%8D%A2.png"  className="icon_breast"/>
-                      <p>热门推荐</p>
-                    </div>
-                  </NavLink>
-                  <NavLink to="qualityMerchant">
-                    <div className="rightLine">
-                      <img src="http://oeinf1vjn.bkt.clouddn.com/%E4%BC%98%E8%B4%A8%E5%95%86%E5%AE%B6.png"  className="icon_breast"/>
-                      <p>优质商家</p>
-                    </div>
-                  </NavLink>
-
-                  <NavLink to="allproduct">
-                    <div className="rightLine">
-                      <img src="http://oeinf1vjn.bkt.clouddn.com/%E6%89%80%E6%9C%89%E5%88%86%E7%B1%BB.png"  className="icon_breast"/>
-                      <p>所有商品</p>
-                    </div>
-                  </NavLink>
-                   <NavLink to="myintergral">
-                    <div className="rightLine">
-                      <img src="http://oeinf1vjn.bkt.clouddn.com/%E4%B8%AA%E4%BA%BA%E4%B8%AD%E5%BF%83.png"  className="icon_breast"/>
-                      <p>个人中心</p>
-                    </div>
-                  </NavLink>
-                </div>
-              </div>
               
               {
                   that.state.lists.map((e,index) => {
@@ -189,7 +120,6 @@ export default class Home extends React.Component {
               { that.state.bottomTxt?<div className="loadmore">{that.state.bottomTxt}</div>:<Loading/>  }
             </div>
           </div>
-          
         </div>
     )
   }

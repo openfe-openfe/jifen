@@ -1,9 +1,6 @@
 body {
     color: #444;
-    font-weight: 400;
-    font-size: 15px;
-    line-height: 1.5;
-    font-family: ZhiFont,Helvetica Neue,Roboto,Segoe UI,Microsoft YaHei,sans-serif;
+    font-family: Helvetica Neue,Roboto,Segoe UI,Microsoft YaHei,sans-serif;
     background-color: #efeff4;
 }
 body, html {

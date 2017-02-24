@@ -1,5 +1,4 @@
 import React from 'react'
-import Slider from '../lib/Slider.jsx'
 import NavLink from '../lib/NavLink.jsx'
 import request from '../common/request.js'
 import config from '../common/config.js'
@@ -10,52 +9,46 @@ export default class Home extends React.Component {
       super(props)
       this.state = {
           lists: [],
+          lists2:[],
           loading:false,
           bottomTxt: '',
           pageIndex:1,
           pageCount: 0,
 
       }
-       
   }
   componentWillMount(){
-    var wv_account=utilities.getParameterByName('wv_account')
-    localStorage.setItem('wv_account',wv_account)
     this.setState({
       loading:true
     })
   }
-  log=()=>{
-    var that=this
-    // 获取用户手机型号(记录日志功能)
-    var phonetype=''
-    var ua = navigator.userAgent.toLowerCase()
-    if (/iphone|ipad|ipod/.test(ua)){
-       phonetype='iOS'
-      }else if (/android/.test(ua)) { 
-      phonetype='Android'
-    }
-    var url=config.api.base+config.api.log
-     var formdata=new FormData();
-        formdata.append('useraccount',utilities.getParameterByName('wv_account'))
-        formdata.append('os',phonetype)
-         fetch(url,{
+    fetchFn2(){
+    //console.log(localStorage.getItem('phone'))
+        var that=this
+        var url=config.api.base+config.api.categorylist
+        var formdata=new FormData();
+        formdata.append('page',1)
+        fetch(url,{
             method: 'POST',
-            cache: 'default',
             body: formdata
         })
         .then(function (response) {
             return response.json();
         })
-        .then((data)=>{
-          console.log(123)
-        })
-        .catch((err) => {
-        console.log(err)
-      })
+      .then((data) => {
+        console.log(data.data)
+        that.setState(
+          {
+            lists2:data.data,
+            loading:false
+          }
+        )
+       })
+      .catch((e) => { console.log(e.message) })
   }
-  loadList = () => {
-        var that = this
+  // 获取数据
+  fetchFn = () => {
+    var that = this
         //var url='http://rap.taobao.org/mockjsdata/7918/songhao/batch'
         var url=config.api.base+config.api.index
         var formdata=new FormData();
@@ -63,20 +56,19 @@ export default class Home extends React.Component {
         formdata.append('type',1)
         fetch(url,{
             method: 'POST',
-            cache: 'default',
             body: formdata
         })
         .then(function (response) {
             return response.json();
         })
        .then((data) => {
-         //console.log(data.msg)
+         console.log(data.msg)
         //console.log(data.total)
         that.setState({
           pageCount:data.page.count
         })
         if(data.page.count==1){
-          that.setState({lists: data.data,loading:false,bottomTxt:'到底儿了'})
+          that.setState({lists: data.data,loading:false,bottomTxt:''})
         }
         if(that.state.pageIndex == 1){
                 that.setState({lists: data.data,loading:false})
@@ -85,25 +77,26 @@ export default class Home extends React.Component {
             }
             that.setState({pageIndex: that.state.pageIndex+1}) 
         });
+  }
+  componentWillUnmount() {
+         document.removeEventListener('scroll', this.handleScroll);
     }
   componentDidMount() {
+       this.fetchFn()
+       this.fetchFn2()
        document.addEventListener('scroll', this.handleScroll);
-       this.loadList()
-       this.log()
   }
-    componentWillUnmount() {
-       document.removeEventListener('scroll', this.handleScroll);
-    }
   handleScroll = () => {
-        var _this = this;
-        var scrolltop = document.body.scrollTop || document.documentElement.scrollTop;
-        var clientHeight = document.documentElement.clientHeight;
-        if(scrolltop + clientHeight==document.body.clientHeight){
-            if (_this.state.pageIndex <= _this.state.pageCount){
-                 _this.loadList();
+        var that = this;
+        var a = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+        var b = document.documentElement.scrollTop==0? document.body.scrollTop : document.documentElement.scrollTop;
+        var c = document.documentElement.scrollTop==0? document.body.scrollHeight : document.documentElement.scrollHeight;
+        if(a+Math.floor(b)==c || a+Math.ceil(b)==c){
+          if (that.state.pageIndex <= that.state.pageCount){
+                
+                that.fetchFn();  
             }else{
-                _this.setState({bottomTxt: '到底儿了~'});
-
+               that.setState({bottomTxt: '我是有底线的'});
             }
         }
     }
@@ -113,46 +106,26 @@ export default class Home extends React.Component {
         <div>
           <div className="">
             <div className="">
-              <Slider/>
-              {
-                that.state.loading
-                ?<Loading/>
-                :null
-              }
-              <div className="In_card shadow">
-                <div className="list_icon E_f12 E_fc_grey1">
-                  <NavLink to="newsproduct">
-                    <div className="rightLine">
-                      <img src="http://oeinf1vjn.bkt.clouddn.com/%E7%83%AD%E9%97%A8%E5%85%91%E6%8D%A2.png"  className="icon_breast"/>
-                      <p>热门推荐</p>
-                    </div>
-                  </NavLink>
-                  <NavLink to="qualityMerchant">
-                    <div className="rightLine">
-                      <img src="http://oeinf1vjn.bkt.clouddn.com/%E4%BC%98%E8%B4%A8%E5%95%86%E5%AE%B6.png"  className="icon_breast"/>
-                      <p>优质商家</p>
-                    </div>
-                  </NavLink>
-
-                  <NavLink to="allproduct">
-                    <div className="rightLine">
-                      <img src="http://oeinf1vjn.bkt.clouddn.com/%E6%89%80%E6%9C%89%E5%88%86%E7%B1%BB.png"  className="icon_breast"/>
-                      <p>所有商品</p>
-                    </div>
-                  </NavLink>
-                   <NavLink to="myintergral">
-                    <div className="rightLine">
-                      <img src="http://oeinf1vjn.bkt.clouddn.com/%E4%B8%AA%E4%BA%BA%E4%B8%AD%E5%BF%83.png"  className="icon_breast"/>
-                      <p>个人中心</p>
-                    </div>
-                  </NavLink>
+              <div className="In_card2 shadow">
+                <div className="list_icon list_icon2 E_f12 E_fc_grey1">
+                  {
+                    that.state.lists2.map((e,index)=>{
+                      return(
+                           <NavLink to={{pathname:"/allshoplist",query:{id:e.id}}} key={index}>
+                              <div className="rightLine">
+                                <p style={{borderColor:e.color}}><span>{e.catname}</span></p>
+                              </div>
+                           </NavLink>
+                      )
+                    })
+                  }
                 </div>
               </div>
-              
               {
                   that.state.lists.map((e,index) => {
                       return (
-                        <NavLink to={{pathname:"/detail",query:{id:e.id}}} className="product_href block_href" key={index}>
+                        
+                         <NavLink to={{pathname:"/detail",query:{id:e.id}}} className="product_href block_href" key={index}>
                          
                               <div className="gift_list">
                                 <img src={e.thumbnail} alt="图片" className="product_img"/>
@@ -182,14 +155,13 @@ export default class Home extends React.Component {
                               </div>
                           
                           </NavLink>
-                          
+                        
                       )
                   })
                }
               { that.state.bottomTxt?<div className="loadmore">{that.state.bottomTxt}</div>:<Loading/>  }
             </div>
           </div>
-          
         </div>
     )
   }

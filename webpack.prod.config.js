@@ -14,7 +14,7 @@ module.exports = {
     ],
     output: {
         path: path.resolve(__dirname, 'build'),
-        filename: "[name].[hash:8].js",
+        filename: "boudle.js",
         publicPath: '/'
     },
     resolve: {
@@ -50,18 +50,23 @@ module.exports = {
       ]
     },
     plugins: [
-      new ExtractTextPlugin("main.[hash:8].css", {
+      new ExtractTextPlugin("main.css", {
           allChunks: true,
           disable: false
       }),
-      new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.[hash:8].js'),
+      new webpack.DefinePlugin({
+        "process.env": { 
+          NODE_ENV: JSON.stringify("production") 
+        }
+      }),
+      new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.js'),
       new uglifyJsPlugin({
         compress: {
           warnings: false
         }
       }),
       new HtmlWebpackPlugin({
-        title: 'your app title',
+        title: '积分商城',
         template: './app/index.html',
       }),
       new webpack.optimize.MinChunkSizePlugin({

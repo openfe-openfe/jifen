@@ -1,0 +1,610 @@
+/*积分商城首页css代码*/
+
+@font-face {font-family: "iconfont";
+  src: url('iconfont.eot?t=1486543640469'); /* IE9*/
+  src: url('iconfont.eot?t=1486543640469#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('iconfont.woff?t=1486543640469') format('woff'), /* chrome, firefox */
+  url('iconfont.ttf?t=1486543640469') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('iconfont.svg?t=1486543640469#iconfont') format('svg'); /* iOS 4.1- */
+}
+em{
+   font-style: normal
+}
+.iconfont {
+  font-family:"iconfont" !important;
+  font-size:16px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-jifen:before { content: "\e624"; }
+
+.slide{
+    margin-bottom: 1rem;
+}
+html {
+    font-size: 78.125%;
+}
+body{
+    background:#f2f2f2;
+}
+@media screen and (max-width: 414px) {
+    html {
+    font-size: 66.25%;
+    }
+}
+@media screen and (max-width: 375px) {
+    html {
+    font-size: 62.5%;
+    }
+}
+.In_card {
+    margin-bottom: 1rem;
+}
+.In_card2 {
+    margin-bottom: .5rem;
+}
+.shadow {
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,.14);
+    -webkit-box-shadow: 0 1px 3px 0 rgba(0,0,0,.14);
+}
+.list_icon {
+    background: #fff;
+    overflow: hidden;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.E_f12 {
+    font-size: 1.2rem;
+}
+.E_fc_grey1, body {
+    color: #333;
+}
+a{
+    color:#1e1e1e;
+}
+.list_icon .rightLine {
+    position: relative;
+}
+.list_icon2 .rightLine p{
+    margin: 0 auto;
+    background: #fff;
+    border: 1px solid #FF8200;
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50%;
+    font-size: 1.1em;
+    padding: .8rem;
+    line-height: 1.3rem;
+    word-wrap: break-word;
+    color:#939393;
+}
+.list_icon2 .rightLine p span{
+    position: relative;
+    top:.3rem;
+}
+.list_icon div {
+    float: left;
+    width: 25%;
+    margin: 1.2rem 0;
+}
+.list_icon2 div{
+    float: left;
+    width:20%;
+    margin: 1.2rem 0;
+}
+.list_icon3 div{
+    float: left;
+    width:33%;
+    margin: 1.2rem 0;
+}
+.product_href .gift_list::after {
+    content: " ";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    border-bottom: 1px solid #e6e6e6;
+    color: #e6e6e6;
+    transform-origin: 0 100%;
+    transform: scaleY(.5);
+}
+.list_icon .rightLine::after {
+    content: " ";
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 1px;
+    height: 100%;
+    border-right: 1px solid #e6e6e6;
+    color: #e6e6e6;
+    transform-origin: 100% 0;
+    transform: scaleX(.5);
+}
+.list_icon [class*=icon_] {
+    width: 2.8rem;
+    height: 2.8rem;
+    vertical-align: bottom;
+    margin-top: .2rem;
+}
+.list_icon2 [class*=icon_] {
+    width: 4.8rem;
+    height: 4.8rem;
+    vertical-align: bottom;
+    margin-top: .2rem;
+}
+.list_icon p {
+    margin-top: .2rem;
+    line-height: 2.4rem;
+}
+.block_href {
+    display: block;
+    background: #fff;
+    padding: 0 1.2rem;
+    font-size: 0;
+}
+.gift_list {
+    background: #fff;
+    overflow: hidden;
+    padding: 1rem 0;
+    position: relative;
+    z-index: 1;
+}
+.gift_list .product_img {
+    width: 7rem;
+    height: 7rem;
+    float: left;
+    position: relative;
+    z-index: 2;
+}
+.gift_list .gift_desc {
+    float: left;
+    width: 100%;
+    height: 7rem;
+    font-size: 1.2rem;
+    margin: 0 -3.7rem 0 -7rem;
+    box-sizing: border-box;
+}
+.gift_list .gift_desc .desc_wrap {
+    margin: 0 3.7rem 0 8rem;
+}
+.gift_list .gift_desc .desc_wrap .desc_title {
+    line-height: 2.5rem;
+}
+
+.gift_list .gift_desc .desc_wrap .desc_title {
+    max-width: 100%;
+    white-space: nowrap;
+    word-break: keep-all;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.E_f16 {
+    font-size: 1.6rem;
+}
+
+.E_fc_grey1, body {
+    color: #333;
+}
+.product_href .gift_list .gift_desc .desc_wrap .desc_charge {
+    line-height: 2.3rem;
+}
+.gold_logo {
+  font-family:"iconfont" !important;
+  font-size:1.5rem;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.gold_logo:before { content: "\e61c"; }
+.gold_logo, .product_href .gift_list .desc_tag {
+    color: #FF8200;
+}
+.E_fc_orange {
+    color: #ff8200;
+}
+
+.E_f15 {
+    font-size: 1.5rem;
+}
+
+.product_href .gift_list .gift_desc .desc_wrap .desc_charge {
+    line-height: 2.3rem;
+}
+.ori_charge {
+    margin-left: 1.2rem;
+    display: inline-block;
+}
+
+.E_fc_grey7 {
+    color: #939393;
+}
+
+.E_f12 {
+    font-size: 1.2rem;
+}
+.product_href .gift_list .gift_desc .desc_wrap .change_his {
+    line-height: 2.2rem;
+}
+.E_fc_grey6 {
+    color: #636363;
+}
+.gift_desc .desc_wrap .change_his .left_txt {
+    width: 30%;
+}
+.gift_list .gift_desc .desc_wrap {
+    margin: 0 3.7rem 0 8rem;
+}
+.change_his span {
+    display: inline-block;
+}
+
+.desc_wrap .change_his {
+    line-height: 2.2rem;
+}
+.gift_desc .desc_wrap .change_his .left_txt .exg_num {
+    width: 58%;
+    text-align: center;
+}
+.change_his .right_txt {
+    width: 40%;
+}
+.right_txt .rate_bar {
+    display: inline-block;
+    position: relative;
+    top: -.1rem;
+    background-color: #eaeaea;
+    font-size: 0;
+    width: 100%;
+    height: .5rem;
+    overflow: hidden;
+    -moz-border-radius: .5rem;
+    -webkit-border-radius: .5rem;
+    border-radius: .5rem;
+}
+.right_txt .rate_bar span {
+    display: inline-block;
+    position: absolute;
+    height: .5rem;
+    background-color: #ff8200;
+    -moz-border-radius: .5rem;
+    -webkit-border-radius: .5rem;
+    border-radius: .5rem;
+    margin-left: 0;
+}
+.gift_list .tag_wrap {
+    float: right;
+    text-align: center;
+    padding: 0 .2rem 0 1.2rem;
+}
+.gift_list .tag_wrap [class*=_tag] {
+    font-size: 2.3rem;
+}
+
+ .gift_list .change_history_tag,.gift_list .tag_wrap [class*=_tag] {
+    line-height: 7rem;
+    font-family: iconfont!important;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: .2px;
+    -moz-osx-font-smoothing: grayscale;
+}
+ .gift_list .change_history_tag,.gift_list .tag_wrap [class*=_tag]:before{
+     content: "\e60b"; 
+ }
+
+.gold_logo,  .gift_list .desc_tag {
+    color: #FF8200;
+}
+.gift_list .end_tag {
+    color: rgba(147,147,147,.5);
+}
+
+.E_load{
+    padding: 1.5rem 0 2rem 0;
+    text-align: center;
+    width: 100%;
+    color:#939393;
+    font-size:0.9rem;
+    margin: 0 auto;
+}
+
+/*我的积分*/
+.my_intergral{
+    background-color: #ffa200;
+    color: #fff;
+    padding: 2rem 1.2rem 2.5rem;
+    overflow: hidden;
+}
+.my_intergral .point_num {
+    line-height: 6.4rem;
+    font-size: 5rem;
+    display: inline-block;
+}
+.my_intergral .rule_link {
+    float: right;
+}
+.my_intergral .integral_rel {
+    line-height: 1.9rem;
+    color: rgba(255,255,255,.6);
+}
+.my_intergral .rule_link i{
+    font-family: iconfont!important;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: .2px;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 2.8rem;
+    line-height: 6.4rem;
+    color: #fff;
+}
+.my_intergral .rule_link i:before{
+    content: "\E608";
+}
+.In_content_title {
+    background: #f2f2f2;
+    line-height: 2.8rem;
+    margin: .6rem 0 0 1.2rem;
+}
+
+.E_fc_grey6 {
+    color: #636363;
+}
+
+.E_f14 {
+    font-size: 1.4rem;
+}
+.instruction{
+}
+.instruction a{
+    display: block;
+    text-align: center;
+    margin-top: 16rem;
+    font-size: 1.2rem;
+}
+
+/*我的积分明细页面等*/
+.intergral_icon{
+    margin-top: 1rem;
+    text-align: center
+}
+.infor_gold_big{
+    color: #FF8200;
+    font-size: 6rem;
+    margin-top: .3rem;
+    font-family:"iconfont" !important;
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
+   font-style: normal;
+}
+.infor_gold_big:before{
+    content: "\e61c";
+}
+.intergral_text{
+    font-family: 'Microsoft YaHei',Helvetica,sans-serif;
+    text-align: center;
+    font-size: 4rem;
+    letter-spacing:4px;
+    margin-bottom: 20px;
+}
+.intergral_text p span{
+       color: #FF8200;
+       font-size: 1.5rem;
+       margin-left: 10px;
+}
+.btn_org{
+    color: #fff;
+    background: #FF8200;
+    height: 4rem;
+    font-size: 1.6rem;
+    line-height: 4rem;
+    display: block;
+    width: 90%;
+    margin: 0 auto;
+    border-radius: 5px;
+    text-align: center;
+    vertical-align: middle;
+    margin-bottom: 10px;
+}
+.btn_gray{
+    color: #fff;
+    background: #ccc;
+    height: 4rem;
+    font-size: 1.6rem;
+    line-height: 4rem;
+    display: block;
+    width: 90%;
+    margin: 0 auto;
+    border-radius: 5px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+/*积分明细列表接口*/
+.intergral_history {
+    padding: 1.7rem 1.2rem 1.7rem .5rem;
+    background-color: #fff;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+.IN_list .child_block {
+    position: relative;
+}
+.intergral_history p:first-child .point_desc {
+    max-width: 66.9%;
+    white-space: nowrap;
+    word-break: keep-all;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.IN_list .child_block::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    border-bottom: 1px solid #e6e6e6;
+    color: #e6e6e6;
+    transform-origin: 0 100%;
+    transform: scaleY(.5);
+}
+.intergral_history p:first-child {
+    height: 1.8rem;
+    position: relative;
+}
+.intergral_history p:first-child span {
+    position: absolute;
+    bottom: 0;
+}
+.intergral_history p:first-child [class*=_point] {
+    right: 0;
+}
+.intergral_history p:last-child {
+    line-height: 1.2rem;
+    margin-top: .8rem;
+}
+.E_fc_grey7 {
+    color: #939393;
+}
+.get_point{
+    color: #47c9bc;
+}
+
+/*积分规则相关页面*/
+.jifen_body{
+    height: 50rem;
+}
+.jifen_rule{
+    background: #fff;
+    min-height: 100%;
+    font-size: 1.2rem;
+}
+.jifen_rule .task_rule{
+    padding: 1.3rem 1.2rem 1.8rem;
+}
+
+.jifen_rule .legal_rule .title, .jifen_rule .point_rule .title, .jifen_rule .task_rule .title {
+    line-height: 1.7rem;
+}
+.jifen_rule .rule_center {
+    text-align: center;
+}
+.jifen_rule .rule_mt11 {
+    margin-top: 1.1rem;
+}
+.jifen_rule .point_rule .paragraph, .jifen_rule .task_rule .paragraph {
+    text-indent: 2.1rem;
+}
+
+.jifen_rule .legal_rule .paragraph, .jifen_rule .point_rule .paragraph, .jifen_rule .task_rule .paragraph {
+    font-size: 1.2rem;
+    color: #636363;
+    line-height: 1.6rem;
+    text-align: justify;
+}
+.jifen_rule .rule_mt4 {
+    margin-top: .4rem;
+}
+
+/*未兑换，已过期，已兑换等页面css*/
+.change_history .history_pay {
+    margin-top: .2rem;
+}
+.block_href {
+    display: block;
+    background: #fff;
+    padding: 0 1.2rem;
+    font-size: 0;
+}
+.product_href .gift_list {
+    background: #fff;
+    overflow: hidden;
+    padding: 1rem 0;
+    position: relative;
+    z-index: 1;
+}
+.product_href .gift_list img {
+    width: 7rem;
+    height: 7rem;
+    float: left;
+    position: relative;
+    z-index: 2;
+}
+.change_history .history_pay .gift_list .gift_desc {
+    margin: 0 -1.5rem 0 -7rem;
+}
+.product_href .gift_list .gift_desc {
+    float: left;
+    width: 100%;
+    height: 7rem;
+    font-size: 1.2rem;
+    margin: 0 -3.7rem 0 -7rem;
+    box-sizing: border-box;
+}
+.change_history .history_pay .gift_list .gift_desc .desc_wrap {
+    margin: 0 1.5rem 0 8rem;
+}
+.product_href .gift_list .gift_desc .desc_wrap {
+    margin: 0 3.7rem 0 8rem;
+}
+.product_href .gift_list .gift_desc .desc_wrap .desc_title {
+    line-height: 2.5rem;
+}
+.exchange_mall_ul .pro_desc, .product_href .gift_list .gift_desc .desc_wrap .desc_title {
+    max-width: 100%;
+    white-space: nowrap;
+    word-break: keep-all;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.history_pay .desc_wrap .desc_exg_time {
+    line-height: 2.2rem;
+}
+.product_href .gift_list .gift_desc .desc_wrap .desc_charge .new_price {
+    margin-left: .4rem;
+}
+.product_href .gift_list .gift_desc .desc_wrap .desc_charge {
+    line-height: 2.3rem;
+}
+.gold_logo {
+    font-family: iconfont!important;
+    font-size: 1.5rem;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: .2px;
+    -moz-osx-font-smoothing: grayscale;
+}
+.gold_logo, .product_href .gift_list .desc_tag {
+    color: #FF8200;
+}
+.business_follow2 {
+    position: absolute;
+    right: 0px;
+    bottom: 3.5rem;
+    text-align: center;
+}
+ .business_follow2 span .readyfollow {
+    color: #6e6e6e;
+}
+ .business_follow2 span .readyfollow {
+    color: #ff8200;
+}
+.business_follow2 span i {
+    font-size: 2.8rem;
+}
+
+.business_follow2 span i, .change_mall_info .change_info_head .info_wrap .infi_prompt .tip_icon, .change_mall_info .change_info_head .info_wrap .info_name .info_act .value_wrap .infor_gold {
+    font-family: iconfont!important;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: .2px;
+    -moz-osx-font-smoothing: grayscale;
+}
+.readyfollow:before{
+    content: "\e608"; 
+}
