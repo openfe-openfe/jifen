@@ -19,6 +19,7 @@ module.exports = {
     integralList:'api.php/Home/Users/integralList',
     exchangeList:'api.php/Home/Users/exchangeList',
     codeDetails:'api.php/Home/Users/codeDetails',
-    slide:'api.php/Home/Index/slider'
+    slide:'api.php/Home/Index/slider',
+    isseller:'api.php/Home/Seller'
   }
 }

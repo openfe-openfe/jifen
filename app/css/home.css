@@ -476,9 +476,7 @@ a{
 }
 
 /*积分规则相关页面*/
-.jifen_body{
-    height: 50rem;
-}
+
 .jifen_rule{
     background: #fff;
     min-height: 100%;

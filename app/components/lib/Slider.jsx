@@ -31,7 +31,7 @@ export default React.createClass({
             return response.json();
         })
       .then((data) => {
-        console.log(data)
+        //console.log(data)
         this.setState(
           {
             lists:data.data,

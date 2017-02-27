@@ -14,7 +14,10 @@ var coupon =React.createClass({
   getInitialState: function() {
     return {
        lists: '',
-       value: 'http://picturesofpeoplescanningqrcodes.tumblr.com/',
+       code: {
+         type:'jifenshangcheng',
+         code:''
+       },
        loading:false
      }
   },
@@ -22,7 +25,6 @@ var coupon =React.createClass({
     this.setState({
       loading:true
     })
-    
   },
   componentDidMount() {
        this.fetchFn()
@@ -47,6 +49,10 @@ var coupon =React.createClass({
         that.setState(
           {
             lists:data.data,
+            code:{
+              type:'jifenshangcheng',
+              code:data.data.code
+            },
             loading:false
           }
         )
@@ -82,7 +88,7 @@ var coupon =React.createClass({
               </div>
             </div>
             <div className="older_code">
-              <QRCode value={lists.code+''} />
+              <QRCode value={this.state.code+''}/>
             </div>
             <div className="business_info">
               <p style={{paddingLeft:'10px',marginBottom:'10px'}}>商家信息</p>

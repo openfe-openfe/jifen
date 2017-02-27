@@ -25,6 +25,34 @@ export default class Home extends React.Component {
       loading:true
     })
   }
+  isseller=()=>{
+    var that=this
+    var url=config.api.base+config.api.isseller
+    var formdata=new FormData();
+       formdata.append('user_account',utilities.getParameterByName('wv_account'))
+       fetch(url,{
+          method: 'POST',
+          cache: 'default',
+          body: formdata
+      })
+      .then(function (response) {
+          return response.json();
+      })
+      .then((data)=>{
+        // console.log(123)
+        if(data.flag==1){
+          var sid=data.data.sid
+          try {
+              csb.WVNavRightButton(true,'商户中心',sid);
+          } catch (e) {
+            window.webkit.messageHandlers.WVNavRightButton.postMessage(true,'商户中心','商户中心')
+          }
+        }
+      })
+      .catch((err) => {
+      console.log(err)
+    })
+  }
   log=()=>{
     var that=this
     // 获取用户手机型号(记录日志功能)
@@ -48,7 +76,7 @@ export default class Home extends React.Component {
             return response.json();
         })
         .then((data)=>{
-          console.log(123)
+          //console.log(123)
         })
         .catch((err) => {
         console.log(err)
@@ -87,7 +115,8 @@ export default class Home extends React.Component {
         });
     }
   componentDidMount() {
-       document.addEventListener('scroll', this.handleScroll);
+       document.addEventListener('scroll', this.handleScroll)
+       this.isseller()
        this.loadList()
        this.log()
   }
