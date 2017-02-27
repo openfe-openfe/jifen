@@ -42,10 +42,11 @@ export default class Home extends React.Component {
         // console.log(123)
         if(data.flag==1){
           var sid=data.data.sid
+          var id='商户中心'+','+sid
           try {
-              csb.WVNavRightButton(true,'商户中心',sid);
+              csb.WVNavRightButton(true,'商户中心',id);
           } catch (e) {
-            window.webkit.messageHandlers.WVNavRightButton.postMessage(true,'商户中心',sid)
+            window.webkit.messageHandlers.WVNavRightButton.postMessage(true,'商户中心',id)
           }
         }
       })
