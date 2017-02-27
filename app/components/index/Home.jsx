@@ -181,8 +181,7 @@ export default class Home extends React.Component {
                                 </div>
                               </div>
                           
-                          </NavLink>
-                          
+                          </NavLink> 
                       )
                   })
                }
