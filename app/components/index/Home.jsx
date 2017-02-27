@@ -16,7 +16,7 @@ export default class Home extends React.Component {
           pageCount: 0,
 
       }
-       
+
   }
   componentWillMount(){
     var wv_account=utilities.getParameterByName('wv_account')
