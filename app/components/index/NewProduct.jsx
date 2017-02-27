@@ -79,6 +79,7 @@ export default class NewProduct extends React.Component {
         <div>
           <div className="">
             <div className="">
+               <NavLink to={{pathname:"/"}} className="backIndex_btn"></NavLink>
               
               {
                   that.state.lists.map((e,index) => {

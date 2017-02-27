@@ -376,3 +376,16 @@ ol, ul {
 .business_info_detail{
     background: #fff;
 }
+.backIndex_btn {
+    bottom: 1.1rem;
+    background: url(http://oij04cgoe.bkt.clouddn.com/QQ%E5%9B%BE%E7%89%8720170227145455.png) left center no-repeat;
+    background-size: 4.9rem 4.9rem;
+}
+.backIndex_btn, .backIndex_btn_up {
+    display: block;
+    position: fixed;
+    width: 4.9rem;
+    height: 4.9rem;
+    right: 1.1rem;
+    z-index: 1000;
+}

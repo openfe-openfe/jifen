@@ -79,6 +79,7 @@ export default class IntergralList extends React.Component {
     return (
         <div>
           <div className="">
+             <NavLink to={{pathname:"/"}} className="backIndex_btn"></NavLink>
                <div className="shadow">
                 <div className="IN_list">
                   {

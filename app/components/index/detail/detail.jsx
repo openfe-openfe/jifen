@@ -59,6 +59,7 @@ var detail =React.createClass({
                 ?<Loading/>
                 :null
             }
+            <NavLink to={{pathname:"/"}} className="backIndex_btn"></NavLink>
             <div className="">
               <DetailHeader detail={this.state.lists}/>
               <DetailActity agents={this.state.lists}/>

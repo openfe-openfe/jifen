@@ -45,7 +45,7 @@ export default class Home extends React.Component {
           try {
               csb.WVNavRightButton(true,'商户中心',sid);
           } catch (e) {
-            window.webkit.messageHandlers.WVNavRightButton.postMessage(true,'商户中心','商户中心')
+            window.webkit.messageHandlers.WVNavRightButton.postMessage(true,'商户中心',sid)
           }
         }
       })

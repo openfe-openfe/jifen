@@ -11,6 +11,7 @@ export default class IntergralRule extends React.Component {
   render() {
     return (
         <div className="jifen_body">
+         <NavLink to={{pathname:"/"}} className="backIndex_btn"></NavLink>
           <div className="jifen_rule">
               <div className="task_rule">
                   <p className="title rule_mt11"><strong><span>1.注意事项：</span></strong></p>

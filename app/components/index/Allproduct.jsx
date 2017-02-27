@@ -105,6 +105,7 @@ export default class Home extends React.Component {
     return (
         <div>
           <div className="">
+            <NavLink to={{pathname:"/"}} className="backIndex_btn"></NavLink>
             <div className="">
               <div className="In_card2 shadow">
                 <div className="list_icon list_icon2 E_f12 E_fc_grey1">
