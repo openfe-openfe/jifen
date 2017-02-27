@@ -6,7 +6,17 @@ export default class IntergralRule extends React.Component {
   constructor(props) {
       super(props)
   }
-  
+componentDidMount() {
+        try {
+           csb.setLocalTitle('积分规则');
+       } catch (e) {
+         try {
+           window.webkit.messageHandlers.setLocalTitle.postMessage('积分规则')
+         } catch (e) {
+           console.log('没有在app内打开')
+         }
+       }
+  }
   render() {
     return (
         <div className="jifen_body">

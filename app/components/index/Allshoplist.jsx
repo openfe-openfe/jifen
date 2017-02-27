@@ -57,6 +57,15 @@ export default class NewProduct extends React.Component {
         });
     }
   componentDidMount() {
+       try {
+           csb.setLocalTitle('商家列表');
+       } catch (e) {
+         try {
+           window.webkit.messageHandlers.setLocalTitle.postMessage('商家列表')
+         } catch (e) {
+           console.log('没有在app内打开')
+         }
+       }
        document.addEventListener('scroll', this.handleScroll);
        this.loadList()
   }

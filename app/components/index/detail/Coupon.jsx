@@ -88,7 +88,7 @@ var coupon =React.createClass({
               </div>
             </div>
             <div className="older_code">
-              <QRCode value={this.state.code+''}/>
+              <QRCode value={JSON.stringify(this.state.code)}/>
             </div>
             <div className="business_info">
               <p style={{paddingLeft:'10px',marginBottom:'10px'}}>商家信息</p>

@@ -22,6 +22,15 @@ var detail =React.createClass({
     })
   },
   componentDidMount() {
+      try {
+           csb.setLocalTitle('商品详情');
+       } catch (e) {
+         try {
+           window.webkit.messageHandlers.setLocalTitle.postMessage('商品详情')
+         } catch (e) {
+           console.log('没有在app内打开')
+         }
+       }
        this.fetchFn()
   },
   // 获取数据

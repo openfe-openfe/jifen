@@ -53,6 +53,15 @@ export default class NewProduct extends React.Component {
         });
     }
   componentDidMount() {
+        try {
+           csb.setLocalTitle('新品兑换');
+       } catch (e) {
+         try {
+           window.webkit.messageHandlers.setLocalTitle.postMessage('新品兑换')
+         } catch (e) {
+           console.log('没有在app内打开')
+         }
+       }
        document.addEventListener('scroll', this.handleScroll);
        this.loadList()
   }

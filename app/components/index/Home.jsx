@@ -44,9 +44,9 @@ export default class Home extends React.Component {
           var sid=data.data.sid
           var id='商户中心'+','+sid
           try {
-              csb.WVNavRightButton(true,'商户中心',id);
+              csb.WVNavRightButton(true,'商户中心',id)
           } catch (e) {
-            window.webkit.messageHandlers.WVNavRightButton.postMessage(true,'商户中心',id)
+            window.webkit.messageHandlers.WVNavRightButton.postMessage([true,'商户中心',id])
           }
         }
       })
@@ -117,6 +117,15 @@ export default class Home extends React.Component {
     }
   componentDidMount() {
        document.addEventListener('scroll', this.handleScroll)
+       try {
+           csb.setLocalTitle('积分商城');
+       } catch (e) {
+         try {
+           window.webkit.messageHandlers.setLocalTitle.postMessage('积分商城')
+         } catch (e) {
+           console.log('没有在app内打开')
+         }
+       }
        this.isseller()
        this.loadList()
        this.log()
@@ -154,7 +163,7 @@ export default class Home extends React.Component {
                   <NavLink to="newsproduct">
                     <div className="rightLine">
                       <img src="http://oeinf1vjn.bkt.clouddn.com/%E7%83%AD%E9%97%A8%E5%85%91%E6%8D%A2.png"  className="icon_breast"/>
-                      <p>热门推荐</p>
+                      <p>热门兑换</p>
                     </div>
                   </NavLink>
                   <NavLink to="qualityMerchant">

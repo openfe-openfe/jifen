@@ -55,6 +55,15 @@ export default class IntergralList extends React.Component {
         });
   }
    componentDidMount() {
+        try {
+           csb.setLocalTitle('积分明细');
+       } catch (e) {
+         try {
+           window.webkit.messageHandlers.setLocalTitle.postMessage('积分明细')
+         } catch (e) {
+           console.log('没有在app内打开')
+         }
+       }
        document.addEventListener('scroll', this.handleScroll);
        this.loadList()
   }
