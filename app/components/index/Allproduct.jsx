@@ -16,7 +16,8 @@ export default class Home extends React.Component {
           catpageIndex:1,
           pageCount: 0,
           color:'#fff',
-          currentIndex:0
+          currentIndex:0,
+          id:''
       }
   }
   componentWillMount(){
@@ -46,7 +47,7 @@ export default class Home extends React.Component {
           }
         )
         var id=data.data[0].id
-        that.catFetch(id,'#fff',0)
+        that.setState({id:id})
        })
       .catch((e) => { console.log(e.message) })
   }
@@ -55,6 +56,7 @@ export default class Home extends React.Component {
     }
   componentDidMount() {
        utilities.setLocalTitle('所有商品')
+       this.loadList(this.state.id)
        this.fetchFn2()
        document.addEventListener('scroll', this.handleScroll);
   }
@@ -65,8 +67,7 @@ export default class Home extends React.Component {
         var c = document.documentElement.scrollTop==0? document.body.scrollHeight : document.documentElement.scrollHeight;
         if(a+Math.floor(b)==c || a+Math.ceil(b)==c){
           if (that.state.pageIndex <= that.state.pageCount){
-                
-                that.fetchFn();  
+                that.loadList(that.state.id)
             }else{
                that.setState({bottomTxt: '我是有底线的'});
             }
@@ -75,14 +76,50 @@ export default class Home extends React.Component {
      check_tittle_index(index){
        return index===this.state.currentIndex ? "Tab_tittle active" : "Tab_tittle";
     }
+      loadList = (id) => {
+        var that = this
+        //var url='http://rap.taobao.org/mockjsdata/7918/songhao/batch'
+        var url=config.api.base+config.api.shoplist
+        var formdata=new FormData();
+        formdata.append('page',that.state.pageIndex)
+        formdata.append('catid',id)
+        fetch(url,{
+            method: 'POST',
+            body: formdata
+        })
+        .then(function (response) {
+            return response.json();
+        })
+       .then((data) => {
+         console.log(data.msg)
+        //console.log(data.total)
+        if(data.flag==0){
+            that.setState({loading:false,bottomTxt:'到底儿了'})
+            return false
+        }
+        that.setState({
+          pageCount:data.page.count
+        })
+        if(data.page.count==1){
+          that.setState({lists: data.data,loading:false,bottomTxt:'到底儿了'})
+        }
+        if(that.state.pageIndex == 1){
+                that.setState({lists: data.data,loading:false})
+            }else{
+                that.setState({lists: that.state.lists.concat(data.data),loading:false})
+            }
+            that.setState({pageIndex: that.state.pageIndex+1}) 
+        });
+    }
     catFetch(id,color,index){
       var that=this
-      // that.check_tittle_index(index)
+      console.log(id)
       that.setState({
         loading:true,
         lists:[],
         currentIndex:index,
-        catpageIndex:1
+        catpageIndex:1,
+        id:id
       },function(){
         var url=config.api.base+config.api.shoplist
         var formdata=new FormData();
@@ -107,7 +144,7 @@ export default class Home extends React.Component {
         if(data.page.count==1){
           that.setState({lists: data.data,loading:false,bottomTxt:'到底儿了'})
         }
-        if(that.state.pageIndex == 1){
+        if(that.state.catpageIndex == 1){
                 that.setState({lists: data.data,loading:false})
             }else{
                 that.setState({lists: that.state.lists.concat(data.data),loading:false})
@@ -133,6 +170,7 @@ export default class Home extends React.Component {
                                 <p className={ this.check_tittle_index(index) }><span>{e.catname}</span></p>
                               </div>
                            </a>
+                           
                       )
                     })
                   }
