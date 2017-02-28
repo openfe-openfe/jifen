@@ -142,7 +142,7 @@ export default class Home extends React.Component {
                   that.state.lists.map((e,index) => {
                       return (
                         
-                         <NavLink to={{pathname:"/detail",query:{id:e.id||e.catid}}} className="product_href block_href" key={index}>
+                         <NavLink to={{pathname:"/detail",query:{id:e.id||e.goodsid}}} className="product_href block_href" key={index}>
                          
                               <div className="gift_list">
                                 <img src={e.thumbnail} alt="图片" className="product_img"/>
