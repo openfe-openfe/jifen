@@ -63,7 +63,7 @@ var detailHeader =React.createClass({
 
     //兑换之后的用户剩余积分
     var residualIntegral=crore-integral
-    console.log(residualIntegral)
+    //console.log(residualIntegral)
     if(residualIntegral>0){
       that.setState({modalIsOpen: false})
       //发送fetch请求处理订单。。。

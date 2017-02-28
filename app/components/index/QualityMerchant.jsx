@@ -52,15 +52,7 @@ export default class qualityMerchant extends React.Component {
         });
     }
   componentDidMount() {
-        try {
-           csb.setLocalTitle('优质商家');
-       } catch (e) {
-         try {
-           window.webkit.messageHandlers.setLocalTitle.postMessage('优质商家')
-         } catch (e) {
-           console.log('没有在app内打开')
-         }
-       }
+       utilities.setLocalTitle('优质商家')
        this.loadList()
        document.addEventListener('scroll', this.handleScroll)
   }

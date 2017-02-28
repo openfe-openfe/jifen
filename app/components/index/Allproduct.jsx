@@ -82,15 +82,7 @@ export default class Home extends React.Component {
          document.removeEventListener('scroll', this.handleScroll);
     }
   componentDidMount() {
-        try {
-           csb.setLocalTitle('所有商品');
-       } catch (e) {
-         try {
-           window.webkit.messageHandlers.setLocalTitle.postMessage('所有商品')
-         } catch (e) {
-           console.log('没有在app内打开')
-         }
-       }
+       utilities.setLocalTitle('所有商品')
        this.fetchFn()
        this.fetchFn2()
        document.addEventListener('scroll', this.handleScroll);

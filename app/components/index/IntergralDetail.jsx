@@ -23,15 +23,7 @@ export default class IntergralDetail extends React.Component {
     
   }
   componentDidMount() {
-        try {
-           csb.setLocalTitle('我的积分');
-       } catch (e) {
-         try {
-           window.webkit.messageHandlers.setLocalTitle.postMessage('我的积分')
-         } catch (e) {
-           console.log('没有在app内打开')
-         }
-       }
+       utilities.setLocalTitle('我的积分')
        this.fetchFn()
   }
   // 获取数据

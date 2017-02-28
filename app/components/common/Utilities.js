@@ -26,5 +26,16 @@ module.exports = {
     },
     pageJump: function (url) {
         location.href = url;
+    },
+    setLocalTitle:function(name){
+        try {
+           csb.setLocalTitle(name);
+       } catch (e) {
+         try {
+           window.webkit.messageHandlers.setLocalTitle.postMessage(name)
+         } catch (e) {
+           console.log('没有在app内打开')
+         }
+       }
     }
 }

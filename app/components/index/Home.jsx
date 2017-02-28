@@ -117,15 +117,7 @@ export default class Home extends React.Component {
     }
   componentDidMount() {
        document.addEventListener('scroll', this.handleScroll)
-       try {
-           csb.setLocalTitle('积分商城');
-       } catch (e) {
-         try {
-           window.webkit.messageHandlers.setLocalTitle.postMessage('积分商城')
-         } catch (e) {
-           console.log('没有在app内打开')
-         }
-       }
+       utilities.setLocalTitle('积分商城')
        this.isseller()
        this.loadList()
        this.log()

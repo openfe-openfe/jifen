@@ -22,15 +22,7 @@ var detail =React.createClass({
     })
   },
   componentDidMount() {
-      try {
-           csb.setLocalTitle('商品详情');
-       } catch (e) {
-         try {
-           window.webkit.messageHandlers.setLocalTitle.postMessage('商品详情')
-         } catch (e) {
-           console.log('没有在app内打开')
-         }
-       }
+       utilities.setLocalTitle('商品详情')
        this.fetchFn()
   },
   // 获取数据
@@ -49,7 +41,7 @@ var detail =React.createClass({
             return response.json();
         })
       .then((data) => {
-        console.log(data.data)
+        //console.log(data.data)
         that.setState(
           {
             lists:data.data,

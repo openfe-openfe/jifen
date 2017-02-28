@@ -23,15 +23,7 @@ export default class MyIntergral extends React.Component {
     
   }
   componentDidMount() {
-        try {
-           csb.setLocalTitle('个人中心');
-       } catch (e) {
-         try {
-           window.webkit.messageHandlers.setLocalTitle.postMessage('个人中心')
-         } catch (e) {
-           console.log('没有在app内打开')
-         }
-       }
+       utilities.setLocalTitle('个人中心')
        this.fetchFn()
   }
   // 获取数据
