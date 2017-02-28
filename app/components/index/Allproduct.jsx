@@ -56,9 +56,9 @@ export default class Home extends React.Component {
     }
   componentDidMount() {
        utilities.setLocalTitle('所有商品')
-       this.loadList(this.state.id)
        this.fetchFn2()
        document.addEventListener('scroll', this.handleScroll);
+       this.loadList(this.state.id)
   }
   handleScroll = () => {
         var that = this;
@@ -67,9 +67,11 @@ export default class Home extends React.Component {
         var c = document.documentElement.scrollTop==0? document.body.scrollHeight : document.documentElement.scrollHeight;
         if(a+Math.floor(b)==c || a+Math.ceil(b)==c){
           if (that.state.pageIndex <= that.state.pageCount){
+                console.log(this.state.pageIndex)
                 that.loadList(that.state.id)
             }else{
-                that.setState({bottomTxt: '到底儿了'});
+              console.log(that.state.pageIndex)
+                that.setState({bottomTxt: '我是有底线的'});
             }
         }
     }
@@ -103,6 +105,7 @@ export default class Home extends React.Component {
         if(data.page.count==1){
           that.setState({lists: data.data,loading:false,bottomTxt:'到底儿了'})
         }
+        console.log(that.state.pageIndex)
         if(that.state.pageIndex == 1){
                 that.setState({lists: data.data,loading:false})
             }else{
@@ -119,7 +122,7 @@ export default class Home extends React.Component {
         lists:[],
         currentIndex:index,
         bottomTxt:'',
-        catpageIndex:1,
+        pageIndex:1,
         id:id
       },function(){
         var url=config.api.base+config.api.shoplist
@@ -145,12 +148,12 @@ export default class Home extends React.Component {
         if(data.page.count==1){
           that.setState({lists: data.data,loading:false,bottomTxt:'到底儿了'})
         }
-        if(that.state.catpageIndex == 1){
+        if(that.state.pageIndex == 1){
                 that.setState({lists: data.data,loading:false})
             }else{
                 that.setState({lists: that.state.lists.concat(data.data),loading:false})
             }
-            that.setState({catpageIndex: that.state.catpageIndex+1}) 
+            that.setState({pageIndex: that.state.pageIndex+1}) 
         });
       })
     }
