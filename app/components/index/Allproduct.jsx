@@ -69,7 +69,7 @@ export default class Home extends React.Component {
           if (that.state.pageIndex <= that.state.pageCount){
                 that.loadList(that.state.id)
             }else{
-               that.setState({bottomTxt: '我是有底线的'});
+                that.setState({bottomTxt: '到底儿了'});
             }
         }
     }
@@ -118,6 +118,7 @@ export default class Home extends React.Component {
         loading:true,
         lists:[],
         currentIndex:index,
+        bottomTxt:'',
         catpageIndex:1,
         id:id
       },function(){
