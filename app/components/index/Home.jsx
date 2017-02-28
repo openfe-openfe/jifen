@@ -145,11 +145,6 @@ export default class Home extends React.Component {
           <div className="">
             <div className="">
               <Slider/>
-              {
-                that.state.loading
-                ?<Loading/>
-                :null
-              }
               <div className="In_card shadow">
                 <div className="list_icon E_f12 E_fc_grey1">
                   <NavLink to="newsproduct">

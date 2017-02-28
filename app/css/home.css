@@ -68,7 +68,7 @@ a{
 .list_icon .rightLine {
     position: relative;
 }
-.list_icon2 .rightLine p{
+.list_icon2 .rightLine .Tab_tittle{
     margin: 0 auto;
     background: #fff;
     border: 1px solid #FF8200;
@@ -81,7 +81,20 @@ a{
     word-wrap: break-word;
     color:#939393;
 }
-.list_icon2 .rightLine p span{
+.list_icon2 .rightLine .active{
+    margin: 0 auto;
+    background: #FF8200;
+    /*border: 1px solid #FF8200;*/
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50%;
+    font-size: 1.1em;
+    padding: .8rem;
+    line-height: 1.3rem;
+    word-wrap: break-word;
+    color:#fff;
+}
+.list_icon2 .rightLine .Tab_tittle span{
     position: relative;
     top:.3rem;
 }

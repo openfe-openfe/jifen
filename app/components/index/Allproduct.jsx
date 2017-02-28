@@ -13,8 +13,10 @@ export default class Home extends React.Component {
           loading:false,
           bottomTxt: '',
           pageIndex:1,
+          catpageIndex:1,
           pageCount: 0,
-
+          color:'#fff',
+          currentIndex:0
       }
   }
   componentWillMount(){
@@ -36,54 +38,23 @@ export default class Home extends React.Component {
             return response.json();
         })
       .then((data) => {
-        console.log(data.data)
+       // console.log(data.data)
         that.setState(
           {
             lists2:data.data,
             loading:false
           }
         )
+        var id=data.data[0].id
+        that.catFetch(id,'#fff',0)
        })
       .catch((e) => { console.log(e.message) })
-  }
-  // 获取数据
-  fetchFn = () => {
-    var that = this
-        //var url='http://rap.taobao.org/mockjsdata/7918/songhao/batch'
-        var url=config.api.base+config.api.index
-        var formdata=new FormData();
-        formdata.append('page',that.state.pageIndex)
-        formdata.append('type',1)
-        fetch(url,{
-            method: 'POST',
-            body: formdata
-        })
-        .then(function (response) {
-            return response.json();
-        })
-       .then((data) => {
-         console.log(data.msg)
-        //console.log(data.total)
-        that.setState({
-          pageCount:data.page.count
-        })
-        if(data.page.count==1){
-          that.setState({lists: data.data,loading:false,bottomTxt:''})
-        }
-        if(that.state.pageIndex == 1){
-                that.setState({lists: data.data,loading:false})
-            }else{
-                that.setState({lists: that.state.lists.concat(data.data),loading:false})
-            }
-            that.setState({pageIndex: that.state.pageIndex+1}) 
-        });
   }
   componentWillUnmount() {
          document.removeEventListener('scroll', this.handleScroll);
     }
   componentDidMount() {
        utilities.setLocalTitle('所有商品')
-       this.fetchFn()
        this.fetchFn2()
        document.addEventListener('scroll', this.handleScroll);
   }
@@ -101,6 +72,50 @@ export default class Home extends React.Component {
             }
         }
     }
+     check_tittle_index(index){
+       return index===this.state.currentIndex ? "Tab_tittle active" : "Tab_tittle";
+    }
+    catFetch(id,color,index){
+      var that=this
+      // that.check_tittle_index(index)
+      that.setState({
+        loading:true,
+        lists:[],
+        currentIndex:index,
+        catpageIndex:1
+      },function(){
+        var url=config.api.base+config.api.shoplist
+        var formdata=new FormData();
+        //console.log(that.state.catpageIndex)
+        formdata.append('page',that.state.catpageIndex)
+        formdata.append('catid',id)
+        fetch(url,{
+            method: 'POST',
+            body: formdata
+        })
+        .then(function (response) {
+            return response.json();
+        })
+       .then((data) => {
+        if(data.flag==0){
+            that.setState({loading:false,bottomTxt:'到底儿了'})
+            return false
+        }
+        that.setState({
+          pageCount:data.page.count
+        })
+        if(data.page.count==1){
+          that.setState({lists: data.data,loading:false,bottomTxt:'到底儿了'})
+        }
+        if(that.state.pageIndex == 1){
+                that.setState({lists: data.data,loading:false})
+            }else{
+                that.setState({lists: that.state.lists.concat(data.data),loading:false})
+            }
+            that.setState({catpageIndex: that.state.catpageIndex+1}) 
+        });
+      })
+    }
   render() {
     var that=this
     return (
@@ -113,11 +128,11 @@ export default class Home extends React.Component {
                   {
                     that.state.lists2.map((e,index)=>{
                       return(
-                           <NavLink to={{pathname:"/allshoplist",query:{id:e.id}}} key={index}>
+                           <a onClick={this.catFetch.bind(this,e.id,e.color,index)} key={index}>
                               <div className="rightLine">
-                                <p style={{borderColor:e.color}}><span>{e.catname}</span></p>
+                                <p className={ this.check_tittle_index(index) }><span>{e.catname}</span></p>
                               </div>
-                           </NavLink>
+                           </a>
                       )
                     })
                   }
@@ -127,7 +142,7 @@ export default class Home extends React.Component {
                   that.state.lists.map((e,index) => {
                       return (
                         
-                         <NavLink to={{pathname:"/detail",query:{id:e.id}}} className="product_href block_href" key={index}>
+                         <NavLink to={{pathname:"/detail",query:{id:e.id||e.catid}}} className="product_href block_href" key={index}>
                          
                               <div className="gift_list">
                                 <img src={e.thumbnail} alt="图片" className="product_img"/>

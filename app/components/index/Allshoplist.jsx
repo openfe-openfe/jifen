@@ -71,7 +71,6 @@ export default class NewProduct extends React.Component {
         var c = document.documentElement.scrollTop==0? document.body.scrollHeight : document.documentElement.scrollHeight;
         if(a+Math.floor(b)==c || a+Math.ceil(b)==c){
           if (that.state.pageIndex <= that.state.pageCount){
-                
                 that.loadList();  
             }else{
                that.setState({bottomTxt: '到底了'});
