@@ -81,7 +81,7 @@ export default class IntergralList extends React.Component {
         <div>
           <div className="">
              <NavLink to={{pathname:"/"}} className="backIndex_btn"></NavLink>
-               <div className="shadow">
+               <div className="">
                 <div className="IN_list">
                   {
                     that.state.lists.map((e,index)=>{

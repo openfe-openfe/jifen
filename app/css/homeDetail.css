@@ -338,15 +338,16 @@ ol, ul {
 }
 .coupon_header{
     margin: 0 auto;
-    width: 90%; 
+    width: 95%; 
     height: 50px;
     border: 1px solid #F18982;
     text-align: center;
     margin-bottom: 10px;
-    margin-top: 10px;
+    /*margin-top: 10px;*/
 }
 .coupon_header p{
     line-height: 50px;
+    font-weight: 600;
     color: #fff;
     font-size: 1.5rem;
 }
@@ -355,6 +356,9 @@ ol, ul {
     padding-left: 5rem;
     text-align: left;
     color: #fff;
+    font-size: 1.5rem;
+}
+.coupon_time p,.coupon_way p{
     font-size: 1.4rem;
 }
 .older_code{

@@ -83,15 +83,15 @@ var coupon =React.createClass({
                   <p>有效期至：{lists.endtime}</p>
                 </div>
                 <div className="coupon_way">
-                  <p>使用方法：实体店扫码验证兑换</p>
+                  <p>使用方法：实体店扫码验证兑换商品</p>
                 </div>
               </div>
             </div>
             <div className="older_code">
-              <QRCode value={JSON.stringify(this.state.code)}/>
+              <QRCode value={JSON.stringify(this.state.code)} size={158}/>
             </div>
             <div className="business_info">
-              <p style={{paddingLeft:'10px',marginBottom:'10px'}}>商家信息</p>
+              <p style={{paddingLeft:'10px',marginBottom:'10px',color:'#828282'}}>商家信息</p>
               <div className="business_info_detail">
                 <div className="shadow In_bg_white">
                     <div className="change_info_business">
