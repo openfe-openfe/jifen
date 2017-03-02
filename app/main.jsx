@@ -33,7 +33,7 @@ import './css/home.css'
 /*积分商城列表详情样式 */
 import './css/homeDetail.css'
 render((
-        <Router history={browserHistory}>
+        <Router history={hashHistory}>
                  <Route path="/" component={Home}/>
                  <Route path="newsproduct" component={NewProduct}/>
                  <Route path="qualityMerchant" component={QualityMerchant}/>

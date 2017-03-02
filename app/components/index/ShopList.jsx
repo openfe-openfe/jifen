@@ -25,9 +25,10 @@ export default class NewProduct extends React.Component {
         var that = this
         //var url='http://rap.taobao.org/mockjsdata/7918/songhao/batch'
         var url=config.api.base+config.api.shoplist
+        var id=that.props.location.query
         var formdata=new FormData();
         formdata.append('page',that.state.pageIndex)
-        formdata.append('shopid',utilities.getParameterByName('id'))
+        formdata.append('shopid',utilities.getParameterByName('id')||id)
         fetch(url,{
             method: 'POST',
             body: formdata

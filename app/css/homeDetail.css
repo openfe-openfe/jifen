@@ -1,10 +1,10 @@
 /*积分商城列表详情css代码*/
 @font-face {font-family: "iconfont";
-  src: url('iconfont.eot?t=1486543640469'); /* IE9*/
-  src: url('iconfont.eot?t=1486543640469#iefix') format('embedded-opentype'), /* IE6-IE8 */
-  url('iconfont.woff?t=1486543640469') format('woff'), /* chrome, firefox */
-  url('iconfont.ttf?t=1486543640469') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
-  url('iconfont.svg?t=1486543640469#iconfont') format('svg'); /* iOS 4.1- */
+  src: url('./iconfont.eot?t=1486543640469'); /* IE9*/
+  src: url('./iconfont.eot?t=1486543640469#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('./iconfont.woff?t=1486543640469') format('woff'), /* chrome, firefox */
+  url('./iconfont.ttf?t=1486543640469') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('./iconfont.svg?t=1486543640469#iconfont') format('svg'); /* iOS 4.1- */
 }
 div,p,li,ul{
     padding: 0;

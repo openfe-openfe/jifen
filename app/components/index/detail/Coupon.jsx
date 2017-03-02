@@ -33,9 +33,12 @@ var coupon =React.createClass({
   fetchFn(){
     var that=this
      var url=config.api.base+config.api.codeDetails
+    //  console.log(that.props.location.query)
+    var id=that.props.location.query.id
+    var name=that.props.location.query.name
         var formdata=new FormData();
-        formdata.append('code',utilities.getParameterByName('id'))
-        formdata.append('goodsname',utilities.getParameterByName('name'))
+        formdata.append('code',utilities.getParameterByName('id')||id)
+        formdata.append('goodsname',utilities.getParameterByName('name')||name)
         formdata.append('useraccount',localStorage.getItem('wv_account'))
      fetch(url,{
             method: 'POST',

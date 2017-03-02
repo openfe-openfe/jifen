@@ -19,7 +19,10 @@ export default class Home extends React.Component {
 
   }
   componentWillMount(){
+    // var WVAccount=this.props.location.query
+    // console.log(WVAccount)
     var wv_account=utilities.getParameterByName('wv_account')
+    console.log(wv_account)
     localStorage.setItem('wv_account',wv_account)
     this.setState({
       loading:true

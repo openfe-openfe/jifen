@@ -29,9 +29,10 @@ var detail =React.createClass({
   fetchFn(){
     //console.log(localStorage.getItem('phone'))
         var that=this
+        var id=that.props.location.query.id
         var url=config.api.base+config.api.goods
         var formdata=new FormData();
-        formdata.append('id',utilities.getParameterByName('id'))
+        formdata.append('id',utilities.getParameterByName('id')||id)
         formdata.append('useraccount',localStorage.getItem('wv_account'))
         fetch(url,{
             method: 'POST',
