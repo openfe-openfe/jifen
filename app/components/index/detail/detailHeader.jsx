@@ -44,6 +44,7 @@ var detailHeader =React.createClass({
     var that=this
     //商品的价格
     var price=that.props.detail.price
+    var youhui=that.props.detail.price_youhui
     //兑换券有效期天数
     var days=that.props.detail.days
     // 商品所需积分
@@ -76,6 +77,7 @@ var detailHeader =React.createClass({
           formdata.append('price',price)
           formdata.append('jifen',integral)
           formdata.append('days',days)
+          formdata.append('youhui',youhui)
       fetch(url,{
             method: 'POST',
             body: formdata
@@ -94,6 +96,7 @@ var detailHeader =React.createClass({
     render() {
       var that=this
       var lists=this.props.detail
+      // console.log(lists)
         return(
           <div className="In_card shadow In_bg_white">
             {
@@ -109,8 +112,17 @@ var detailHeader =React.createClass({
                   <div className="info_act">
                     <div className="value_wrap">
                       <i className="infor_gold"></i>
-                      <span  className="info_points E_f24 E_fc_orange">{lists.jifen}</span>
-                      <span className="info_value E_f12 E_fc_grey7">价值：{lists.price}</span>
+                      {
+                        lists.jifen_youhui>0?
+                        <span  className="info_points E_f24 E_fc_orange">{lists.jifen_youhui}</span>
+                        :<span  className="info_points E_f24 E_fc_orange">{lists.jifen}</span>
+                      } 
+                      <span className="info_value E_f12 E_fc_grey7">原价：{lists.price}</span>
+                      {
+                        lists.price_youhui!==null?
+                        <span className="info_value2 E_f12 E_fc_org">优惠价：{lists.price_youhui}</span>
+                        :null
+                      }
                     </div>
                     {
                       lists.userIntegral-lists.jifen>0 && lists.inventory>0 && lists.canbuynum!==0

@@ -90,6 +90,10 @@ div,p,li,ul{
     margin: 1rem 0 0 1.1rem;
     text-decoration: line-through;
 }
+.change_mall_info .change_info_head .info_wrap .info_name .info_act .value_wrap .info_value2 {
+    margin: 1rem 0 0 1.1rem;
+    /*text-decoration: line-through;*/
+}
 .change_mall_info .change_info_head .info_wrap .info_name .info_act .change_btn_org {
     background-color: #ff8607;
     color: #fff;

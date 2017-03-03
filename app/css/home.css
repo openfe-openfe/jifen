@@ -239,7 +239,9 @@ a{
 .E_fc_grey7 {
     color: #939393;
 }
-
+.E_fc_org {
+    color: #FF8200;
+}
 .E_f12 {
     font-size: 1.2rem;
 }

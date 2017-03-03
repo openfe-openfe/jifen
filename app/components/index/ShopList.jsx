@@ -25,7 +25,7 @@ export default class NewProduct extends React.Component {
         var that = this
         //var url='http://rap.taobao.org/mockjsdata/7918/songhao/batch'
         var url=config.api.base+config.api.shoplist
-        var id=that.props.location.query
+        var id=that.props.location.query.id
         var formdata=new FormData();
         formdata.append('page',that.state.pageIndex)
         formdata.append('shopid',utilities.getParameterByName('id')||id)
@@ -97,7 +97,11 @@ export default class NewProduct extends React.Component {
                                     <div className="desc_title E_f16 E_fc_grey1">{e.goodsname}</div>
                                     <div className="desc_charge">
                                       <i className="gold_logo"></i>
-                                      <span className="new_price E_f15 E_fc_orange">{e.jifen}</span>
+                                      {
+                                        e.youhui>0?
+                                        <span className="new_price E_f15 E_fc_orange">{e.youhui}</span>
+                                        : <span className="new_price E_f15 E_fc_orange">{e.jifen}</span>
+                                      }
                                       <div className="ori_charge E_f12 E_fc_grey7">
                                         <em>价值: </em><span className="old_price">{e.price}</span>
                                       </div>

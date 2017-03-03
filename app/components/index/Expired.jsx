@@ -64,15 +64,16 @@ export default class IntergralList extends React.Component {
        document.removeEventListener('scroll', this.handleScroll);
     }
   handleScroll = () => {
-        var _this = this;
-        var scrolltop = document.body.scrollTop || document.documentElement.scrollTop;
-        var clientHeight = document.documentElement.clientHeight;
-        if(scrolltop + clientHeight==document.body.clientHeight){
-            if (_this.state.pageIndex <= _this.state.pageCount){
-                 _this.loadList();
+        var that = this;
+        var a = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+        var b = document.documentElement.scrollTop==0? document.body.scrollTop : document.documentElement.scrollTop;
+        var c = document.documentElement.scrollTop==0? document.body.scrollHeight : document.documentElement.scrollHeight;
+        if(a+Math.floor(b)==c || a+Math.ceil(b)==c){
+          if (that.state.pageIndex <= that.state.pageCount){
+                
+                that.loadList();  
             }else{
-                _this.setState({bottomTxt: '到底儿了~'});
-
+               that.setState({bottomTxt: '到底了'});
             }
         }
     }
