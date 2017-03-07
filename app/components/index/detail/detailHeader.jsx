@@ -117,10 +117,10 @@ var detailHeader =React.createClass({
                         <span  className="info_points E_f24 E_fc_orange">{lists.jifen_youhui}</span>
                         :<span  className="info_points E_f24 E_fc_orange">{lists.jifen}</span>
                       } 
-                      <span className="info_value E_f12 E_fc_grey7">原价：{lists.price}</span>
+                      <span className="info_value E_f12 E_fc_grey7">价值{lists.price}</span>
                       {
                         lists.price_youhui!==null?
-                        <span className="info_value2 E_f12 E_fc_org">优惠价：{lists.price_youhui}</span>
+                        <span className="info_value2 E_f12 E_fc_org">优惠积分：{lists.jifen_youhui}</span>
                         :null
                       }
                     </div>
