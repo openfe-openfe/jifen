@@ -209,6 +209,9 @@ a {
 .content_des{
     background: #fff;
 }
+.pro_info_content .change_info_content img {
+    width: 100%;
+}
 .change_mall_info .pro_info_content .change_info_content {
     padding: 1.5rem 1.2rem;
     word-wrap: break-word;

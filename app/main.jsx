@@ -18,6 +18,7 @@ import ShopList from './components/index/ShopList.jsx'
 import Detail from './components/index/detail/detail.jsx'
 import Coupon from './components/index/detail/Coupon.jsx'
 import Allshoplist from './components/index/Allshoplist.jsx'
+import AdsDetail from './components/index/detail/newsDetail.jsx'
 /* 样式文件加载 */
 import './css/reset.css'
 import './css/modal.css'
@@ -50,6 +51,7 @@ render((
                  <Route path="detail" component={Detail}/>
                  <Route path="coupon" component={Coupon}/>
                  <Route path="allshoplist" component={Allshoplist}/>
+                 <Route path="adsdetail" component={AdsDetail}/>
         </Router>
     
 ), document.getElementById('app'))

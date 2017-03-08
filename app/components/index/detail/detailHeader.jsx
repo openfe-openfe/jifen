@@ -58,7 +58,7 @@ var detailHeader =React.createClass({
     //商铺shopid
     var shopid=that.props.detail.shopid
     //购买人的潍V号
-    var useraccount=localStorage.getItem('wv_account')
+    var useraccount=localStorage.getItem('wv_account')||utilities.getParameterByName('wv_account')
     //推荐位id
     var tjwid=that.props.detail.tjwid
 

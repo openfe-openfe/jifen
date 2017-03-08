@@ -34,6 +34,10 @@ var detail =React.createClass({
         var formdata=new FormData();
         formdata.append('id',utilities.getParameterByName('id')||id)
         formdata.append('useraccount',localStorage.getItem('wv_account'))
+        if(that.props.location.query.ads||utilities.getParameterByName('id')){
+          formdata.append('isads',1)
+          formdata.append('adid',that.props.location.query.ads||utilities.getParameterByName('id'))
+        }
         fetch(url,{
             method: 'POST',
             body: formdata

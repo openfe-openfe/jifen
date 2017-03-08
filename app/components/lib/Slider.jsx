@@ -24,8 +24,14 @@ export default React.createClass({
    var that = this
         //var url='http://rap.taobao.org/mockjsdata/7918/songhao/batch'
         var url=config.api.base+config.api.slide
+        var formdata=new FormData();
+        formdata.append('position',2)
+        formdata.append('useraccount',utilities.getParameterByName('wv_account'))
+        console.log('123'+utilities.getParameterByName('wv_account'))
         fetch(url,{
-            method: 'GET',
+            method: 'POST',
+            cache: 'default',
+            body: formdata
         })
         .then(function (response) {
             return response.json();
@@ -58,8 +64,13 @@ export default React.createClass({
             this.state.lists.map((e,index) => {
                 return (
                   <div className="slide" key={index}>
-                    <NavLink to={{pathname:"/detail",query:{id:e.goodsid}}}><div style={{height:'8.6rem'}}><img src={e.logo} className="HomeBanner-image-2T6G"/></div>
+                    {
+                      e.types=='1'?
+                      <NavLink to={{pathname:"/detail",query:{id:e.goodsid,ads:e.id}}}><div style={{height:'8rem'}}><img src={e.img} className="HomeBanner-image-2T6G"/></div></NavLink>
+                      :<NavLink to={{pathname:"/adsdetail",query:{id:e.id}}}><div style={{height:'8rem'}}><img src={e.img} className="HomeBanner-image-2T6G"/></div>
                     </NavLink>
+                    }
+                    
                   </div>
                 )
             })
