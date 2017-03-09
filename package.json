@@ -27,6 +27,7 @@
     "query-string": "^4.2.3",
     "react": "15.x",
     "react-addons-css-transition-group": "^15.4.2",
+    "react-addons-update": "^15.4.2",
     "react-dom": "15.x",
     "react-loading": "0.0.9",
     "react-logger": "^1.1.0",
@@ -34,14 +35,15 @@
     "react-redux": "^5.0.2",
     "react-router": "^2.8.1",
     "react-router-redux": "^4.0.7",
+    "react-sk-countdown": "^1.0.0",
     "react-slick": "^0.12.2",
     "redux": "^3.6.0",
     "redux-logger": "^2.8.1",
     "redux-thunk": "^2.2.0",
     "url-loader": "^0.5.7",
-    "whatwg-fetch": "^1.0.0",
     "webpack": "^1.14.0",
-    "webpack-dev-server": "^1.14.1"
+    "webpack-dev-server": "^1.14.1",
+    "whatwg-fetch": "^1.0.0"
   },
   "devDependencies": {
     "babel-core": "6.x",

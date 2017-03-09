@@ -104,6 +104,10 @@ export default class Home extends React.Component {
        .then((data) => {
          //console.log(data.msg)
         //console.log(data.total)
+        if(data.flag==0){
+            that.setState({loading:false,bottomTxt:'到底儿了'})
+            return false
+        }
         that.setState({
           pageCount:data.page.count
         })

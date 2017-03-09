@@ -13,7 +13,6 @@ export default class MyIntergral extends React.Component {
           bottomTxt: '',
           pageIndex:1,
           pageCount: 0,
-
       }
   }
   componentWillMount(){
@@ -22,6 +21,7 @@ export default class MyIntergral extends React.Component {
     })
     
   }
+
   componentDidMount() {
        utilities.setLocalTitle('个人中心')
        this.fetchFn()

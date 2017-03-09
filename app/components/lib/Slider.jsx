@@ -40,7 +40,7 @@ export default React.createClass({
         //console.log(data)
         this.setState(
           {
-            lists:data.data,
+            lists:data.data||[],
             loading:false
           }
         )
