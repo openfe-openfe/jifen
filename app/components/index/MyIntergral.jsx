@@ -4,6 +4,7 @@ import request from '../common/request.js'
 import config from '../common/config.js'
 import utilities from '../common/Utilities.js'
 import Loading  from '../common/Loading.jsx'
+// import {CountDownText} from '../common/test/index'
 export default class MyIntergral extends React.Component {
   constructor(props) {
       super(props)
@@ -13,6 +14,8 @@ export default class MyIntergral extends React.Component {
           bottomTxt: '',
           pageIndex:1,
           pageCount: 0,
+          countingDone:false,
+          codeSent:false
       }
   }
   componentWillMount(){
@@ -50,7 +53,24 @@ export default class MyIntergral extends React.Component {
        })
       .catch((e) => { console.log(e.message) })
   }
+  _sendVerifyCode(){
+    this.setState({
+      countingDone:false
+    })
+  }
   render() {
+     var styleObj = {
+            color:"#fff",
+            fontSize:16,
+            fontWeight:"normal",
+            textAlign:"center",
+            margin:'0 auto',
+            background:"#ee735c",
+            width:120,
+            height:40,
+            lineHeight:'40px',
+            marginTop:10,
+        } 
     var that=this
     return (
         <div>
@@ -98,6 +118,24 @@ export default class MyIntergral extends React.Component {
               <div className="instruction">
                   <NavLink to="exchangenote">兑换说明</NavLink>
               </div>
+              {/*{
+                that.state.countingDone
+                ?<p style={styleObj} onClick={this._sendVerifyCode.bind(this)}>获取验证码</p>
+                : <CountDownText
+                style={styleObj}
+                countType='seconds' // 计时类型：seconds / date 
+                auto={true} // 自动开始 
+                afterEnd={() => {this.setState({
+                  countingDone:true
+                })}} // 结束回调 
+                timeLeft={5} // 正向计时 时间起点为0秒 
+                step={-1} // 计时步长，以秒为单位，正数则为正计时，负数为倒计时 
+                startText='获取验证码' // 开始的文本 
+                endText='获取验证码' // 结束的文本 
+                intervalText={(sec) => sec + '秒重新获取'} // 定时的文本回调 
+                />
+              }
+             */}
           </div>
         </div>
     )
