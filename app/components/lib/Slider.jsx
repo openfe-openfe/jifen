@@ -60,7 +60,6 @@ export default React.createClass({
     return (
         <Slider {...settings}>
           {
-
             this.state.lists.map((e,index) => {
                 return (
                   <div className="slide" key={index}>
@@ -70,7 +69,6 @@ export default React.createClass({
                       :<NavLink to={{pathname:"/adsdetail",query:{id:e.id}}}><div style={{height:'8rem'}}><img src={e.img} className="HomeBanner-image-2T6G"/></div>
                     </NavLink>
                     }
-                    
                   </div>
                 )
             })
