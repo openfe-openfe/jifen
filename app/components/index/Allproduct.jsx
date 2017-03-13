@@ -96,14 +96,14 @@ export default class Home extends React.Component {
          console.log(data.msg)
         //console.log(data.total)
         if(data.flag==0){
-            that.setState({loading:false,bottomTxt:'到底儿了'})
+            that.setState({loading:false,bottomTxt:'我是有底线的'})
             return false
         }
         that.setState({
           pageCount:data.page.count
         })
         if(data.page.count==1){
-          that.setState({lists: data.data,loading:false,bottomTxt:'到底儿了'})
+          that.setState({lists: data.data,loading:false,bottomTxt:'我是有底线的'})
         }
         console.log(that.state.pageIndex)
         if(that.state.pageIndex == 1){
@@ -111,7 +111,7 @@ export default class Home extends React.Component {
             }else{
                 that.setState({lists: that.state.lists.concat(data.data),loading:false})
             }
-            that.setState({pageIndex: that.state.pageIndex+1}) 
+            that.setState({pageIndex: that.state.pageIndex+1})
         });
     }
     catFetch(id,color,index){
@@ -139,21 +139,21 @@ export default class Home extends React.Component {
         })
        .then((data) => {
         if(data.flag==0){
-            that.setState({loading:false,bottomTxt:'到底儿了'})
+            that.setState({loading:false,bottomTxt:'我是有底线的'})
             return false
         }
         that.setState({
           pageCount:data.page.count
         })
         if(data.page.count==1){
-          that.setState({lists: data.data,loading:false,bottomTxt:'到底儿了'})
+          that.setState({lists: data.data,loading:false,bottomTxt:'我是有底线的'})
         }
         if(that.state.pageIndex == 1){
                 that.setState({lists: data.data,loading:false})
             }else{
                 that.setState({lists: that.state.lists.concat(data.data),loading:false})
             }
-            that.setState({pageIndex: that.state.pageIndex+1}) 
+            that.setState({pageIndex: that.state.pageIndex+1})
         });
       })
     }
@@ -174,7 +174,7 @@ export default class Home extends React.Component {
                                 <p className={ this.check_tittle_index(index) }><span>{e.catname}</span></p>
                               </div>
                            </a>
-                           
+
                       )
                     })
                   }
@@ -183,9 +183,9 @@ export default class Home extends React.Component {
               {
                   that.state.lists.map((e,index) => {
                       return (
-                        
+
                          <NavLink to={{pathname:"/detail",query:{id:e.id||e.goodsid}}} className="product_href block_href" key={index}>
-                         
+
                               <div className="gift_list">
                                 <img src={e.thumbnail} alt="图片" className="product_img"/>
                                 <div className="gift_desc">
@@ -212,9 +212,9 @@ export default class Home extends React.Component {
                                   }
                                 </div>
                               </div>
-                          
+
                           </NavLink>
-                        
+
                       )
                   })
                }

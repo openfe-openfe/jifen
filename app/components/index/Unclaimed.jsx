@@ -41,21 +41,21 @@ export default class IntergralList extends React.Component {
          console.log(data.msg)
         //console.log(data.total)
         if(data.flag==0){
-            that.setState({loading:false,bottomTxt:'到底儿了'})
+            that.setState({loading:false,bottomTxt:'我是有底线的'})
             return false
         }
         that.setState({
           pageCount:data.page.count
         })
         if(data.page.count==1){
-          that.setState({lists: data.data,loading:false,bottomTxt:'到底儿了'})
+          that.setState({lists: data.data,loading:false,bottomTxt:'我是有底线的'})
         }
         if(that.state.pageIndex == 1){
                 that.setState({lists: data.data,loading:false})
             }else{
                 that.setState({lists: that.state.lists.concat(data.data),loading:false})
             }
-            that.setState({pageIndex: that.state.pageIndex+1}) 
+            that.setState({pageIndex: that.state.pageIndex+1})
         });
   }
    componentDidMount() {
@@ -73,10 +73,10 @@ export default class IntergralList extends React.Component {
         var c = document.documentElement.scrollTop==0? document.body.scrollHeight : document.documentElement.scrollHeight;
         if(a+Math.floor(b)==c || a+Math.ceil(b)==c){
           if (that.state.pageIndex <= that.state.pageCount){
-                
-                that.loadList();  
+
+                that.loadList();
             }else{
-               that.setState({bottomTxt: '到底了'});
+               that.setState({bottomTxt: '我是有底线的'});
             }
         }
     }

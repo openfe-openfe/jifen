@@ -20,7 +20,7 @@ export default class IntergralList extends React.Component {
     this.setState({
       loading:true
     })
-    
+
   }
   // 获取数据
   loadList(){
@@ -40,8 +40,8 @@ export default class IntergralList extends React.Component {
        .then((data) => {
          console.log(data.msg)
         //console.log(data.total)
-         if(data.flag==0){
-            that.setState({loading:false,bottomTxt:'到底儿了'})
+         if(data.flag==0||data.data.length==0){
+            that.setState({loading:false,bottomTxt:'我是有底线的'})
             return false
         }
         that.setState({
@@ -55,7 +55,7 @@ export default class IntergralList extends React.Component {
             }else{
                 that.setState({lists: that.state.lists.concat(data.data),loading:false})
             }
-            that.setState({pageIndex: that.state.pageIndex+1}) 
+            that.setState({pageIndex: that.state.pageIndex+1})
         });
   }
    componentDidMount() {
@@ -73,10 +73,10 @@ export default class IntergralList extends React.Component {
         var c = document.documentElement.scrollTop==0? document.body.scrollHeight : document.documentElement.scrollHeight;
         if(a+Math.floor(b)==c || a+Math.ceil(b)==c){
           if (that.state.pageIndex <= that.state.pageCount){
-                
-                that.loadList();  
+
+                that.loadList();
             }else{
-               that.setState({bottomTxt: '到底了'});
+               that.setState({bottomTxt: '我是有底线的'});
             }
         }
     }
@@ -85,7 +85,6 @@ export default class IntergralList extends React.Component {
     return (
         <div>
           <div className="">
-             <NavLink to={{pathname:"/"}} className="backIndex_btn"></NavLink>
                <div className="">
                 <div className="IN_list">
                   {
@@ -99,7 +98,7 @@ export default class IntergralList extends React.Component {
                         <p className="E_f12 E_fc_grey7">&nbsp;&nbsp;{e.time}</p>
                       </div>
                       )
-                      
+
                     })
                   }
                    { that.state.bottomTxt?<div className="loadmore">{that.state.bottomTxt}</div>:<Loading/>  }

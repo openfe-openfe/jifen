@@ -176,7 +176,7 @@
 .slick-dots li button:before
 {
     font-family: 'slick';
-    font-size: 2px;
+    font-size: 12px;
     position: absolute;
     top: 0;
     left: 0;

@@ -64,7 +64,7 @@ export default class Home extends React.Component {
     var ua = navigator.userAgent.toLowerCase()
     if (/iphone|ipad|ipod/.test(ua)){
        phonetype='iOS'
-      }else if (/android/.test(ua)) { 
+      }else if (/android/.test(ua)) {
       phonetype='Android'
     }
     var url=config.api.base+config.api.log
@@ -105,21 +105,21 @@ export default class Home extends React.Component {
          //console.log(data.msg)
         //console.log(data.total)
         if(data.flag==0){
-            that.setState({loading:false,bottomTxt:'到底儿了'})
+            that.setState({loading:false,bottomTxt:'我是有底线的'})
             return false
         }
         that.setState({
           pageCount:data.page.count
         })
         if(data.page.count==1){
-          that.setState({lists: data.data,loading:false,bottomTxt:'到底儿了'})
+          that.setState({lists: data.data,loading:false,bottomTxt:'我是有底线的'})
         }
         if(that.state.pageIndex == 1){
                 that.setState({lists: data.data,loading:false})
             }else{
                 that.setState({lists: that.state.lists.concat(data.data),loading:false})
             }
-            that.setState({pageIndex: that.state.pageIndex+1}) 
+            that.setState({pageIndex: that.state.pageIndex+1})
         });
     }
   componentDidMount() {
@@ -139,10 +139,10 @@ export default class Home extends React.Component {
         var c = document.documentElement.scrollTop==0? document.body.scrollHeight : document.documentElement.scrollHeight;
         if(a+Math.floor(b)==c || a+Math.ceil(b)==c){
           if (that.state.pageIndex <= that.state.pageCount){
-                
-                that.loadList();  
+
+                that.loadList();
             }else{
-               that.setState({bottomTxt: '到底了'});
+               that.setState({bottomTxt: '我是有底线的'});
             }
         }
     }
@@ -182,12 +182,12 @@ export default class Home extends React.Component {
                   </NavLink>
                 </div>
               </div>
-              
+
               {
                   that.state.lists.map((e,index) => {
                       return (
                         <NavLink to={{pathname:"/detail",query:{id:e.id}}} className="product_href block_href" key={index}>
-                         
+
                               <div className="gift_list">
                                 <img src={e.thumbnail} alt="图片" className="product_img"/>
                                 <div className="gift_desc">
@@ -218,15 +218,15 @@ export default class Home extends React.Component {
                                   }
                                 </div>
                               </div>
-                          
-                          </NavLink> 
+
+                          </NavLink>
                       )
                   })
                }
               { that.state.bottomTxt?<div className="loadmore">{that.state.bottomTxt}</div>:<Loading/>  }
             </div>
           </div>
-          
+
         </div>
     )
   }

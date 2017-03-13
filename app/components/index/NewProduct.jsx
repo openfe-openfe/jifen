@@ -42,14 +42,14 @@ export default class NewProduct extends React.Component {
           pageCount:data.page.count
         })
         if(data.page.count==1){
-          that.setState({lists: data.data,loading:false,bottomTxt:'到底儿了'})
+          that.setState({lists: data.data,loading:false,bottomTxt:'我是有底线的'})
         }
         if(that.state.pageIndex == 1){
                 that.setState({lists: data.data,loading:false})
             }else{
                 that.setState({lists: that.state.lists.concat(data.data),loading:false})
             }
-            that.setState({pageIndex: that.state.pageIndex+1}) 
+            that.setState({pageIndex: that.state.pageIndex+1})
         });
     }
   componentDidMount() {
@@ -67,10 +67,10 @@ export default class NewProduct extends React.Component {
         var c = document.documentElement.scrollTop==0? document.body.scrollHeight : document.documentElement.scrollHeight;
         if(a+Math.floor(b)==c || a+Math.ceil(b)==c){
           if (that.state.pageIndex <= that.state.pageCount){
-                
-                that.loadList();  
+
+                that.loadList();
             }else{
-               that.setState({bottomTxt: '到底了'});
+               that.setState({bottomTxt: '我是有底线的'});
             }
         }
     }
@@ -81,12 +81,12 @@ export default class NewProduct extends React.Component {
           <div className="">
             <div className="">
                <NavLink to={{pathname:"/"}} className="backIndex_btn"></NavLink>
-              
+
               {
                   that.state.lists.map((e,index) => {
                       return (
                         <NavLink to={{pathname:"/detail",query:{id:e.id}}} className="product_href block_href" key={index}>
-                         
+
                               <div className="gift_list">
                                 <img src={e.thumbnail} alt="图片" className="product_img"/>
                                 <div className="gift_desc">
@@ -117,9 +117,9 @@ export default class NewProduct extends React.Component {
                                   }
                                 </div>
                               </div>
-                          
+
                           </NavLink>
-                          
+
                       )
                   })
                }

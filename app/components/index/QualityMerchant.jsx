@@ -44,11 +44,11 @@ export default class qualityMerchant extends React.Component {
           that.setState({lists: data.data,loading:false,bottomTxt:''})
         }
         if(that.state.pageIndex == 1){
-                that.setState({lists: data.data,loading:false,bottomTxt:'到底儿了'})
+                that.setState({lists: data.data,loading:false,bottomTxt:'我是有底线的'})
             }else{
                 that.setState({lists: that.state.lists.concat(data.data),loading:false})
             }
-            that.setState({pageIndex: that.state.pageIndex+1}) 
+            that.setState({pageIndex: that.state.pageIndex+1})
         });
     }
   componentDidMount() {
@@ -66,8 +66,8 @@ export default class qualityMerchant extends React.Component {
         var c = document.documentElement.scrollTop==0? document.body.scrollHeight : document.documentElement.scrollHeight;
         if(a+Math.floor(b)==c || a+Math.ceil(b)==c){
           if (that.state.pageIndex <= that.state.pageCount){
-                
-                that.loadList();  
+
+                that.loadList();
             }else{
                that.setState({bottomTxt: '到底了'});
             }
@@ -80,11 +80,11 @@ export default class qualityMerchant extends React.Component {
           <div className="">
             <div className="">
                <NavLink to={{pathname:"/"}} className="backIndex_btn"></NavLink>
-              
+
               {
                   that.state.lists.map((e,index) => {
                       return (
-                        
+
                          <div className="shadow In_bg_white" key={index}>
                                 <div className="change_info_business">
                                   <NavLink to={{pathname:"/shoplist",query:{id:e.id}}}>
@@ -104,7 +104,7 @@ export default class qualityMerchant extends React.Component {
                                     </div>
                                   </NavLink>
                                 </div>
-                         </div>  
+                         </div>
                       )
                   })
                }
