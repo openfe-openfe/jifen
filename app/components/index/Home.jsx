@@ -104,7 +104,7 @@ export default class Home extends React.Component {
        .then((data) => {
          //console.log(data.msg)
         //console.log(data.total)
-        if(data.flag==0){
+        if(data.flag==0||data.data==''){
             that.setState({loading:false,bottomTxt:'我是有底线的'})
             return false
         }

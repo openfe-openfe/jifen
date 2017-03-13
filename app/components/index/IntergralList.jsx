@@ -30,6 +30,7 @@ export default class IntergralList extends React.Component {
         var formdata=new FormData();
         formdata.append('page',that.state.pageIndex)
         formdata.append('useraccount',utilities.getParameterByName('wv_account')||localStorage.getItem('wv_account'))
+        formdata.append('user_id',utilities.getParameterByName('user_id')||'')
         fetch(url,{
             method: 'POST',
             body: formdata
