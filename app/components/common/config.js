@@ -7,7 +7,6 @@ module.exports = {
   },
   api: {
     // base: 'http://192.168.1.111/jifen/',
-    //首页list
     base:'http://con.icloudcity.cn/jifen/',
     index: 'api.php/home/index/index_goods',
     log:'api.php/Home/Index/logs',
