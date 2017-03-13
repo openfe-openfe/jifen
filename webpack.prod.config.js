@@ -15,6 +15,7 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, 'build'),
         filename: "boudle.js",
+        publicPath: '/jifen/',
         chunkFilename: 'js/[name].[chunkhash:5].js'
     },
     resolve: {
