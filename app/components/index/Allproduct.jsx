@@ -25,7 +25,7 @@ export default class Home extends React.Component {
       loading:true
     })
   }
-    fetchFn2(){
+  fetchFn2(){
     //console.log(localStorage.getItem('phone'))
         var that=this
         var url=config.api.base+config.api.categorylist
@@ -47,7 +47,15 @@ export default class Home extends React.Component {
           }
         )
         var id=data.data[0].id
-        that.setState({id:id})
+        console.log(id)
+        that.setState(
+          {
+            id:id
+          },function(){
+            // console.log(123123)
+            that.loadList(this.state.id)
+          }
+        )
        })
       .catch((e) => { console.log(e.message) })
   }
@@ -58,7 +66,7 @@ export default class Home extends React.Component {
        utilities.setLocalTitle('所有商品')
        this.fetchFn2()
        document.addEventListener('scroll', this.handleScroll);
-       this.loadList(this.state.id)
+       
   }
   handleScroll = () => {
         var that = this;
@@ -76,9 +84,10 @@ export default class Home extends React.Component {
         }
     }
      check_tittle_index(index){
-       return index===this.state.currentIndex ? "Tab_tittle active" : "Tab_tittle";
+       return index===this.state.currentIndex ? "CampaignTabBar-tabInner-3qGE active" : "CampaignTabBar-tabInner-3qGE";
     }
       loadList = (id) => {
+        console.log(id)
         var that = this
         //var url='http://rap.taobao.org/mockjsdata/7918/songhao/batch'
         var url=config.api.base+config.api.shoplist
@@ -164,20 +173,24 @@ export default class Home extends React.Component {
           <div className="">
             <NavLink to={{pathname:"/"}} className="backIndex_btn"></NavLink>
             <div className="">
-              <div className="In_card2 shadow">
-                <div className="list_icon list_icon2 E_f12 E_fc_grey1">
-                  {
-                    that.state.lists2.map((e,index)=>{
-                      return(
-                           <a onClick={this.catFetch.bind(this,e.id,e.color,index)} key={index}>
-                              <div className="rightLine">
-                                <p className={ this.check_tittle_index(index) }><span>{e.catname}</span></p>
-                              </div>
-                           </a>
+              <div className="In_card2">
+                <div className=" E_f12 E_fc_grey1">
+                    <div className="CampaignTabBar-tabs-1WkC">
+                      {
+                        that.state.lists2.map((e,index)=>{
+                          return(
+      
+                          <a className="CampaignTabBar-tab-3ryG" onClick={this.catFetch.bind(this,e.id,e.color,index)} key={index}>
+                            <span className={ this.check_tittle_index(index) }>
+                              <span className="CampaignTabBar-tabText-3TwF">{e.catname}</span>
+                            </span>
+                          </a>
 
-                      )
-                    })
-                  }
+                          )
+                        })
+                    }
+                    </div>
+                  
                 </div>
               </div>
               {

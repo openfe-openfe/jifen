@@ -27,7 +27,7 @@ export default React.createClass({
         var formdata=new FormData();
         formdata.append('position',2)
         formdata.append('useraccount',utilities.getParameterByName('wv_account'))
-        console.log('123'+utilities.getParameterByName('wv_account'))
+        // console.log('123'+utilities.getParameterByName('wv_account'))
         fetch(url,{
             method: 'POST',
             cache: 'default',

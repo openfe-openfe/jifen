@@ -48,10 +48,12 @@ div,p,li,ul{
     display: block;
     margin: 0 auto;
     width: 100%;
+    max-height: 375px;
+    overflow: hidden;
 }
 .change_mall_info .change_info_head .info_wrap .info_name {
     position: relative;
-    padding: 1.5rem 0;
+    padding: 2.5rem 0;
 }
 .change_mall_info .change_info_head .info_wrap .info_name .info_title {
     max-width: 29rem;
@@ -87,11 +89,12 @@ div,p,li,ul{
     margin: .4rem 0 0 .5rem;
 }
 .change_mall_info .change_info_head .info_wrap .info_name .info_act .value_wrap .info_value {
-    margin: 1rem 0 0 1.1rem;
+    /*margin: 1rem 0 0 1.1rem;*/
     text-decoration: line-through;
 }
 .change_mall_info .change_info_head .info_wrap .info_name .info_act .value_wrap .info_value2 {
-    margin: 1rem 0 0 1.1rem;
+     margin: 1rem 0 0 1.6rem;
+     color:#939393;
     /*text-decoration: line-through;*/
 }
 .change_mall_info .change_info_head .info_wrap .info_name .info_act .change_btn_org {
@@ -194,7 +197,7 @@ a {
     -moz-osx-font-smoothing: grayscale;
 }
 .readyfollow:before{
-    content: "\e608"; 
+    content: "\e608";
 }
 
 /*详情部分的css*/
@@ -345,7 +348,7 @@ ol, ul {
 }
 .coupon_header{
     margin: 0 auto;
-    width: 95%; 
+    width: 95%;
     height: 50px;
     border: 1px solid #F18982;
     text-align: center;
@@ -381,7 +384,7 @@ ol, ul {
     margin: 0 auto;
 }
 .business_info{
-    
+
     font-size: 1.3rem;
 }
 .business_info_detail{

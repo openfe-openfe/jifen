@@ -209,6 +209,9 @@ a{
 .product_href .gift_list .gift_desc .desc_wrap .desc_charge {
     line-height: 2.3rem;
 }
+.product_href .gift_list .gift_desc .old_price{
+  text-decoration: line-through;
+}
 .gold_logo {
   font-family:"iconfont" !important;
   font-size:1.5rem;
@@ -264,12 +267,21 @@ a{
 .desc_wrap .change_his {
     line-height: 2.2rem;
 }
+
 .gift_desc .desc_wrap .change_his .left_txt .exg_num {
     width: 58%;
     text-align: center;
 }
+@media screen and (max-width: 320px) {
+.gift_desc .desc_wrap .change_his .left_txt .exg_num {
+    width: 38%;
+    text-align: center;
+}
+}
 .change_his .right_txt {
     width: 40%;
+    position: relative;
+    left: .5rem;
 }
 .right_txt .rate_bar {
     display: inline-block;
@@ -312,7 +324,7 @@ a{
     -moz-osx-font-smoothing: grayscale;
 }
  .gift_list .change_history_tag,.gift_list .tag_wrap [class*=_tag]:before{
-     content: "\e60b"; 
+     content: "\e60b";
  }
 
 .gold_logo,  .gift_list .desc_tag {
@@ -622,5 +634,71 @@ a{
     -moz-osx-font-smoothing: grayscale;
 }
 .readyfollow:before{
-    content: "\e608"; 
+    content: "\e608";
+}
+
+.CampaignTabBar-tabs-1WkC {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.CampaignTabBar-tabs-1WkC {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: 4.8rem;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #fff;
+}
+.CampaignTabBar-tabs-1WkC .active{
+    background: #FF8200;
+    color:#fff;
+}
+ .CampaignTabBar-tab-3ryG {
+    padding-left: 15px;
+}
+
+.CampaignTabBar-tab-3ryG {
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    color:#939393;
+}
+.CampaignTabBar-tabInner-3qGE {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    height: 4.8rem;
+    width: 4.8rem;
+    border: 1px solid #FF8200;
+    border-radius: 50%;
+    justify-content: center
+}
+.CampaignTabBar-tabInner-3qGE::after{
+     content: " ";
+    position: absolute;
+    right: -8px;
+    top: 0;
+    width: 1px;
+    height: 100%;
+    border-right: 1px solid #e6e6e6;
+    color: #e6e6e6;
+    transform-origin: 100% 0;
+    transform: scaleX(.5);
+}
+ .CampaignTabBar-tabText-3TwF {
+    /*background: -webkit-linear-gradient(top left,#ffcd70,#ff9d6c);
+    background: linear-gradient(to bottom right,#ffcd70,#ff9d6c);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;*/
+    text-align: center;
+    width: 3rem;
+    font-size: 1.4rem;
+}
+.CampaignTabBar-tabs-1WkC::-webkit-scrollbar {
+    display: none;
 }

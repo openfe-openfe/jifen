@@ -90,7 +90,7 @@ var detailHeader =React.createClass({
              that.setState({code:data.data})
              that.setState({modalIsOpenPay:true})
         }
-      }) 
+      })
     }
   },
     render() {
@@ -108,7 +108,7 @@ var detailHeader =React.createClass({
               <img src={lists.goodslogo} alt="商品"/>
               <div className="info_wrap">
                 <div className="info_name">
-                  <p className="info_title E_f16 E_fc_grey1">{lists.item_name}</p>
+                  <p className="info_title E_f16 E_fc_grey1">{lists.goodsname}</p>
                   <div className="info_act">
                     <div className="value_wrap">
                       <i className="infor_gold"></i>
@@ -116,13 +116,17 @@ var detailHeader =React.createClass({
                         lists.jifen_youhui>0?
                         <span  className="info_points E_f24 E_fc_orange">{lists.jifen_youhui}</span>
                         :<span  className="info_points E_f24 E_fc_orange">{lists.jifen}</span>
-                      } 
-                      <span className="info_value E_f12 E_fc_grey7">价值{lists.price}</span>
+                      }
+
+
                       {
-                        lists.price_youhui!==null?
-                        <span className="info_value2 E_f12 E_fc_org">优惠积分：{lists.jifen_youhui}</span>
+                        lists.price_youhui!==0?
+                        <span className="info_value2 E_f12 E_fc_grey"><i className="infor_gold" style={{fontSize:'16px',color:'#939393',marginRight:'0.5rem'}}></i>{lists.jifen}</span>
                         :null
                       }
+                      <div className="info_box">
+                        <span className="E_f12 E_fc_grey7">价值:&nbsp;&nbsp;<span className="info_value">{lists.price}</span></span>
+                      </div>
                     </div>
                     {
                       lists.userIntegral-lists.jifen>0 && lists.inventory>0 && lists.canbuynum!==0
@@ -130,11 +134,11 @@ var detailHeader =React.createClass({
                         兑换
                         </button>
                       :<button className="change_btn_gray">{
-                        lists.userIntegral-lists.jifen>0 && lists.canbuynum==0?'兑换上限':
+                        lists.userIntegral-lists.jifen>0 && lists.canbuynum==0?'已达上限':
                         lists.userIntegral-lists.jifen>0 && lists.inventory==0?'已兑完':'积分不足'
-                        }</button>  
+                        }</button>
                     }
-                      
+
                       <Modal
                           isOpen={this.state.modalIsOpen}
                           onAfterOpen={this.afterOpenModal}
@@ -146,7 +150,7 @@ var detailHeader =React.createClass({
                       <div className="outer E_layer">
                         <div className="content">
                           <div className="layer_common">
-                            <span>商品兑换后，积分不返还，请在兑换券有效时间内到指定实体店兑换<label style={{color:'#FF9900'}}>（有效期7天)</label>。兑换将消耗<label style={{color:'#FF9900'}}>{lists.integral}</label>积分，确定要兑换吗</span>
+                            <span>商品兑换后，积分不返还，请在兑换券有效时间内到指定实体店兑换<label style={{color:'#FF9900'}}>（有效期{lists.days}天)</label>。兑换将消耗<label style={{color:'#FF9900'}}>{lists.integral}</label>积分，确定要兑换吗</span>
                             <ul className="E_layer_btn">
                               <li><a  className="E_btn_grey" onClick={this.closeModal}>取消</a></li>
                               <li><a  className="E_btn_grey btn_ok" onClick={this.exchange}>兑换</a></li>

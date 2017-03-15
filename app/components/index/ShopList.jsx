@@ -58,6 +58,7 @@ export default class NewProduct extends React.Component {
         });
     }
   componentDidMount() {
+       utilities.setLocalTitle('商品列表')
        document.addEventListener('scroll', this.handleScroll);
        this.loadList()
   }
