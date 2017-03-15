@@ -9,6 +9,7 @@ var ExtractTextPlugin = require("extract-text-webpack-plugin");
 module.exports = {
   devtool: 'cheap-source-map',
   entry: [
+    'babel-polyfill',
     path.resolve(__dirname, 'app/main.jsx'),
   ],
   output: {

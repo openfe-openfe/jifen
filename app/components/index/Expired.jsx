@@ -98,7 +98,7 @@ export default class IntergralList extends React.Component {
                                         <div className="gift_desc">
                                             <div className="desc_wrap">
                                                 <div className="desc_title E_f16 E_fc_grey1">{e.goodsname}</div>
-                                                <div className="desc_exg_time E_f12 E_fc_grey6">未中奖 {e.endtime}</div>
+                                                <div className="desc_exg_time E_f12 E_fc_grey6">过期时间： {e.endtime}</div>
                                                 <div className="desc_charge">
                                                     <i className="gold_logo"></i>
                                                     <span className="new_price E_f15 E_fc_orange">{e.jifen}</span>

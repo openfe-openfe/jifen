@@ -8,12 +8,14 @@ export default class detailDes extends React.Component {
 }
     render() {
         const content=this.props.content
+        const tel=content.shoptel
+        const phone='tel:'+tel
         return(
           <div className="pro_info_content">
               <div className="content_title E_f13 E_fc_grey6">商家信息</div>
               <div className="change_info_content E_f15 E_fc_grey1">
-                  <p>商家地址：水电费活动设计费</p>
-                  <p>商家电话：1283218933</p>
+                  <p>商家地址：{content.shopaddress}</p>
+                  <p>商家电话：<a href={phone}>{content.shoptel}</a></p>
               </div>
               <div className="content_title E_f13 E_fc_grey6">商品详情</div>
               <div className="change_info_content E_f15 E_fc_grey1">

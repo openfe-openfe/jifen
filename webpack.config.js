@@ -1,6 +1,5 @@
 var webpack = require('webpack');
 var path = require('path');
-
 // 编译后自动打开浏览器
 var OpenBrowserPlugin = require('open-browser-webpack-plugin');
 
@@ -19,8 +18,7 @@ module.exports = {
         port: 8080
   },
   entry: [
-    'webpack/hot/dev-server',
-    'webpack-dev-server/client?http://localhost:8080',
+    'babel-polyfill',
     path.resolve(__dirname, 'app/main.jsx')
   ],
   output: {
@@ -34,7 +32,7 @@ module.exports = {
         {test: /\.css$/, include: path.resolve(__dirname, 'app'), loader: 'style-loader!css-loader'},
         {test: /\.js[x]?$/, loaders: ['babel-loader'], exclude: path.resolve(__dirname, node_modules)},
         {test: /\.(png|jpg|gif)$/, loader: 'url?limit=81920'},
-        {test: /\.(ttf|eot|svg|woff(2)?)(\?[a-z0-9=&.]+)?$/,loader: 'file-loader'}
+        {test: /\.(woff|woff2|svg|eot|ttf)?)(\?[a-z0-9=&.]+)?$/,loader: 'file-loader'}
     ]
   },
   //其它解决方案配置

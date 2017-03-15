@@ -49,7 +49,11 @@ export default class Home extends React.Component {
           try {
               csb.WVNavRightButton(true,'商户中心',id)
           } catch (e) {
-            window.webkit.messageHandlers.WVNavRightButton.postMessage([true,'商户中心',id])
+            try{
+              window.webkit.messageHandlers.WVNavRightButton.postMessage([true,'商户中心',id])
+            }catch(e){
+              console.log('没有在app内打开')
+            }
           }
         }
       })
