@@ -389,12 +389,18 @@ a{
     font-size: 1.4rem;
 }
 .instruction{
+    position: absolute;
+    bottom: 2rem;
+    text-align: center;
+    /* display: inline-block; */
+    left: 50%;
+    margin-left: -2.4rem;
 }
 .instruction a{
-    display: block;
+    /*display: block;
     text-align: center;
     margin-top: 16rem;
-    font-size: 1.2rem;
+    font-size: 1.2rem;*/
 }
 
 /*我的积分明细页面等*/
