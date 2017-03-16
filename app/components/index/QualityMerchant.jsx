@@ -69,7 +69,7 @@ export default class qualityMerchant extends React.Component {
 
                 that.loadList();
             }else{
-               that.setState({bottomTxt: '到底了'});
+               that.setState({bottomTxt: '我是有底线的'});
             }
         }
     }
