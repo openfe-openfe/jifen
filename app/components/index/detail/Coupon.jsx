@@ -98,7 +98,7 @@ var coupon =React.createClass({
               <div className="business_info_detail">
                 <div className="shadow In_bg_white">
                     <div className="change_info_business">
-                      <a href="#">
+                      <a>
                         <div className="business_wrap" style={{height:'6rem'}}>
                           <img src={lists.shoplogo} className="business_img" style={{height:'6rem',width:'6rem'}}/>
                           <div className="business_desc">
@@ -112,7 +112,7 @@ var coupon =React.createClass({
                 </div>
                 <div className="shadow In_bg_white">
                     <div className="change_info_business">
-                      <a href="#">
+                      <a>
                         <div className="business_wrap2">
                           <div className="business_desc">
                             <div className="desc_wrap">
@@ -125,7 +125,7 @@ var coupon =React.createClass({
                 </div>
                  <div className="shadow In_bg_white">
                     <div className="change_info_business">
-                      <a href="#">
+                      <a>
                         <div className="business_wrap2">
                           <div className="business_desc">
                             <div className="desc_wrap">

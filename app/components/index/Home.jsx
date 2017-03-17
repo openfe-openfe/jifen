@@ -52,7 +52,7 @@ export default class Home extends React.Component {
             try{
               window.webkit.messageHandlers.WVNavRightButton.postMessage([true,'商户中心',id])
             }catch(e){
-              console.log('没有在app内打开')
+              console.log('没有在潍V内打开')
             }
           }
         }
@@ -89,6 +89,9 @@ export default class Home extends React.Component {
         .catch((err) => {
         console.log(err)
       })
+  }
+  wv_account=(WVAccount)=>{
+    console.log(WVAccount)
   }
   loadList = () => {
         var that = this
@@ -201,7 +204,7 @@ export default class Home extends React.Component {
                                       <i className="gold_logo"></i>
                                       {
                                         e.youhui>0?
-                                        <span className="new_price E_f15 E_fc_orange">{e.youhui}</span>
+                                        <span className="new_price E_f15 E_fc_orange">{e.jifen_youhui}</span>
                                         : <span className="new_price E_f15 E_fc_orange">{e.jifen}</span>
                                       }
                                       <div className="ori_charge E_f12 E_fc_grey7">

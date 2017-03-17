@@ -97,7 +97,11 @@ export default class NewProduct extends React.Component {
                                     <div className="desc_title E_f16 E_fc_grey1">{e.goodsname}</div>
                                     <div className="desc_charge">
                                       <i className="gold_logo"></i>
-                                      <span className="new_price E_f15 E_fc_orange">{e.jifen}</span>
+                                      {
+                                        e.youhui>0?
+                                        <span className="new_price E_f15 E_fc_orange">{e.jifen_youhui}</span>
+                                        : <span className="new_price E_f15 E_fc_orange">{e.jifen}</span>
+                                      }
                                       <div className="ori_charge E_f12 E_fc_grey7">
                                         <em>原价: </em><span className="old_price">{e.price}</span>
                                       </div>

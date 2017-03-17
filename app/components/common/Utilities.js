@@ -34,7 +34,8 @@ module.exports = {
          try {
            window.webkit.messageHandlers.setLocalTitle.postMessage(name)
          } catch (e) {
-           console.log('没有在app内打开')
+           console.log('没有在潍V内打开')
+        //    location.href='http://songhao888.cn/lalala/'
          }
        }
     }

@@ -65,7 +65,7 @@ var detailHeader =React.createClass({
     //兑换之后的用户剩余积分
     var residualIntegral=crore-integral
     //console.log(residualIntegral)
-    if(residualIntegral>0){
+    if(true){
       that.setState({modalIsOpen: false})
       //发送fetch请求处理订单。。。
       var url=config.api.base+config.api.exchange
@@ -105,7 +105,16 @@ var detailHeader =React.createClass({
                 :null
             }
             <div className="change_info_head">
-              <img src={lists.goodslogo} alt="商品"/>
+              <div className="head_canbuy">
+                <img src={lists.goodslogo} alt="商品"/>
+                {
+                  lists.mostbuynum>0?<div className="canbuynum">
+                    <img src="http://oij04cgoe.bkt.clouddn.com/1.png"alt="商品"/>
+                    <span>限购{lists.mostbuynum}件</span>
+                  </div>
+                  :null
+                }
+                </div>
               <div className="info_wrap">
                 <div className="info_name">
                   <p className="info_title E_f16 E_fc_grey1">{lists.goodsname}</p>
@@ -129,13 +138,14 @@ var detailHeader =React.createClass({
                       </div>
                     </div>
                     {
-                      lists.userIntegral-lists.jifen>0 && lists.inventory>0 && lists.canbuynum!==0
+                      
+                      lists.userIntegral-lists.jifen>0 && lists.inventory>0 && lists.canbuynum!==0 ||lists.jifen_youhui>0&&lists.userIntegral-lists.jifen_youhui>0&& lists.inventory>0 && lists.canbuynum!==0
                       ?<button className="change_btn_org" onClick={this.openModalSponsorship}>
                         兑换
                         </button>
                       :<button className="change_btn_gray">{
-                        lists.userIntegral-lists.jifen>0 && lists.canbuynum==0?'已达上限':
-                        lists.userIntegral-lists.jifen>0 && lists.inventory==0?'已兑完':'积分不足'
+                        lists.userIntegral-lists.jifen>0 && lists.inventory==0?'已兑完':
+                        lists.userIntegral-lists.jifen>0 && lists.canbuynum==0?'已达上限':'积分不足'
                         }</button>
                     }
 

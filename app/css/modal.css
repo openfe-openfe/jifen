@@ -16,7 +16,6 @@
     margin: auto;
     width: 92%;
     max-width: 472px;
-    background-color: #fff;
     border-radius: 8px;
     outline: none;
 }
@@ -54,6 +53,3 @@
     height: 45px;
     color: #999;
 }
-
-
-

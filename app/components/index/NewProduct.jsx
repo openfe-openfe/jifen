@@ -100,7 +100,7 @@ export default class NewProduct extends React.Component {
                                       <i className="gold_logo"></i>
                                       {
                                         e.youhui>0?
-                                        <span className="new_price E_f15 E_fc_orange">{e.youhui}</span>
+                                        <span className="new_price E_f15 E_fc_orange">{e.jifen_youhui}</span>
                                         : <span className="new_price E_f15 E_fc_orange">{e.jifen}</span>
                                       }
                                       <div className="ori_charge E_f12 E_fc_grey7">

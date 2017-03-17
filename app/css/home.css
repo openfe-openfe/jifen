@@ -396,12 +396,12 @@ a{
     left: 50%;
     margin-left: -2.4rem;
 }
-.instruction a{
-    /*display: block;
+/*.instruction a{
+    display: block;
     text-align: center;
     margin-top: 16rem;
-    font-size: 1.2rem;*/
-}
+    font-size: 1.2rem;
+}*/
 
 /*我的积分明细页面等*/
 .intergral_icon{
@@ -462,7 +462,7 @@ a{
 
 /*积分明细列表接口*/
 .intergral_history {
-    padding: 1.7rem 1.2rem 1.7rem .5rem;
+    padding: 2.8rem 1.2rem 1.7rem .5rem;
     background-color: #fff;
     overflow: hidden;
     box-sizing: border-box;
@@ -471,11 +471,11 @@ a{
     position: relative;
 }
 .intergral_history p:first-child .point_desc {
-    max-width: 66.9%;
-    white-space: nowrap;
-    word-break: keep-all;
+    max-width: 70%;
+    /*white-space: nowrap;*/
+    /*word-break: keep-all;*/
     overflow: hidden;
-    text-overflow: ellipsis;
+    /*text-overflow: ellipsis;*/
 }
 .IN_list .child_block::after {
     content: "";
@@ -652,7 +652,6 @@ a{
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    height: 4.8rem;
     padding-top: 10px;
     padding-bottom: 10px;
     background-color: #fff;
@@ -685,7 +684,7 @@ a{
     justify-content: center
 }
 .CampaignTabBar-tabInner-3qGE::after{
-     content: " ";
+    content: " ";
     position: absolute;
     right: -8px;
     top: 0;
@@ -704,6 +703,36 @@ a{
     text-align: center;
     width: 3rem;
     font-size: 1.4rem;
+}
+@media screen and (max-width: 320px) {
+  .CampaignTabBar-tab-3ryG {
+     padding-left: 10px;
+ }
+  .CampaignTabBar-tabText-3TwF {
+     /*background: -webkit-linear-gradient(top left,#ffcd70,#ff9d6c);
+     background: linear-gradient(to bottom right,#ffcd70,#ff9d6c);
+     -webkit-background-clip: text;
+     -webkit-text-fill-color: transparent;*/
+     text-align: center;
+     width: 3rem;
+     font-size: 1.45rem;
+     position: relative;
+     left: 5px;
+  }
+  .CampaignTabBar-tabInner-3qGE {
+      position: relative;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      height: 4.4rem;
+      width: 4.4rem;
+      border: 1px solid #FF8200;
+      border-radius: 50%;
+      justify-content: center
+  }
 }
 .CampaignTabBar-tabs-1WkC::-webkit-scrollbar {
     display: none;

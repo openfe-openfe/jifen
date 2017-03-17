@@ -9,7 +9,8 @@ export default class detailDes extends React.Component {
       super(props)
       this.state={
           content:'',
-          title:''
+          title:'',
+          tips:''
       }
   }
   componentWillMount(){
@@ -47,14 +48,18 @@ export default class detailDes extends React.Component {
   createMarkup() {
   return {__html: this.state.content};
 }
+  createMarkuptips() {
+  return {__html: this.state.tips}
+}
  componentDidMount() {
+       utilities.setLocalTitle(title)
        this.fetchFn()
   }
     render() {
         return(
           <div className="pro_info_content">
             <div className="change_info_content">
-             <div dangerouslySetInnerHTML={this.createMarkup()}></div>  
+             <div dangerouslySetInnerHTML={this.createMarkup()}></div>
             </div> 
           </div>
 

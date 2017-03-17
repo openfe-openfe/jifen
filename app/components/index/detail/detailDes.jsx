@@ -6,6 +6,9 @@ export default class detailDes extends React.Component {
   createMarkup() {
   return {__html: this.props.content.contents};
 }
+  createMarkuptips() {
+  return {__html: this.props.content.tips};
+}
     render() {
         const content=this.props.content
         const tel=content.shoptel
@@ -20,6 +23,7 @@ export default class detailDes extends React.Component {
               <div className="content_title E_f13 E_fc_grey6">商品详情</div>
               <div className="change_info_content E_f15 E_fc_grey1">
                   <div dangerouslySetInnerHTML={this.createMarkup()}></div>
+                  <div dangerouslySetInnerHTML={this.createMarkuptips()}></div>
               </div>
               
           </div>
