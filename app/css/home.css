@@ -463,7 +463,7 @@ a{
 
 /*积分明细列表接口*/
 .intergral_history {
-    padding: 2.8rem 1.2rem 1.7rem .5rem;
+    padding: 1.7rem 1.2rem 1.7rem .5rem;
     background-color: #fff;
     overflow: hidden;
     box-sizing: border-box;
