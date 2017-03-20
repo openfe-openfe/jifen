@@ -36,15 +36,18 @@ export default class qualityMerchant extends React.Component {
             return response.json();
         })
        .then((data) => {
+          if(data.flag==0||data.data==''){
+            that.setState({loading:false,bottomTxt:'我是有底线的'})
+            return false
+        }
         that.setState({
           pageCount:data.page.count
         })
-        console.log(that.state.pageIndex)
         if(data.page.count==1){
-          that.setState({lists: data.data,loading:false,bottomTxt:''})
+          that.setState({lists: data.data,loading:false,bottomTxt:'我是有底线的'})
         }
         if(that.state.pageIndex == 1){
-                that.setState({lists: data.data,loading:false,bottomTxt:'我是有底线的'})
+                that.setState({lists: data.data,loading:false})
             }else{
                 that.setState({lists: that.state.lists.concat(data.data),loading:false})
             }
@@ -53,8 +56,8 @@ export default class qualityMerchant extends React.Component {
     }
   componentDidMount() {
        utilities.setLocalTitle('优质商家')
-       this.loadList()
        document.addEventListener('scroll', this.handleScroll)
+       this.loadList()
   }
     componentWillUnmount() {
        document.removeEventListener('scroll', this.handleScroll)

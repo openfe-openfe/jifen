@@ -61,7 +61,7 @@ export default React.createClass({
         <Slider {...settings}>
           {
             this.state.lists.length==0
-            ?<NavLink to={{pathname:"/intergralrule"}}><div style={{height:'8rem'}}><img src="http://ww3.sinaimg.cn/large/005EbfWqjw1f83ei47xouj30hs04s0ul" className="HomeBanner-image-2T6G"/></div></NavLink>
+            ?<NavLink to={{pathname:"/intergralrule"}}><div><img src="http://ww3.sinaimg.cn/large/005EbfWqjw1f83ei47xouj30hs04s0ul" className="HomeBanner-image-2T6G"/></div></NavLink>
             :this.state.lists.map((e,index) => {
                 return (
                   <div className="slide" key={index}>
