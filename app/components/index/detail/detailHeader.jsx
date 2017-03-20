@@ -134,7 +134,7 @@ var detailHeader =React.createClass({
                         :null
                       }
                       <div className="info_box">
-                        <span className="E_f12 E_fc_grey7">价值:&nbsp;&nbsp;<span className="info_value">{lists.price}</span></span>
+                        <span className="E_f12 E_fc_grey7">价值:&nbsp;&nbsp;<span className="info_value">￥{lists.price}</span></span>
                       </div>
                     </div>
                     {

@@ -104,7 +104,7 @@ export default class NewProduct extends React.Component {
                                         : <span className="new_price E_f15 E_fc_orange">{e.jifen}</span>
                                       }
                                       <div className="ori_charge E_f12 E_fc_grey7">
-                                        <em>价值: </em><span className="old_price">{e.price}</span>
+                                        <em>价值: ￥</em><span className="old_price">{e.price}</span>
                                       </div>
                                     </div>
                                     <div className="change_his E_f12 E_fc_grey6">
