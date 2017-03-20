@@ -111,7 +111,7 @@ div,p,li,ul{
 .change_mall_info .change_info_head .info_wrap .info_name .info_act .value_wrap .info_value2 {
      margin: 1rem 0 0 1.6rem;
      color:#939393;
-    /*text-decoration: line-through;*/
+    text-decoration: line-through;
 }
 .change_mall_info .change_info_head .info_wrap .info_name .info_act .change_btn_org {
     background-color: #ff8607;
@@ -221,6 +221,7 @@ a {
     background: #f2f2f2;
     line-height: 2.8rem;
     margin: .6rem 0 0 1.2rem;
+    font-size: 1.6rem;
 }
 .change_mall_info .pro_info_content .change_info_content img {
     width: 100%;
@@ -370,17 +371,21 @@ ol, ul {
     text-align: center;
     margin-bottom: 10px;
     /*margin-top: 10px;*/
-    padding: 10px;
+    /*padding: 10px;*/
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 .coupon_header p{
     /*font-weight: 600;*/
     color: #fff;
-    font-size: 1.5rem;
-    white-space: nowrap;
-    word-break: keep-all;
+    font-size: 1.4rem;
     overflow: hidden;
     text-overflow: ellipsis;
-    line-height: 2.8rem;
+    display: box;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    /*height: 3rem;*/
 }
 .coupon_time,.coupon_way{
     margin-bottom: 10px;

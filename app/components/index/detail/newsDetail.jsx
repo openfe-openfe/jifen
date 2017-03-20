@@ -40,6 +40,8 @@ export default class detailDes extends React.Component {
             content:data.data.content,
             title:data.data.title,
             loading:false
+          },function(){
+            utilities.setLocalTitle(that.state.title)
           }
         )
        })
@@ -52,7 +54,7 @@ export default class detailDes extends React.Component {
   return {__html: this.state.tips}
 }
  componentDidMount() {
-       utilities.setLocalTitle(title)
+      //  utilities.setLocalTitle(title)
        this.fetchFn()
   }
     render() {
