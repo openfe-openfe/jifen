@@ -6,8 +6,8 @@ module.exports = {
     mode: 'cors'
   },
   api: {
-    //  base: 'http://192.168.1.111/jifen/',
-     base:'http://con.icloudcity.cn/jifen/',
+     base: 'http://192.168.1.111/jifen/',
+    //  base:'http://con.icloudcity.cn/jifen/',
     index: 'api.php/home/index/index_goods',
     log:'api.php/Home/Index/logs',
     goods:'api.php/Home/Goods',

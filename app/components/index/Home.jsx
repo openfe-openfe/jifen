@@ -87,7 +87,7 @@ export default class Home extends React.Component {
           //console.log(123)
         })
         .catch((err) => {
-        console.log(err)
+        console.log('没有返回值')
       })
   }
   wv_account=(WVAccount)=>{

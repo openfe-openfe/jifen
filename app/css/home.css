@@ -21,7 +21,7 @@ em{
 .icon-jifen:before { content: "\e624"; }
 
 .slide{
-    margin-bottom: 1rem;
+    /*margin-bottom: 1rem;*/
 }
 html {
     font-size: 78.125%;

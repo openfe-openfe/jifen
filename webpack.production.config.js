@@ -1,5 +1,5 @@
-var webpack = require('webpack');
 var path = require('path');
+var webpack = require('webpack');
 var uglifyJsPlugin = webpack.optimize.UglifyJsPlugin;
 // 产出html模板
 var HtmlWebpackPlugin = require("html-webpack-plugin");
@@ -7,39 +7,57 @@ var HtmlWebpackPlugin = require("html-webpack-plugin");
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
-  devtool: 'cheap-source-map',
-  entry: [
-    'babel-polyfill',
-    path.resolve(__dirname, 'app/main.jsx'),
-  ],
-  output: {
-    path: __dirname + '/build',
-    publicPath: '/',
-    filename: './bundle.js'
-  },
-  module: {
-    loaders:[
-      { test: /\.scss$/,include: path.resolve(__dirname, 'app'), loader: 'style!css!sass?sourceMap'},
-      { test: /\.css$/, include: path.resolve(__dirname, 'app'), loader: 'style-loader!css-loader'},
-      { test: /\.js[x]?$/, include: path.resolve(__dirname, 'app'), exclude: /node_modules/, loader: 'babel-loader'},
-      {test: /\.(png|jpg|gif)$/, loader: 'url?limit=8192'},
-      {test: /\.(ttf|eot|svg|woff(2)?)(\?[a-z0-9=&.]+)?$/,loader : 'file-loader'}
+    entry: [
+      'babel-polyfill',
+      path.resolve(__dirname, 'app/main.jsx')
+    ],
+    output: {
+        path: path.resolve(__dirname, 'build'),
+        filename: "boudle.js",
+        publicPath: '/jifen/',
+        chunkFilename: '[name].[chunkhash:5].js'
+    },
+    resolve: {
+      extension: ['', '.jsx', '.js', '.json'],
+      alias: {}
+    },
+    'display-error-details': true,
+    module: {
+      loaders: [
+        {
+          test: /\.js[x]?$/,
+          loaders: ['babel-loader'],
+          exclude: path.resolve(__dirname, 'node_modules')
+        },
+        { 
+          test: /\.scss$/,
+          include: path.resolve(__dirname, 'app'), 
+          loader: 'style!css!sass?sourceMap'
+        },
+        {
+          test: /\.css/,
+          loader: ExtractTextPlugin.extract("style-loader", "css-loader")
+        },
+        {
+          test: /\.(png|jpg|gif)$/,
+          loader: 'url?limit=8192'
+        },
+          {
+              test: /\.(ttf|eot|svg|woff(2)?)(\?[a-z0-9=&.]+)?$/,
+              loader : 'file-loader'
+          }
 
-    ]
-  },
-  resolve: {
-    extensions: ['', '.js', '.jsx', '.json'],
-    alias: {}
-  },
-  plugins: [
+      ]
+    },
+    plugins: [
       new ExtractTextPlugin("main.css", {
           allChunks: true,
           disable: false
       }),
       new webpack.DefinePlugin({
-        "process.env": { 
-          NODE_ENV: JSON.stringify("production") 
-        }
+          'process.env': {
+              NODE_ENV: JSON.stringify('development')
+          }
       }),
       new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.js'),
       new uglifyJsPlugin({

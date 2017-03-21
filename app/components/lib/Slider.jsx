@@ -37,7 +37,7 @@ export default React.createClass({
             return response.json();
         })
       .then((data) => {
-        //console.log(data)
+        //console.log(data.data)
         this.setState(
           {
             lists:data.data||[],
@@ -67,8 +67,8 @@ export default React.createClass({
                   <div className="slide" key={index}>
                     {
                       e.types=='1'?
-                      <NavLink to={{pathname:"/detail",query:{id:e.goodsid,ads:e.id}}}><div style={{height:'8rem'}}><img src={e.img} className="HomeBanner-image-2T6G"/></div></NavLink>
-                      :<NavLink to={{pathname:"/adsdetail",query:{id:e.id}}}><div style={{height:'8rem'}}><img src={e.img} className="HomeBanner-image-2T6G"/></div>
+                      <NavLink to={{pathname:"/detail",query:{id:e.goodsid,ads:e.id}}}><div><img src={e.img} className="HomeBanner-image-2T6G"/></div></NavLink>
+                      :<NavLink to={{pathname:"/adsdetail",query:{id:e.id}}}><div><img src={e.img} className="HomeBanner-image-2T6G"/></div>
                     </NavLink>
                     }
                   </div>

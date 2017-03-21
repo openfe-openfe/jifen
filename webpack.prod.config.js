@@ -1,5 +1,3 @@
-'use strict';
-
 var path = require('path');
 var webpack = require('webpack');
 var uglifyJsPlugin = webpack.optimize.UglifyJsPlugin;
@@ -17,7 +15,7 @@ module.exports = {
         path: path.resolve(__dirname, 'build'),
         filename: "boudle.js",
         publicPath: '/jifen/',
-        chunkFilename: 'js/[name].[chunkhash:5].js'
+        chunkFilename: '[name].[chunkhash:5].js'
     },
     resolve: {
       extension: ['', '.jsx', '.js', '.json'],
