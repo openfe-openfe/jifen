@@ -473,10 +473,10 @@ a{
 }
 .intergral_history p:first-child .point_desc {
     max-width: 70%;
-    /*white-space: nowrap;*/
-    /*word-break: keep-all;*/
+    white-space: nowrap;
+    word-break: keep-all;
     overflow: hidden;
-    /*text-overflow: ellipsis;*/
+    text-overflow: ellipsis;
 }
 .IN_list .child_block::after {
     content: "";

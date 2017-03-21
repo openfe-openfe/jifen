@@ -22,7 +22,7 @@ export default class Home extends React.Component {
     // var WVAccount=this.props.location.query
     // console.log(WVAccount)
     var wv_account=utilities.getParameterByName('wv_account')
-    console.log(wv_account)
+    // console.log(wv_account)
     localStorage.setItem('wv_account',wv_account)
     this.setState({
       loading:true
@@ -87,11 +87,11 @@ export default class Home extends React.Component {
           //console.log(123)
         })
         .catch((err) => {
-        console.log('没有返回值')
+        console.log(phonetype)
       })
   }
   wv_account=(WVAccount)=>{
-    console.log(WVAccount)
+    // console.log(WVAccount)
   }
   loadList = () => {
         var that = this
@@ -135,6 +135,7 @@ export default class Home extends React.Component {
        this.isseller()
        this.loadList()
        this.log()
+       console.info("看代码，先来了解一下作者呀~ \n %c https://github.com/songhaoreact","color:#47c9bc;font-size:18px")
   }
     componentWillUnmount() {
        document.removeEventListener('scroll', this.handleScroll);
