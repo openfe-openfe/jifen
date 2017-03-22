@@ -64,6 +64,8 @@ var coupon =React.createClass({
   },
   render() {
     var lists=this.state.lists
+    const tel=lists.shoptel
+    const phone='tel:'+tel
     return (
         <div>
           {
@@ -129,7 +131,7 @@ var coupon =React.createClass({
                         <div className="business_wrap2">
                           <div className="business_desc">
                             <div className="desc_wrap">
-                              <p className="desc_name E_f16 E_fc_grey2">商家电话：{lists.shoptel}</p>
+                              <p className="desc_name E_f16 E_fc_grey2">商家电话：<a href={phone}>{lists.shoptel}</a></p>
                             </div>
                           </div>
                         </div>

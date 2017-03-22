@@ -42,8 +42,20 @@ button {
     cursor: pointer;
 }
 
-/*a:-webkit-any-link {
-    color: -webkit-link;
-    text-decoration: underline;
-    cursor: auto;
-}*/
+.page-enter {
+    transform: translate3d(-100%,0px,0px);
+}
+
+.page-enter.page-enter-active {
+    transition: all 0.3s;
+    transform: translate3d(0px,0px,0px);
+}
+
+.page-leave {
+    transform: translate3d(0px,-100%,0px);
+}
+
+.page-leave.page-leave-active {
+    transition: all 0.3s;
+    transform: translate3d(100%,-100%,0px);
+}

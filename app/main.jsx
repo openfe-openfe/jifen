@@ -2,6 +2,7 @@ import React from 'react'
 import { render } from 'react-dom'
 import { Router, Route, browserHistory, IndexRoute,hashHistory } from 'react-router'
 /* 组件加载 */
+import Container from './components/index/Container.jsx'
 import Home from './components/index/Home.jsx'
 import NewProduct from './components/index/NewProduct.jsx'
 import QualityMerchant from './components/index/QualityMerchant.jsx'
@@ -35,7 +36,8 @@ import './css/home.css'
 import './css/homeDetail.css'
 render((
         <Router history={hashHistory}>
-                 <Route path="/" component={Home}/>
+                <Route path="/" component={Container}>
+                 <IndexRoute component={Home}/>
                  <Route path="newsproduct" component={NewProduct}/>
                  <Route path="qualityMerchant" component={QualityMerchant}/>
                  <Route path="allproduct" component={AllProduct}/>
@@ -52,6 +54,7 @@ render((
                  <Route path="coupon" component={Coupon}/>
                  <Route path="allshoplist" component={Allshoplist}/>
                  <Route path="adsdetail" component={AdsDetail}/>
+                </Route>
         </Router>
     
 ), document.getElementById('app'))

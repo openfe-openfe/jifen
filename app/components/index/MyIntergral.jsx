@@ -84,7 +84,7 @@ export default class MyIntergral extends React.Component {
                   <div className="my_intergral">
                       <p className="integral_rel E_f12">当前积分</p>
                       <p className="point_num">{that.state.jifen}</p>
-                      <NavLink to="intergraldetail" className="rule_link integral_rel E_f12">
+                      <NavLink to="/intergraldetail" className="rule_link integral_rel E_f12">
                         <i className=""></i>
                       </NavLink>
                   </div>
@@ -94,20 +94,20 @@ export default class MyIntergral extends React.Component {
               </div>
               <div className="In_card shadow">
                 <div className="list_icon list_icon3 E_f12 E_fc_grey1">
-                  <NavLink to="unclaimed">
+                  <NavLink to={{pathname:'/unclaimed'}}>
                     <div className="rightLine">
                       <img src="http://oij04cgoe.bkt.clouddn.com/weilingqu.png"  className="icon_breast"/>
                       <p>未领取</p>
                     </div>
                   </NavLink>
-                  <NavLink to="alreadyreceive">
+                  <NavLink to="/alreadyreceive">
                     <div className="rightLine">
                       <img src="http://oij04cgoe.bkt.clouddn.com/yilingqu.png"  className="icon_breast"/>
                       <p>已领取</p>
                     </div>
                   </NavLink>
 
-                  <NavLink to="expired">
+                  <NavLink to="/expired">
                     <div className="rightLine">
                       <img src="http://oij04cgoe.bkt.clouddn.com/yiguoqi.png"  className="icon_breast"/>
                       <p>已过期</p>
@@ -116,26 +116,8 @@ export default class MyIntergral extends React.Component {
                 </div>
               </div>
               <div className="instruction">
-                  <NavLink to="exchangenote">兑换说明</NavLink>
+                  <NavLink to="/exchangenote">兑换说明</NavLink>
               </div>
-              {/*{
-                that.state.countingDone
-                ?<p style={styleObj} onClick={this._sendVerifyCode.bind(this)}>获取验证码</p>
-                : <CountDownText
-                style={styleObj}
-                countType='seconds' // 计时类型：seconds / date 
-                auto={true} // 自动开始 
-                afterEnd={() => {this.setState({
-                  countingDone:true
-                })}} // 结束回调 
-                timeLeft={5} // 正向计时 时间起点为0秒 
-                step={-1} // 计时步长，以秒为单位，正数则为正计时，负数为倒计时 
-                startText='获取验证码' // 开始的文本 
-                endText='获取验证码' // 结束的文本 
-                intervalText={(sec) => sec + '秒重新获取'} // 定时的文本回调 
-                />
-              }
-             */}
           </div>
         </div>
     )

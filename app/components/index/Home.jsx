@@ -163,26 +163,26 @@ export default class Home extends React.Component {
               <Slider/>
               <div className="In_card shadow">
                 <div className="list_icon E_f12 E_fc_grey1">
-                  <NavLink to="newsproduct">
+                  <NavLink to={{pathname:"/newsproduct"}}>
                     <div className="rightLine">
                       <img src="http://oeinf1vjn.bkt.clouddn.com/%E7%83%AD%E9%97%A8%E5%85%91%E6%8D%A2.png"  className="icon_breast"/>
                       <p>热门兑换</p>
                     </div>
                   </NavLink>
-                  <NavLink to="qualityMerchant">
+                  <NavLink to={{pathname:"/qualityMerchant"}}>
                     <div className="rightLine">
                       <img src="http://oeinf1vjn.bkt.clouddn.com/%E4%BC%98%E8%B4%A8%E5%95%86%E5%AE%B6.png"  className="icon_breast"/>
                       <p>优质商家</p>
                     </div>
                   </NavLink>
 
-                  <NavLink to="allproduct">
+                  <NavLink to={{pathname:"/allproduct"}}>
                     <div className="rightLine">
                       <img src="http://oeinf1vjn.bkt.clouddn.com/%E6%89%80%E6%9C%89%E5%88%86%E7%B1%BB.png"  className="icon_breast"/>
                       <p>所有商品</p>
                     </div>
                   </NavLink>
-                   <NavLink to="myintergral">
+                   <NavLink to={{pathname:"/myintergral"}}>
                     <div className="rightLine">
                       <img src="http://oeinf1vjn.bkt.clouddn.com/%E4%B8%AA%E4%BA%BA%E4%B8%AD%E5%BF%83.png"  className="icon_breast"/>
                       <p>个人中心</p>

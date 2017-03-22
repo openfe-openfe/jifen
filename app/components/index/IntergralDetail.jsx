@@ -66,8 +66,8 @@ export default class IntergralDetail extends React.Component {
               <div className="intergral_text">
                   <p>{that.state.jifen}<span>个</span></p>
               </div>
-              <NavLink to="intergrallist" className="btn_org">积分明细</NavLink>
-              <NavLink to="intergralrule" className="btn_gray">积分规则</NavLink>
+              <NavLink to={{pathname:"/intergrallist"}} className="btn_org">积分明细</NavLink>
+              <NavLink to={{pathname:"/intergralrule"}} className="btn_gray">积分规则</NavLink>
           </div>
         </div>
     )
