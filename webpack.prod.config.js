@@ -74,7 +74,7 @@ module.exports = {
           warnings: false
         }
       }),
-      // 查找相等或近似的模块，避免在最终生成的文件中出现重复的模块
+      // 查找相等或近似的模块，避免在最终生成的文件中出现重复的模块,明显提升打包速度
       new webpack.optimize.DedupePlugin(),
       // 按引用频度来排序 ID，以便达到减少文件大小的效果
       new webpack.optimize.OccurenceOrderPlugin(),
