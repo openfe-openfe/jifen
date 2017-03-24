@@ -4,7 +4,7 @@ import request from '../common/request.js'
 import config from '../common/config.js'
 import utilities from '../common/Utilities.js'
 import Loading  from '../common/Loading.jsx'
-export default class IntergralList extends React.Component {
+class IntergralList extends React.Component {
   constructor(props) {
       super(props)
       this.state = {
@@ -119,3 +119,4 @@ export default class IntergralList extends React.Component {
     )
   }
 }
+module.exports=IntergralList;

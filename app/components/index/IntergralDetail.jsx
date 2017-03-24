@@ -4,7 +4,7 @@ import request from '../common/request.js'
 import config from '../common/config.js'
 import utilities from '../common/Utilities.js'
 import Loading  from '../common/Loading.jsx'
-export default class IntergralDetail extends React.Component {
+class IntergralDetail extends React.Component {
   constructor(props) {
       super(props)
       this.state = {
@@ -73,3 +73,4 @@ export default class IntergralDetail extends React.Component {
     )
   }
 }
+module.exports=IntergralDetail

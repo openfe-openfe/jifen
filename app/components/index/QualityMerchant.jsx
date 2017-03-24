@@ -5,7 +5,7 @@ import Loading  from '../common/Loading.jsx'
 import config from '../common/config.js'
 import utilities from '../common/Utilities.js'
 var util=require('../../utils/util')
-export default class qualityMerchant extends React.Component {
+class QualityMerchant extends React.Component {
   constructor(props) {
       super(props)
       this.state = {
@@ -118,3 +118,4 @@ export default class qualityMerchant extends React.Component {
     )
   }
 }
+module.exports=QualityMerchant

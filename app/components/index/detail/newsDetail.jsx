@@ -4,7 +4,7 @@ import Loading  from '../../common/Loading.jsx'
 import NavLink from '../../lib/NavLink.jsx'
 import config from '../../common/config.js'
 import utilities from '../../common/Utilities.js'
-export default class detailDes extends React.Component {
+class NewsDetail extends React.Component {
   constructor(props) {
       super(props)
       this.state={
@@ -68,3 +68,4 @@ export default class detailDes extends React.Component {
         )
     }
 }
+module.exports=NewsDetail

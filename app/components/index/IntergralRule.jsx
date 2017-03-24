@@ -3,7 +3,7 @@ import NavLink from '../lib/NavLink.jsx'
 import request from '../common/request.js'
 import Loading  from '../common/Loading.jsx'
 import utilities from '../common/Utilities.js'
-export default class IntergralRule extends React.Component {
+class IntergralRule extends React.Component {
   constructor(props) {
       super(props)
   }
@@ -33,3 +33,4 @@ componentDidMount() {
     )
   }
 }
+module.exports=IntergralRule

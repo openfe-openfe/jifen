@@ -1,6 +1,6 @@
 import React from 'react'
-import ReactCSSTransitionGroup from "react-addons-css-transition-group"
-import '../../css/reset.css'
+// import ReactCSSTransitionGroup from "react-addons-css-transition-group"
+// import '../../css/reset.css'
 export default class Container extends React.Component {
   constructor(props) {
       super(props)

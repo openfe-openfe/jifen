@@ -5,7 +5,7 @@ import config from '../common/config.js'
 import utilities from '../common/Utilities.js'
 import Loading  from '../common/Loading.jsx'
 // import {CountDownText} from '../common/test/index'
-export default class MyIntergral extends React.Component {
+class MyIntergral extends React.Component {
   constructor(props) {
       super(props)
       this.state = {
@@ -123,3 +123,4 @@ export default class MyIntergral extends React.Component {
     )
   }
 }
+module.exports=MyIntergral

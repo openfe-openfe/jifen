@@ -4,7 +4,7 @@ import request from '../common/request.js'
 import Loading  from '../common/Loading.jsx'
 import config from '../common/config.js'
 import utilities from '../common/Utilities.js'
-export default class NewProduct extends React.Component {
+class AllShopList extends React.Component {
   constructor(props) {
       super(props)
       this.state = {
@@ -133,3 +133,4 @@ export default class NewProduct extends React.Component {
     )
   }
 }
+module.exports=AllShopList

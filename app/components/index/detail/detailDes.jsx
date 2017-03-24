@@ -1,5 +1,5 @@
 import React from 'react'
-export default class detailDes extends React.Component {
+ class detailDes extends React.Component {
   constructor(props) {
       super(props)
   }
@@ -31,3 +31,4 @@ export default class detailDes extends React.Component {
         )
     }
 }
+module.exports=detailDes

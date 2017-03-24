@@ -3,7 +3,7 @@ import 'whatwg-fetch'
 import NavLink from '../lib/NavLink.jsx'
 import request from '../common/request.js'
 import Loading  from '../common/Loading.jsx'
-export default class IntergralRule extends React.Component {
+class IntergralRule extends React.Component {
   constructor(props) {
       super(props)
   }
@@ -29,3 +29,4 @@ export default class IntergralRule extends React.Component {
     )
   }
 }
+module.exports=IntergralRule
