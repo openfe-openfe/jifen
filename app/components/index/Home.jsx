@@ -98,6 +98,7 @@ export default class Home extends React.Component {
         //var url='http://rap.taobao.org/mockjsdata/7918/songhao/batch'
         var url=config.api.base+config.api.index
         var formdata=new FormData();
+        formdata.append('useraccount',utilities.getParameterByName('wv_account'))
         formdata.append('page',that.state.pageIndex)
         formdata.append('type',1)
         fetch(url,{

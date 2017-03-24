@@ -20,17 +20,18 @@ export default class Container extends React.Component {
 
   render() {
     return (
-        < div className = 'container'>
-             <ReactCSSTransitionGroup
+        <div className = 'container'>
+             {/*<ReactCSSTransitionGroup
                 component = 'div'
                 transitionName = 'page'
-                transitionEnterTimeout = {500}
-                transitionLeaveTimeout = {500}
+                transitionEnterTimeout = {300}
+                transitionLeaveTimeout = {300}
              >
                 {React.cloneElement(this.props.children, {
                     key: this.props.location.pathname
                 })}
-             </ReactCSSTransitionGroup>
+             </ReactCSSTransitionGroup>*/}
+             {this.props.children}
          </div>
     )
   }

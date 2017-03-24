@@ -55,6 +55,5 @@ render((
                  <Route path="allshoplist" component={Allshoplist}/>
                  <Route path="adsdetail" component={AdsDetail}/>
                 </Route>
-        </Router>
-    
+        </Router> 
 ), document.getElementById('app'))

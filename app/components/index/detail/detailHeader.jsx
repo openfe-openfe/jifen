@@ -139,13 +139,13 @@ var detailHeader =React.createClass({
                     </div>
                     {
                       
-                      lists.userIntegral-lists.jifen>0 && lists.inventory>0 && lists.canbuynum!==0 ||lists.jifen_youhui>0&&lists.userIntegral-lists.jifen_youhui>0&& lists.inventory>0 && lists.canbuynum!==0
+                      lists.userIntegral-lists.jifen>=0 && lists.inventory>0 && lists.canbuynum!==0 ||lists.jifen_youhui>0&&lists.userIntegral-lists.jifen_youhui>=0&& lists.inventory>0 && lists.canbuynum!==0
                       ?<button className="change_btn_org" onClick={this.openModalSponsorship}>
                         兑换
                         </button>
                       :<button className="change_btn_gray">{
-                        lists.userIntegral-lists.jifen>0 && lists.inventory==0?'已兑完':
-                        lists.userIntegral-lists.jifen>0 && lists.canbuynum==0?'已达上限':'积分不足'
+                        lists.inventory==0?'已兑完':
+                        lists.canbuynum==0? '限购'+lists.mostbuynum+'件':'积分不足'
                         }</button>
                     }
 

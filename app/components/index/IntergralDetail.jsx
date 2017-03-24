@@ -31,7 +31,7 @@ export default class IntergralDetail extends React.Component {
        var that=this
         var url=config.api.base+config.api.integral
         var formdata=new FormData();
-        formdata.append('useraccount',localStorage.getItem('wv_account'))
+        formdata.append('useraccount',utilities.getParameterByName('wv_account')||localStorage.getItem('wv_account'))
         fetch(url,{
             method: 'POST',
             body: formdata

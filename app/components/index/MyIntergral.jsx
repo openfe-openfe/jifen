@@ -97,7 +97,7 @@ export default class MyIntergral extends React.Component {
                   <NavLink to={{pathname:'/unclaimed'}}>
                     <div className="rightLine">
                       <img src="http://oij04cgoe.bkt.clouddn.com/weilingqu.png"  className="icon_breast"/>
-                      <p>未领取</p>
+                      <p>已兑换</p>
                     </div>
                   </NavLink>
                   <NavLink to="/alreadyreceive">
