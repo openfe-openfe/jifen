@@ -97,13 +97,13 @@ class MyIntergral extends React.Component {
                   <NavLink to={{pathname:'/unclaimed'}}>
                     <div className="rightLine">
                       <img src="http://oij04cgoe.bkt.clouddn.com/weilingqu.png"  className="icon_breast"/>
-                      <p>已兑换</p>
+                      <p>未使用</p>
                     </div>
                   </NavLink>
                   <NavLink to="/alreadyreceive">
                     <div className="rightLine">
                       <img src="http://oij04cgoe.bkt.clouddn.com/yilingqu.png"  className="icon_breast"/>
-                      <p>已领取</p>
+                      <p>已使用</p>
                     </div>
                   </NavLink>
 

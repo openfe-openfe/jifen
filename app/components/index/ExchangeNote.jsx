@@ -22,7 +22,7 @@ class IntergralRule extends React.Component {
                   <p className="title rule_mt11"><strong><span>2.兑换流程：</span></strong></p>
                   <p className="paragraph rule_mt4">①用户可持电子兑换券到商品详情标注的商家地址，进行商品兑换。<br/>
 ②兑换商品时需要用户向商家出示电子兑换券，需要商家进行扫码验证核销兑换券，验证成功后可领取兑换券对应的商品。随即兑换券作废，不可能重复验证。</p>
-                  <p className="title rule_mt11"><strong><span>©最终解释权归积分商城运营方新橙科技有限公</span></strong></p>
+                  <p className="title rule_mt11"><strong><span>©最终解释权归积分商城运营方新橙科技有限公司</span></strong></p>
               </div>
           </div>
         </div>

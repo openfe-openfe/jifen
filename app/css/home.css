@@ -533,7 +533,7 @@ a{
     margin-top: 1.1rem;
 }
 .jifen_rule .point_rule .paragraph, .jifen_rule .task_rule .paragraph {
-    text-indent: 2.1rem;
+    /*text-indent: 2.1rem;*/
 }
 
 .jifen_rule .legal_rule .paragraph, .jifen_rule .point_rule .paragraph, .jifen_rule .task_rule .paragraph {
