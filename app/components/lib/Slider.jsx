@@ -1,7 +1,9 @@
 import React from 'react'
 import Slider from 'react-slick'
 import NavLink from './NavLink.jsx'
-import request from '../common/request.js'
+// import request from '../common/request.js'
+//兼容ios等手机浏览器
+import fetch from 'isomorphic-fetch'
 import config from '../common/config.js'
 import utilities from '../common/Utilities.js'
 export default React.createClass({

@@ -7,7 +7,8 @@ import DetailActity from './detailActity.jsx'
 import DetailDes from './detailDes.jsx'
 import utilities from '../../common/Utilities.js'
 import config from '../../common/config.js'
-import request from '../../common/request.js'
+// import request from '../../common/request.js'
+import fetch from 'isomorphic-fetch';
 import Loading  from '../../common/Loading.jsx'
 var coupon =React.createClass({
   

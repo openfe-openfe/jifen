@@ -1,7 +1,8 @@
 var React =require('react')
 var ReactDOM = require('react-dom')
 var Modal = require('react-modal')
-import request from '../../common/request.js'
+// import request from '../../common/request.js'
+import fetch from 'isomorphic-fetch'
 import Loading  from '../../common/Loading.jsx'
 import NavLink from '../../lib/NavLink.jsx'
 import config from '../../common/config.js'

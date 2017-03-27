@@ -1,6 +1,7 @@
 import React from 'react'
 import NavLink from '../lib/NavLink.jsx'
-import request from '../common/request.js'
+// import request from '../common/request.js'
+import fetch from 'isomorphic-fetch';
 import Loading  from '../common/Loading.jsx'
 import utilities from '../common/Utilities.js'
 class IntergralRule extends React.Component {

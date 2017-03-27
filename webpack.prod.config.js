@@ -5,7 +5,6 @@ var uglifyJsPlugin = webpack.optimize.UglifyJsPlugin;
 var HtmlWebpackPlugin = require("html-webpack-plugin");
 // 单独样式文件
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
-
 module.exports = {
     entry: [
       'babel-polyfill',
@@ -61,6 +60,7 @@ module.exports = {
       }),
       new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.js'),
       new uglifyJsPlugin({
+        comments: false,
         compress: {
           warnings: false
         }
