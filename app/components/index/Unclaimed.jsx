@@ -60,7 +60,7 @@ class IntergralList extends React.Component {
         });
   }
    componentDidMount() {
-       utilities.setLocalTitle('未领取')
+       utilities.setLocalTitle('未使用')
        document.addEventListener('scroll', this.handleScroll);
        this.loadList()
   }

@@ -61,7 +61,7 @@ class AlreadyReceive extends React.Component {
         });
   }
    componentDidMount() {
-       utilities.setLocalTitle('已领取')
+       utilities.setLocalTitle('已使用')
        document.addEventListener('scroll', this.handleScroll);
        this.loadList()
   }
