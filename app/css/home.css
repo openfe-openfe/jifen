@@ -732,6 +732,7 @@ a{
       width: 4.4rem;
       border: 1px solid #FF8200;
       border-radius: 50%;
+      -webkit-justify-content:center;
       justify-content: center
   }
 }

@@ -12,6 +12,7 @@ var detailHeader =React.createClass({
     return {
       modalIsOpen: false,
       modalIsOpenPay:false,
+      modalIsOpenLoading:false,
       residualIntegral:0,
       loading:false,
       code:''
@@ -68,6 +69,7 @@ var detailHeader =React.createClass({
     //console.log(residualIntegral)
     if(true){
       that.setState({modalIsOpen: false})
+      that.setState({modalIsOpenLoading: true})
       //发送fetch请求处理订单。。。
       var url=config.api.base+config.api.exchange
       var formdata=new FormData();
@@ -89,6 +91,7 @@ var detailHeader =React.createClass({
       .then((data)=>{
         if(data.flag==1){
              that.setState({code:data.data})
+              that.setState({modalIsOpenLoading:false})
              that.setState({modalIsOpenPay:true})
         }
       })
@@ -167,6 +170,21 @@ var detailHeader =React.createClass({
                               <li><a  className="E_btn_grey btn_ok" onClick={this.exchange}>兑换</a></li>
                             </ul>
                           </div>
+                        </div>
+                      </div>
+                     </Modal>
+                       <Modal
+                          isOpen={this.state.modalIsOpenLoading}
+                          onAfterOpen={this.afterOpenModaLoading}
+                          onRequestClose={this.closeModalLoading}
+                          overlayClassName="Dialog-overlay-2RlI"
+                          className="Dialog-content-3qxv"
+                          contentLabel="Modal"
+                       >
+                      <div className="outer E_layer">
+                        <div className="content">
+                          <Loading/>
+                          <div style={{paddingBottom:'20px'}}>努力兑换中...</div>
                         </div>
                       </div>
                      </Modal>
