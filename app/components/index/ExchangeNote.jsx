@@ -2,7 +2,7 @@ import React from 'react'
 // import 'whatwg-fetch'
 import fetch from 'isomorphic-fetch';
 import NavLink from '../lib/NavLink.jsx'
-import request from '../common/request.js'
+// import request from '../common/request.js'
 import Loading  from '../common/Loading.jsx'
 class IntergralRule extends React.Component {
   constructor(props) {

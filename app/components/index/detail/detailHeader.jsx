@@ -13,8 +13,10 @@ var detailHeader =React.createClass({
       modalIsOpen: false,
       modalIsOpenPay:false,
       modalIsOpenLoading:false,
+      modalIsOpenError:false,
       residualIntegral:0,
       loading:false,
+      errorMsg:'',
       code:''
      }
   },
@@ -37,6 +39,9 @@ var detailHeader =React.createClass({
   closeModalPay(){
     this.setState({modalIsOpenPay:false})
     location.reload()
+  },
+  closeModalErr(){
+    this.setState({modalIsOpenError:false})
   },
   afterOpenModal() {
   },
@@ -89,10 +94,16 @@ var detailHeader =React.createClass({
             return response.json();
         })
       .then((data)=>{
+        console.log(data)
+        if(data.flag==0){
+          that.setState({errorMsg:data.msg})
+          that.setState({modalIsOpenLoading:false})
+          that.setState({modalIsOpenError:true})
+        }
         if(data.flag==1){
-             that.setState({code:data.data})
-              that.setState({modalIsOpenLoading:false})
-             that.setState({modalIsOpenPay:true})
+          that.setState({code:data.data})
+          that.setState({modalIsOpenLoading:false})
+          that.setState({modalIsOpenPay:true})
         }
       })
     }
@@ -185,6 +196,21 @@ var detailHeader =React.createClass({
                         <div className="content">
                           <Loading/>
                           <div style={{paddingBottom:'20px'}}>努力兑换中...</div>
+                        </div>
+                      </div>
+                     </Modal>
+                     <Modal
+                          isOpen={this.state.modalIsOpenError}
+                          onAfterOpen={this.afterOpenModaError}
+                          onRequestClose={this.closeModalError}
+                          overlayClassName="Dialog-overlay-2RlI"
+                          className="Dialog-content-3qxv"
+                          contentLabel="Modal"
+                       >
+                      <div className="outer E_layer">
+                        <div className="content">
+                          <div style={{paddingBottom:'20px',paddingTop:'20px'}}>{this.state.errorMsg}</div>
+                          <a  className="E_btn_grey btn_ok" onClick={this.closeModalErr}>确定</a>
                         </div>
                       </div>
                      </Modal>

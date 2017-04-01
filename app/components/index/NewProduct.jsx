@@ -59,7 +59,7 @@ class NewProduct extends React.Component {
         });
     }
   componentDidMount() {
-       utilities.setLocalTitle('新品兑换')
+       utilities.setLocalTitle('热门兑换')
        document.addEventListener('scroll', this.handleScroll);
        this.loadList()
   }
