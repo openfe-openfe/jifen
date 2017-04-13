@@ -1,6 +1,6 @@
 import React from 'react'
 import NavLink from '../lib/NavLink.jsx'
-// import request from '../common/request.js'
+import {post,get} from '../common/request.js'
 import fetch from 'isomorphic-fetch';
 import config from '../common/config.js'
 import utilities from '../common/Utilities.js'
@@ -27,14 +27,12 @@ class IntergralList extends React.Component {
     var that = this
         //var url='http://rap.taobao.org/mockjsdata/7918/songhao/batch'
         var url=config.api.base+config.api.exchangeList
-        var formdata=new FormData();
-        formdata.append('page',that.state.pageIndex)
-        formdata.append('useraccount',localStorage.getItem('wv_account'))
-        formdata.append('status',0)
-        fetch(url,{
-            method: 'POST',
-            body: formdata
-        })
+        var params={
+            page:that.state.pageIndex,
+            useraccount:localStorage.getItem('wv_account'),
+            status:0
+        }
+       post(url,params)
         .then(function (response) {
             return response.json();
         })

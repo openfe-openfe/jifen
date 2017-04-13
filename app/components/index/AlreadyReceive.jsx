@@ -1,6 +1,6 @@
 import React from 'react'
 import NavLink from '../lib/NavLink.jsx'
-// import request from '../common/request.js'
+import {post,get} from '../common/request.js'
 import fetch from 'isomorphic-fetch';
 import config from '../common/config.js'
 import utilities from '../common/Utilities.js'

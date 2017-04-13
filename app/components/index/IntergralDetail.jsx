@@ -1,6 +1,6 @@
 import React from 'react'
 import NavLink from '../lib/NavLink.jsx'
-// import request from '../common/request.js'
+import {post,get} from '../common/request.js'
 import fetch from 'isomorphic-fetch';
 import config from '../common/config.js'
 import utilities from '../common/Utilities.js'
@@ -31,12 +31,10 @@ class IntergralDetail extends React.Component {
   fetchFn(){
        var that=this
         var url=config.api.base+config.api.integral
-        var formdata=new FormData();
-        formdata.append('useraccount',utilities.getParameterByName('wv_account')||localStorage.getItem('wv_account'))
-        fetch(url,{
-            method: 'POST',
-            body: formdata
-        })
+        var params={
+          useraccount:utilities.getParameterByName('wv_account')||localStorage.getItem('wv_account')
+        }
+      post(url,params)
         .then(function (response) {
             return response.json();
         })

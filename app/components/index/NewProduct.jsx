@@ -1,6 +1,6 @@
 import React from 'react'
 import NavLink from '../lib/NavLink.jsx'
-// import request from '../common/request.js'
+import {post,get} from '../common/request.js'
 import fetch from 'isomorphic-fetch';
 import Loading  from '../common/Loading.jsx'
 import config from '../common/config.js'
@@ -26,14 +26,12 @@ class NewProduct extends React.Component {
         var that = this
         //var url='http://rap.taobao.org/mockjsdata/7918/songhao/batch'
         var url=config.api.base+config.api.index
-        var formdata=new FormData();
-        formdata.append('useraccount',localStorage.getItem('wv_account'))
-        formdata.append('page',that.state.pageIndex)
-        formdata.append('type',2)
-        fetch(url,{
-            method: 'POST',
-            body: formdata
-        })
+        var params={
+          useraccount:localStorage.getItem('wv_account'),
+          page:that.state.pageIndex,
+          type:2
+        }
+       post(url,params)
         .then(function (response) {
             return response.json();
         })

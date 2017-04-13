@@ -1,5 +1,5 @@
 import React from 'react'
-// import request from '../../common/request.js'
+import {post,get} from '../../common/request.js'
 import fetch from 'isomorphic-fetch';
 import Loading  from '../../common/Loading.jsx'
 import NavLink from '../../lib/NavLink.jsx'
@@ -23,14 +23,12 @@ class NewsDetail extends React.Component {
     fetchFn(){
        var that=this
         var url=config.api.base+config.api.view
-        var formdata=new FormData();
         var id=that.props.location.query.id
-        formdata.append('useraccount',utilities.getParameterByName('wv_account'))
-        formdata.append('id',utilities.getParameterByName('id')||id)
-        fetch(url,{
-            method: 'POST',
-            body: formdata
-        })
+        var params={
+          useraccount:utilities.getParameterByName('wv_account'),
+          id:utilities.getParameterByName('id')||id
+        }
+        post(url,params)
         .then(function (response) {
             return response.json();
         })

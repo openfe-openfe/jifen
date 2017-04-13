@@ -1,6 +1,6 @@
 import React from 'react'
 import NavLink from '../lib/NavLink.jsx'
-// import request from '../common/request.js'
+import {post,get} from '../common/request.js'
 import fetch from 'isomorphic-fetch';
 import config from '../common/config.js'
 import utilities from '../common/Utilities.js'
@@ -26,16 +26,15 @@ class Allproduct extends React.Component {
       loading:true
     })
   }
+  //获取所有分类
   fetchFn2(){
     //console.log(localStorage.getItem('phone'))
         var that=this
         var url=config.api.base+config.api.categorylist
-        var formdata=new FormData();
-        formdata.append('page',1)
-        fetch(url,{
-            method: 'POST',
-            body: formdata
-        })
+        var params={
+          page:1
+        }
+      post(url,params)
         .then(function (response) {
             return response.json();
         })
@@ -96,13 +95,11 @@ class Allproduct extends React.Component {
         var that = this
         //var url='http://rap.taobao.org/mockjsdata/7918/songhao/batch'
         var url=config.api.base+config.api.shoplist
-        var formdata=new FormData();
-        formdata.append('page',that.state.pageIndex)
-        formdata.append('catid',id)
-        fetch(url,{
-            method: 'POST',
-            body: formdata
-        })
+        var params={
+          page:that.state.pageIndex,
+          catid:id
+        }
+      post(url,params)
         .then(function (response) {
             return response.json();
         })
@@ -140,14 +137,11 @@ class Allproduct extends React.Component {
         id:id
       },function(){
         var url=config.api.base+config.api.shoplist
-        var formdata=new FormData();
-        //console.log(that.state.catpageIndex)
-        formdata.append('page',that.state.catpageIndex)
-        formdata.append('catid',id)
-        fetch(url,{
-            method: 'POST',
-            body: formdata
-        })
+        var params={
+          page:that.state.catpageIndex,
+          catid:id
+        }
+       post(url,params)
         .then(function (response) {
             return response.json();
         })

@@ -1,7 +1,7 @@
 import React from 'react'
 import Slider from 'react-slick'
 import NavLink from './NavLink.jsx'
-// import request from '../common/request.js'
+import {get,post} from '../common/request.js'
 //兼容ios等手机浏览器
 import fetch from 'isomorphic-fetch'
 import config from '../common/config.js'
@@ -26,15 +26,11 @@ export default React.createClass({
    var that = this
         //var url='http://rap.taobao.org/mockjsdata/7918/songhao/batch'
         var url=config.api.base+config.api.slide
-        var formdata=new FormData();
-        formdata.append('position',2)
-        formdata.append('useraccount',utilities.getParameterByName('wv_account'))
-        // console.log('123'+utilities.getParameterByName('wv_account'))
-        fetch(url,{
-            method: 'POST',
-            cache: 'default',
-            body: formdata
-        })
+        var params={
+          position:2,
+          useraccount:utilities.getParameterByName('wv_account')
+        }
+       post(url,params)
         .then(function (response) {
             return response.json();
         })

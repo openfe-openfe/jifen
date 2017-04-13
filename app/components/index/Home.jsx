@@ -1,7 +1,7 @@
 import React from 'react'
 import Slider from '../lib/Slider.jsx'
 import NavLink from '../lib/NavLink.jsx'
-// import request from '../common/request.js'
+import { get, post } from '../common/request.js'
 import fetch from 'isomorphic-fetch';
 import config from '../common/config.js'
 import utilities from '../common/Utilities.js'
@@ -32,13 +32,10 @@ class Home extends React.Component {
   isseller=()=>{
     var that=this
     var url=config.api.base+config.api.isseller
-    var formdata=new FormData();
-       formdata.append('user_account',utilities.getParameterByName('wv_account'))
-       fetch(url,{
-          method: 'POST',
-          cache: 'default',
-          body: formdata
-      })
+    var params={
+      user_account:utilities.getParameterByName('wv_account')
+    }
+    post(url,params)
       .then(function (response) {
           return response.json();
       })
@@ -73,14 +70,11 @@ class Home extends React.Component {
       phonetype='Android'
     }
     var url=config.api.base+config.api.log
-     var formdata=new FormData();
-        formdata.append('useraccount',utilities.getParameterByName('wv_account'))
-        formdata.append('os',phonetype)
-         fetch(url,{
-            method: 'POST',
-            cache: 'default',
-            body: formdata
-        })
+    var params={
+      useraccount:utilities.getParameterByName('wv_account'),
+      os:phonetype
+    }
+     post(url,params)
         .then(function (response) {
             return response.json();
         })
@@ -98,15 +92,12 @@ class Home extends React.Component {
         var that = this
         //var url='http://rap.taobao.org/mockjsdata/7918/songhao/batch'
         var url=config.api.base+config.api.index
-        var formdata=new FormData();
-        formdata.append('useraccount',utilities.getParameterByName('wv_account'))
-        formdata.append('page',that.state.pageIndex)
-        formdata.append('type',1)
-        fetch(url,{
-            method: 'POST',
-            cache: 'default',
-            body: formdata
-        })
+        var params={
+           useraccount:utilities.getParameterByName('wv_account'),
+           page:that.state.pageIndex,
+           type:1
+        }
+        post(url,params)
         .then(function (response) {
             return response.json();
         })
@@ -224,7 +215,7 @@ class Home extends React.Component {
                                 </div>
                                 <div className="tag_wrap">
                                   {
-                                    e.change_percent=='100'?<i className="end_tag"></i>:<i className="desc_tag"></i>
+                                    e.sold=='100'?<i className="end_tag"></i>:<i className="desc_tag"></i>
                                   }
                                 </div>
                               </div>

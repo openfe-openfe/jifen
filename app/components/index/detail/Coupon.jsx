@@ -7,8 +7,8 @@ import DetailActity from './detailActity.jsx'
 import DetailDes from './detailDes.jsx'
 import utilities from '../../common/Utilities.js'
 import config from '../../common/config.js'
-// import request from '../../common/request.js'
-import fetch from 'isomorphic-fetch';
+import {post,get} from '../../common/request.js'
+// import fetch from 'isomorphic-fetch'
 import Loading  from '../../common/Loading.jsx'
 var coupon =React.createClass({
   
@@ -37,14 +37,12 @@ var coupon =React.createClass({
     //  console.log(that.props.location.query)
     var id=that.props.location.query.id
     var name=that.props.location.query.name
-        var formdata=new FormData();
-        formdata.append('code',utilities.getParameterByName('id')||id)
-        formdata.append('goodsname',utilities.getParameterByName('name')||name)
-        formdata.append('useraccount',localStorage.getItem('wv_account'))
-     fetch(url,{
-            method: 'POST',
-            body: formdata
-        })
+    var params={
+      code:utilities.getParameterByName('id')||id,
+      goodsname:utilities.getParameterByName('name')||name,
+      useraccount:localStorage.getItem('wv_account')
+    }
+     post(url,params)
         .then(function (response) {
             return response.json();
         })

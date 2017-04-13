@@ -1,7 +1,7 @@
 var React =require('react')
 var ReactDOM = require('react-dom')
 var Modal = require('react-modal')
-// import request from '../../common/request.js'
+import {get,post} from '../../common/request.js'
 import fetch from 'isomorphic-fetch'
 import Loading  from '../../common/Loading.jsx'
 import NavLink from '../../lib/NavLink.jsx'
@@ -77,19 +77,17 @@ var detailHeader =React.createClass({
       that.setState({modalIsOpenLoading: true})
       //发送fetch请求处理订单。。。
       var url=config.api.base+config.api.exchange
-      var formdata=new FormData();
-          formdata.append('goodsid',goodsid)
-          formdata.append('catid',catid)
-          formdata.append('shopid',shopid)
-          formdata.append('useraccount',useraccount)
-          formdata.append('price',price)
-          formdata.append('jifen',integral)
-          formdata.append('days',days)
-          formdata.append('youhui',youhui)
-      fetch(url,{
-            method: 'POST',
-            body: formdata
-        })
+      var params={
+        goodsid:goodsid,
+        catid:catid,
+        shopid:shopid,
+        useraccount:useraccount,
+        price:price,
+        jifen:crore,
+        days:days,
+        youhui:youhui
+      }
+      post(url,params)
         .then(function (response) {
             return response.json();
         })

@@ -4,7 +4,7 @@ import NavLink from '../../lib/NavLink.jsx'
 import DetailHeader from './detailHeader.jsx'
 import DetailActity from './detailActity.jsx'
 import DetailDes from './detailDes.jsx'
-// import request from '../../common/request.js'
+import {get,post} from '../../common/request.js'
 import fetch from 'isomorphic-fetch';
 import Loading  from '../../common/Loading.jsx'
 import config from '../../common/config.js'
@@ -32,17 +32,19 @@ var detail =React.createClass({
         var that=this
         var id=that.props.location.query.id
         var url=config.api.base+config.api.goods
-        var formdata=new FormData();
-        formdata.append('id',utilities.getParameterByName('id')||id)
-        formdata.append('useraccount',localStorage.getItem('wv_account'))
-        if(that.props.location.query.ads||utilities.getParameterByName('id')){
-          formdata.append('isads',1)
-          formdata.append('adid',that.props.location.query.ads||utilities.getParameterByName('id'))
+        var params={
+            id:utilities.getParameterByName('id')||id,
+            useraccount:localStorage.getItem('wv_account')
         }
-        fetch(url,{
-            method: 'POST',
-            body: formdata
-        })
+        if(that.props.location.query.ads||utilities.getParameterByName('id')){
+            var params={
+            id:utilities.getParameterByName('id')||id,
+            useraccount:localStorage.getItem('wv_account'),
+            isads:1,
+            adid:that.props.location.query.ads||utilities.getParameterByName('id')
+          }
+        }
+       post(url,params)
         .then(function (response) {
             return response.json();
         })

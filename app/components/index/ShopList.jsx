@@ -1,6 +1,6 @@
 import React from 'react'
 import NavLink from '../lib/NavLink.jsx'
-// import request from '../common/request.js'
+import {post,get} from '../common/request.js'
 import fetch from 'isomorphic-fetch';
 import Loading  from '../common/Loading.jsx'
 import config from '../common/config.js'
@@ -27,13 +27,12 @@ class Shoplist extends React.Component {
         //var url='http://rap.taobao.org/mockjsdata/7918/songhao/batch'
         var url=config.api.base+config.api.shoplist
         var id=that.props.location.query.id
-        var formdata=new FormData();
-        formdata.append('page',that.state.pageIndex)
-        formdata.append('shopid',utilities.getParameterByName('id')||id)
-        fetch(url,{
-            method: 'POST',
-            body: formdata
-        })
+        var params={
+          page:that.state.pageIndex,
+          shopid:utilities.getParameterByName('id')||id
+        }
+
+      post(url,params)
         .then(function (response) {
             return response.json();
         })
