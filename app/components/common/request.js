@@ -14,6 +14,7 @@ function obj2params(obj) {
         result += '&' + item + '=' + encodeURIComponent(obj[item]);
     }
     if (result) {
+        //console.log(result)
         result = result.slice(1);
     }
     return result;
@@ -32,11 +33,9 @@ export function get(url, params) {
       url += (url.indexOf('?') === -1 ? '?' : '&') + data;
   }
   let result = fetch(url, {
-      credentials: 'include',// 请求默认带 cookie
       headers: {
           'Accept': 'application/json, text/plain, */*'
       },
-      mode: 'no-cors'
   });
 
   return result;
@@ -56,15 +55,15 @@ export function post(url, paramsObj) {
     return result;
 }
 
-// jsonp保持与fetch一致的API
-// export function getJsonp (url, data) {
-//     data = obj2params(data);
-//     if (data) {
-//         url += (url.indexOf('?') === -1 ? '?' : '&') + data;
-//     }
-//     let result = fetchJsonp(url, {
-//         // jsonpCallback: 'jsoncallback',
-//         timeout: 3000
-//     });
-//     return result;
-// }
+//jsonp保持与fetch一致的API
+export function getJsonp (url, data) {
+    data = obj2params(data);
+    if (data) {
+        url += (url.indexOf('?') === -1 ? '?' : '&') + data;
+    }
+    let result = fetchJsonp(url, {
+        // jsonpCallback: 'jsoncallback',
+        timeout: 3000
+    });
+    return result;
+}

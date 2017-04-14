@@ -6,6 +6,7 @@ import {get,post} from '../common/request.js'
 import fetch from 'isomorphic-fetch'
 import config from '../common/config.js'
 import utilities from '../common/Utilities.js'
+import Loading  from '../common/Loading.jsx'
 export default React.createClass({
   getInitialState() {
     return {
@@ -38,7 +39,7 @@ export default React.createClass({
         //console.log(data.data)
         this.setState(
           {
-            lists:data.data||[],
+            lists:data.data||'nopic',
             loading:false
           }
         )
@@ -58,7 +59,7 @@ export default React.createClass({
     return (
         <Slider {...settings}>
           {
-            this.state.lists.length==0
+            this.state.lists=='nopic'
             ?<NavLink to={{pathname:"/intergralrule"}}><div><img src="http://ww3.sinaimg.cn/large/005EbfWqjw1f83ei47xouj30hs04s0ul" className="HomeBanner-image-2T6G"/></div></NavLink>
             :this.state.lists.map((e,index) => {
                 return (

@@ -391,19 +391,29 @@ a{
 }
 .instruction{
     position: absolute;
-    bottom: 2rem;
+    bottom: 4rem;
     text-align: center;
     /* display: inline-block; */
     left: 50%;
-    margin-left: -2.4rem;
+    transform: translate(-50%, -50%);
 }
-/*.instruction a{
-    display: block;
-    text-align: center;
-    margin-top: 16rem;
+.instruction a{
+    color: #507daf;
     font-size: 1.2rem;
-}*/
-
+}
+.hottel{
+    position: absolute;
+    bottom: 1rem;
+    text-align: center;
+    /* display: inline-block; */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-top: .8rem;
+}
+.hottel p,.hottel p a{
+    color:#939393;
+    font-size: .9rem;
+}
 /*我的积分明细页面等*/
 .intergral_icon{
     margin-top: 1rem;

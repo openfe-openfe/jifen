@@ -30,7 +30,7 @@ class QualityMerchant extends React.Component {
         var params={
           page:that.state.pageIndex
         }
-       post(url.params)
+       post(url,params)
         .then(function (response) {
             return response.json();
         })
