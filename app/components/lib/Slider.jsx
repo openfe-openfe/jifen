@@ -54,7 +54,13 @@ export default React.createClass({
         slidesToScroll: 1,
         arrows: false,
         autoplay: true,
-        dots:true
+        dots:true,
+        touchMove:true
+    }
+    if(this.state.lists.length==1){
+      settings.autoplay=false,
+      settings.dots=false,
+      settings.touchMove=false
     }
     return (
         <Slider {...settings}>

@@ -198,7 +198,10 @@ a{
     text-overflow: ellipsis;
     overflow: hidden;
 }
+.gift_list .gift_desc .desc_wrap .desc_view{
+    color:#939393
 
+}
 .E_f16 {
     font-size: 1.6rem;
 }
@@ -218,6 +221,17 @@ a{
   font-style:normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+.view_glass{
+  font-family:"iconfont" !important;
+  font-size:1.8rem;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin-right: 3px;
+}
+.view_glass:before{
+    content: "\e606";
 }
 .gold_logo:before { content: "\e61c"; }
 .gold_logo, .product_href .gift_list .desc_tag {

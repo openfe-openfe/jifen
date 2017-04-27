@@ -17,7 +17,6 @@ class Home extends React.Component {
           pageCount: 0,
 
       }
-
   }
   componentWillMount(){
     // var WVAccount=this.props.location.query
@@ -190,10 +189,16 @@ class Home extends React.Component {
                         <NavLink to={{pathname:"/detail",query:{id:e.id}}} className="product_href block_href" key={index}>
 
                               <div className="gift_list">
-                                <img src={e.thumbnail} alt="图片" className="product_img"/>
+                                <img src={e.thumbnail} alt="图片" 
+                                ref="image"
+                                className="product_img"
+                                />
                                 <div className="gift_desc">
                                   <div className="desc_wrap">
                                     <div className="desc_title E_f16 E_fc_grey1">{e.goodsname}</div>
+                                    <div className="desc_view E_f14">
+                                      {/*<i className="view_glass"></i>1000*/}
+                                    </div>
                                     <div className="desc_charge">
                                       <i className="gold_logo"></i>
                                       {

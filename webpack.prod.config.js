@@ -5,6 +5,7 @@ var uglifyJsPlugin = webpack.optimize.UglifyJsPlugin;
 var HtmlWebpackPlugin = require("html-webpack-plugin");
 // 单独样式文件
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
+var CompressionWebpackPlugin = require('compression-webpack-plugin');
 module.exports = {
     entry: [
       'babel-polyfill',
@@ -58,6 +59,15 @@ module.exports = {
           NODE_ENV: JSON.stringify("production") 
         }
       }),
+      new CompressionWebpackPlugin({ //gzip 压缩
+        asset: '[path].gz[query]',
+        algorithm: 'gzip',
+        test: new RegExp(
+            '\\.(js|css)$'    //压缩 js 与 css
+        ),
+        threshold: 10240,
+        minRatio: 0.8
+     }),
       new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.js'),
       new uglifyJsPlugin({
         comments: false,
