@@ -117,7 +117,7 @@ class NewProduct extends React.Component {
                                 </div>
                                 <div className="tag_wrap">
                                   {
-                                    e.change_percent=='100'?<i className="end_tag"></i>:<i className="desc_tag"></i>
+                                    e.sold=='100'?<i className="end_tag"></i>:<i className="desc_tag"></i>
                                   }
                                 </div>
                               </div>
