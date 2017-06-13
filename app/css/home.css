@@ -669,7 +669,7 @@ a{
 }
 
 .CampaignTabBar-tabs-1WkC {
-    overflow-x: auto;
+    overflow: auto;
     -webkit-overflow-scrolling: touch;
 }
 

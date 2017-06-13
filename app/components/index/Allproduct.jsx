@@ -1,10 +1,12 @@
 import React from 'react'
+import ReactDOM from 'react-dom'
 import NavLink from '../lib/NavLink.jsx'
 import {post,get} from '../common/request.js'
 import fetch from 'isomorphic-fetch';
 import config from '../common/config.js'
 import utilities from '../common/Utilities.js'
 import Loading  from '../common/Loading.jsx'
+import ItemList from './ItemList.jsx'
 class Allproduct extends React.Component {
   constructor(props) {
       super(props)
@@ -50,8 +52,8 @@ class Allproduct extends React.Component {
             loading:false
           }
         )
-        var id=data.data[0].id
-        console.log(id)
+        var id=localStorage.getItem('id')||data.data[0].id
+        //console.log(id)
         that.setState(
           {
             id:id
@@ -70,8 +72,14 @@ class Allproduct extends React.Component {
        utilities.setLocalTitle('所有商品')
        this.fetchFn2()
        document.addEventListener('scroll', this.handleScroll);
-       
+       this.test()
   }
+  
+  test=()=>{
+    console.log(localStorage.getItem('scrollLeft')+'px')
+     console.log(document.documentElement.scrollLeft+200)
+  }
+
   handleScroll = () => {
         var that = this;
         var a = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
@@ -88,7 +96,9 @@ class Allproduct extends React.Component {
         }
     }
      check_tittle_index(index){
-       return index===this.state.currentIndex ? "CampaignTabBar-tabInner-3qGE active" : "CampaignTabBar-tabInner-3qGE";
+       //console.log(this.state.currentIndex)
+       //console.log(localStorage.getItem('keyid'))
+       return index==localStorage.getItem('keyid') || 0? "CampaignTabBar-tabInner-3qGE active" : "CampaignTabBar-tabInner-3qGE";
     }
       loadList = (id) => {
         console.log(id)
@@ -127,11 +137,14 @@ class Allproduct extends React.Component {
     }
     catFetch(id,color,index){
       var that=this
-      console.log(id)
+       /*获取id并本地存储id */
+      localStorage.setItem('id',id)
+      localStorage.setItem('keyid',index+'')
+      localStorage.setItem('scrollLeft',document.getElementById(index).offsetLeft+'')
       that.setState({
         loading:true,
         lists:[],
-        currentIndex:index,
+        currentIndex:localStorage.getItem('keyid')||index,
         bottomTxt:'',
         pageIndex:1,
         id:id
@@ -174,12 +187,12 @@ class Allproduct extends React.Component {
             <div className="">
               <div className="In_card2">
                 <div className=" E_f12 E_fc_grey1">
-                    <div className="CampaignTabBar-tabs-1WkC">
+                    <div className="CampaignTabBar-tabs-1WkC" ref="tset">
                       {
                         that.state.lists2.map((e,index)=>{
                           return(
       
-                          <a className="CampaignTabBar-tab-3ryG" onClick={this.catFetch.bind(this,e.id,e.color,index)} key={index}>
+                          <a className="CampaignTabBar-tab-3ryG" onClick={this.catFetch.bind(this,e.id,e.color,index)} key={index} id={index}>
                             <span className={ this.check_tittle_index(index) }>
                               <span className="CampaignTabBar-tabText-3TwF">{e.catname}</span>
                             </span>
@@ -192,48 +205,7 @@ class Allproduct extends React.Component {
                   
                 </div>
               </div>
-              {
-                  that.state.lists.map((e,index) => {
-                      return (
-
-                         <NavLink to={{pathname:"/detail",query:{id:e.id||e.goodsid}}} className="product_href block_href" key={index}>
-
-                              <div className="gift_list">
-                                <img src={e.thumbnail} alt="图片" className="product_img"/>
-                                <div className="gift_desc">
-                                  <div className="desc_wrap">
-                                    <div className="desc_title E_f16 E_fc_grey1">{e.goodsname}</div>
-                                    <div className="desc_charge">
-                                      <i className="gold_logo"></i>
-                                      {
-                                        e.youhui>0?
-                                        <span className="new_price E_f15 E_fc_orange">{e.jifen_youhui}</span>
-                                        : <span className="new_price E_f15 E_fc_orange">{e.jifen}</span>
-                                      }
-                                      <div className="ori_charge E_f12 E_fc_grey7">
-                                        <em>价值: ￥</em><span className="old_price">{e.price}</span>
-                                      </div>
-                                    </div>
-                                    <div className="change_his E_f12 E_fc_grey6">
-                                      <span className="left_txt"><span className="exg_txt">已兑</span>
-                                      <span className="exg_num">{e.sold+'%'}</span></span>
-                                      <span className="right_txt"><span className="rate_bar">
-                                        <span style={{width:e.sold+"%"}}></span></span></span>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div className="tag_wrap">
-                                  {
-                                    e.sold=='100'?<i className="end_tag"></i>:<i className="desc_tag"></i>
-                                  }
-                                </div>
-                              </div>
-
-                          </NavLink>
-
-                      )
-                  })
-               }
+              <ItemList list={that.state.lists}/>
               { that.state.bottomTxt?<div className="loadmore">{that.state.bottomTxt}</div>:<Loading/>  }
             </div>
           </div>
