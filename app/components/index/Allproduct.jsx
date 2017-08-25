@@ -7,6 +7,7 @@ import config from '../common/config.js'
 import utilities from '../common/Utilities.js'
 import Loading  from '../common/Loading.jsx'
 import ItemList from './ItemList.jsx'
+import BScroll from 'better-scroll'
 class Allproduct extends React.Component {
   constructor(props) {
       super(props)
@@ -72,14 +73,16 @@ class Allproduct extends React.Component {
        utilities.setLocalTitle('所有商品')
        this.fetchFn2()
        document.addEventListener('scroll', this.handleScroll);
-       this.test()
+       let offsetWidth=200
+      //  console.log(this.refs.lalala.style.scrollTop)
+      let scroll=new BScroll(this.refs.lalala,{})
+    //   scroll.on('scroll', (pos) => {
+    //     console.log(pos.x + '~' + pos.y)
+    // })
   }
   
-  test=()=>{
-    console.log(localStorage.getItem('scrollLeft')+'px')
-     console.log(document.documentElement.scrollLeft+200)
-  }
-
+  
+  
   handleScroll = () => {
         var that = this;
         var a = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
@@ -187,7 +190,7 @@ class Allproduct extends React.Component {
             <div className="">
               <div className="In_card2">
                 <div className=" E_f12 E_fc_grey1">
-                    <div className="CampaignTabBar-tabs-1WkC" ref="tset">
+                    <div className="CampaignTabBar-tabs-1WkC" ref="lalala">
                       {
                         that.state.lists2.map((e,index)=>{
                           return(

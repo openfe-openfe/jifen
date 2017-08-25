@@ -43,16 +43,24 @@ class Home extends React.Component {
         // console.log(123)
         if(data.flag==1){
           var sid=data.data.sid
+          localStorage.setItem('sid',sid)
           var id='商户中心'+','+sid
+          const url='http://webapp.icloudcity.cn:7070/#/seller'
+
           try {
-              csb.WVNavRightButton(true,'商户中心',id)
-          } catch (e) {
-            try{
-              window.webkit.messageHandlers.WVNavRightButton.postMessage([true,'商户中心',id])
-            }catch(e){
-              console.log('没有在潍V内打开')
-            }
-          }
+            csb.WVNavRightButton(true,'商户中心',url)
+            WVJsFunction.WVSaveData(JSON.stringify({'sid':sid,'wv_account':utilities.getParameterByName('wv_account')}))
+            WVJsFunction.showTitle(true)
+       } catch (e) {
+         try{
+           window.webkit.messageHandlers.WVNavRightButton.postMessage([true,'商户中心',url])
+           // alert(sid)
+           window.webkit.messageHandlers.WVSaveData.postMessage({'sid':sid,'wv_account':utilities.getParameterByName('wv_account')})
+           window.webkit.messageHandlers.WVJsFunction.postMessage({showTitle:true})
+         }catch(e){
+           console.log('没有在潍V内打开')
+         }
+       }
         }
       })
       .catch((err) => {

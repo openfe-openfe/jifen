@@ -1,12 +1,13 @@
 import React from 'react'
 import NavLink from '../lib/NavLink.jsx'
+// import BScroll from 'better-scroll'
 class ItemList extends React.Component {
   constructor(props) {
       super(props)
   }
   render() {
     return (
-        <div>
+        <div ref="wrapper">
               {
                   this.props.list.map((e,index) => {
                       return (

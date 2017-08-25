@@ -32,9 +32,10 @@ import './components/common/loading.scss'
 
 /*积分商城首页样式,新品推荐,所有分类,个人中心等css */
 import './css/home.css'
-
 /*积分商城列表详情样式 */
 import './css/homeDetail.css'
+
+import './css/seller.css'
 const Home = (location, cb) => {
     require.ensure([], require => {
         cb(null, require('./components/index/Home.jsx'))
@@ -120,6 +121,12 @@ const AdsDetail = (location, cb) => {
         cb(null, require('./components/index/detail/newsDetail.jsx'))
     },'AdsDetail')
 }
+
+const Seller = (location, cb) => {
+    require.ensure([], require => {
+        cb(null, require('./components/seller/seller.jsx'))
+    },'Seller')
+}
 render((
         <Router history={hashHistory}>
                 <Route path="/" component={Container}>
@@ -140,6 +147,7 @@ render((
                  <Route path="coupon" getComponent={Coupon}/>
                  <Route path="allshoplist" getComponent={Allshoplist}/>
                  <Route path="adsdetail" getComponent={AdsDetail}/>
+                 <Route path="seller" getComponent={Seller}/>
                 </Route>
         </Router> 
 ), document.getElementById('app'))

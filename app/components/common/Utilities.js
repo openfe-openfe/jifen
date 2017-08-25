@@ -30,9 +30,11 @@ module.exports = {
     setLocalTitle:function(name){
         try {
            csb.setLocalTitle(name);
+           WVJsFunction.showTitle(true)
        } catch (e) {
          try {
            window.webkit.messageHandlers.setLocalTitle.postMessage(name)
+           window.webkit.messageHandlers.WVJsFunction.postMessage({showTitle:true})
          } catch (e) {
            console.log('没有在潍V内打开')
         //    location.href='http://songhao888.cn/lalala/'
