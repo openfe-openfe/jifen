@@ -29,7 +29,7 @@ import './lib/slick-carousel/slick/slick.css'
 import './lib/slick-carousel/slick/slick-theme.css'
 /*组件加载动画样式*/
 import './components/common/loading.scss'
-
+import './components/common/screen.scss'
 /*积分商城首页样式,新品推荐,所有分类,个人中心等css */
 import './css/home.css'
 /*积分商城列表详情样式 */

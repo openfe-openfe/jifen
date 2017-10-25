@@ -117,7 +117,7 @@ class MyIntergral extends React.Component {
               <div className="instruction">
                   <NavLink to="/exchangenote">兑换说明</NavLink>
               </div>
-              <div className="hottel"><p>咨询热线:  <a href="tel:15205361088">15205361088</a></p></div>
+              <div className="hottel"><p>咨询热线:  <a href="tel:15306360792">15306360792</a></p></div>
           </div>
         </div>
     )

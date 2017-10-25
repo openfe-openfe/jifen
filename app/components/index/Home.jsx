@@ -6,6 +6,7 @@ import fetch from 'isomorphic-fetch';
 import config from '../common/config.js'
 import utilities from '../common/Utilities.js'
 import Loading  from '../common/Loading.jsx'
+import Screen  from '../common/Screen.jsx'
 import ItemList from './ItemList.jsx'
 class Home extends React.Component {
   constructor(props) {
@@ -13,6 +14,7 @@ class Home extends React.Component {
       this.state = {
           lists: [],
           loading:false,
+          skeleton: false,
           bottomTxt: '',
           pageIndex:1,
           pageCount: 0,
@@ -45,15 +47,22 @@ class Home extends React.Component {
           var sid=data.data.sid
           localStorage.setItem('sid',sid)
           var id='商户中心'+','+sid
-          const url='http://webapp.icloudcity.cn:7070/#/seller'
-
+          const url='http://app.wxtxcxxkj.com:7070/#/seller'
+          var jsonObj={
+            bool:true,
+            title:'商户中心',
+            url:url
+          }
+          var jsonString= JSON.stringify(jsonObj)
           try {
             csb.WVNavRightButton(true,'商户中心',url)
+            // csb.WVNavRightButton(true,'商户中心',id)
             WVJsFunction.WVSaveData(JSON.stringify({'sid':sid,'wv_account':utilities.getParameterByName('wv_account')}))
             WVJsFunction.showTitle(true)
        } catch (e) {
          try{
-           window.webkit.messageHandlers.WVNavRightButton.postMessage([true,'商户中心',url])
+          //  window.webkit.messageHandlers.WVNavRightButton.postMessage([true,'商户中心',url])
+           window.webkit.messageHandlers.WVNavRightButton.postMessage(jsonString)
            // alert(sid)
            window.webkit.messageHandlers.WVSaveData.postMessage({'sid':sid,'wv_account':utilities.getParameterByName('wv_account')})
            window.webkit.messageHandlers.WVJsFunction.postMessage({showTitle:true})
@@ -114,6 +123,7 @@ class Home extends React.Component {
         //console.log(data.total)
         if(data.flag==0||data.data==''){
             that.setState({loading:false,bottomTxt:'我是有底线的'})
+            that.setState({skeleton:true})
             return false
         }
         that.setState({
@@ -121,11 +131,14 @@ class Home extends React.Component {
         })
         if(data.page.count==1){
           that.setState({lists: data.data,loading:false,bottomTxt:'我是有底线的'})
+          that.setState({skeleton:true})
         }
         if(that.state.pageIndex == 1){
                 that.setState({lists: data.data,loading:false})
+                that.setState({skeleton:true})
             }else{
                 that.setState({lists: that.state.lists.concat(data.data),loading:false})
+                that.setState({skeleton:true})
             }
             that.setState({pageIndex: that.state.pageIndex+1})
         });
@@ -134,7 +147,9 @@ class Home extends React.Component {
        document.addEventListener('scroll', this.handleScroll)
        utilities.setLocalTitle('积分商城')
        this.isseller()
-       this.loadList()
+       setTimeout(()=>{
+          this.loadList()
+       },1000)
        this.log()
        console.info("看代码，先来了解一下作者呀~ \n %c https://github.com/songhaoreact","color:#47c9bc;font-size:18px")
   }
@@ -159,6 +174,8 @@ class Home extends React.Component {
     var that=this
     return (
         <div>
+          {that.state.skeleton?
+          
           <div className="">
             <div className="">
               <Slider/>
@@ -195,7 +212,9 @@ class Home extends React.Component {
               { that.state.bottomTxt?<div className="loadmore">{that.state.bottomTxt}</div>:<Loading/>  }
             </div>
           </div>
-
+          :<Screen/>
+        }
+          
         </div>
     )
   }

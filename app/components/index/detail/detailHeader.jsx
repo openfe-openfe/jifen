@@ -99,6 +99,7 @@ var detailHeader =React.createClass({
           that.setState({modalIsOpenError:true})
         }
         if(data.flag==1){
+          that.setState({errorMsg:data.msg})
           that.setState({code:data.data})
           that.setState({modalIsOpenLoading:false})
           that.setState({modalIsOpenPay:true})
@@ -223,7 +224,7 @@ var detailHeader =React.createClass({
                       <div className="outer E_layer">
                         <div className="content">
                           <div className="layer_common">
-                            <span><label style={{color:'#FF9900'}}>兑换成功</label></span>
+                            <span><label style={{color:'#FF9900'}}>{this.state.errorMsg}</label></span>
                             <ul className="E_layer_btn">
                               <li><a  className="E_btn_grey" onClick={this.closeModalPay}>继续兑换</a></li>
                               <li><NavLink to={{pathname:"/coupon",query:{id:that.state.code,name:that.props.detail.goodsname}}} className="E_btn_grey btn_ok">查看订单</NavLink></li>

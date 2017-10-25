@@ -7,7 +7,7 @@ import config from '../common/config.js'
 import utilities from '../common/Utilities.js'
 import Loading  from '../common/Loading.jsx'
 import ItemList from './ItemList.jsx'
-import BScroll from 'better-scroll'
+// import BScroll from 'better-scroll'
 class Allproduct extends React.Component {
   constructor(props) {
       super(props)
@@ -75,7 +75,7 @@ class Allproduct extends React.Component {
        document.addEventListener('scroll', this.handleScroll);
        let offsetWidth=200
       //  console.log(this.refs.lalala.style.scrollTop)
-      let scroll=new BScroll(this.refs.lalala,{})
+      // let scroll=new BScroll(this.refs.lalala,{})
     //   scroll.on('scroll', (pos) => {
     //     console.log(pos.x + '~' + pos.y)
     // })
